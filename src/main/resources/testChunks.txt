@@ -1,0 +1,294 @@
+[{
+  "candidates": [
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "В"
+          }
+        ],
+        "role": "model"
+      }
+    }
+  ],
+  "usageMetadata": {
+    "promptTokenCount": 13,
+    "totalTokenCount": 13,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 13
+      }
+    ]
+  },
+  "modelVersion": "gemini-1.5-pro-002"
+}
+,
+{
+  "candidates": [
+    {
+      "content": {
+        "parts": [
+          {
+            "text": " маленьком, уютном городке, где дома были цвета сахарной ваты"
+          }
+        ],
+        "role": "model"
+      }
+    }
+  ],
+  "usageMetadata": {
+    "promptTokenCount": 13,
+    "totalTokenCount": 13,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 13
+      }
+    ]
+  },
+  "modelVersion": "gemini-1.5-pro-002"
+}
+,
+{
+  "candidates": [
+    {
+      "content": {
+        "parts": [
+          {
+            "text": ", а улицы пахли корицей и яблоками, жил старый часовщик по имени"
+          }
+        ],
+        "role": "model"
+      }
+    }
+  ],
+  "usageMetadata": {
+    "promptTokenCount": 13,
+    "totalTokenCount": 13,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 13
+      }
+    ]
+  },
+  "modelVersion": "gemini-1.5-pro-002"
+}
+,
+{
+  "candidates": [
+    {
+      "content": {
+        "parts": [
+          {
+            "text": " Элиас.  У него были добрые, морщинистые глаза и улыбка, которая, казалось, заводила все часы в его мастерской."
+          }
+        ],
+        "role": "model"
+      }
+    }
+  ],
+  "usageMetadata": {
+    "promptTokenCount": 13,
+    "totalTokenCount": 13,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 13
+      }
+    ]
+  },
+  "modelVersion": "gemini-1.5-pro-002"
+}
+,
+{
+  "candidates": [
+    {
+      "content": {
+        "parts": [
+          {
+            "text": " Элиас чинил не только часы, но и сломанные игрушки,  расклеившиеся книжки и даже детские мечты. \n\nОднажды"
+          }
+        ],
+        "role": "model"
+      }
+    }
+  ],
+  "usageMetadata": {
+    "promptTokenCount": 13,
+    "totalTokenCount": 13,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 13
+      }
+    ]
+  },
+  "modelVersion": "gemini-1.5-pro-002"
+}
+,
+{
+  "candidates": [
+    {
+      "content": {
+        "parts": [
+          {
+            "text": " к нему пришла маленькая девочка Лили с плюшевым мишкой, у которого оторвалась лапа. Мишка был старенький, выцветший, но для Лили он был самым лучшим другом на свете.  "
+          }
+        ],
+        "role": "model"
+      }
+    }
+  ],
+  "usageMetadata": {
+    "promptTokenCount": 13,
+    "totalTokenCount": 13,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 13
+      }
+    ]
+  },
+  "modelVersion": "gemini-1.5-pro-002"
+}
+,
+{
+  "candidates": [
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "Элиас взял мишку, аккуратно пришил лапку, а потом, заметив грусть в глазах девочки, достал из ящика стола маленькую заводную птичку. Птичка была ярко-синего цвета, с"
+          }
+        ],
+        "role": "model"
+      }
+    }
+  ],
+  "usageMetadata": {
+    "promptTokenCount": 13,
+    "totalTokenCount": 13,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 13
+      }
+    ]
+  },
+  "modelVersion": "gemini-1.5-pro-002"
+}
+,
+{
+  "candidates": [
+    {
+      "content": {
+        "parts": [
+          {
+            "text": " крошечным клювом и блестящими глазками.  Он завел ее, и птичка запела веселую мелодию, прыгая по столу.\n\nЛили рассмеялась, впервые за весь день.  Элиас улыбнулся в ответ. \"Забирай ее себе,\""
+          }
+        ],
+        "role": "model"
+      }
+    }
+  ],
+  "usageMetadata": {
+    "promptTokenCount": 13,
+    "totalTokenCount": 13,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 13
+      }
+    ]
+  },
+  "modelVersion": "gemini-1.5-pro-002"
+}
+,
+{
+  "candidates": [
+    {
+      "content": {
+        "parts": [
+          {
+            "text": " сказал он. \"Пусть она поет для тебя и твоего мишки.\"\n\nЛили крепко обняла мишку и птичку.  Выходя из мастерской, она услышала, как Элиас тихонько напевает ту же мелодию, что и птичка.\n\nНа"
+          }
+        ],
+        "role": "model"
+      }
+    }
+  ],
+  "usageMetadata": {
+    "promptTokenCount": 13,
+    "totalTokenCount": 13,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 13
+      }
+    ]
+  },
+  "modelVersion": "gemini-1.5-pro-002"
+}
+,
+{
+  "candidates": [
+    {
+      "content": {
+        "parts": [
+          {
+            "text": " улице светило солнце, и казалось, что весь город улыбается вместе с Лили. Дома она поставила птичку на тумбочку рядом с мишкой.  Птичка пела, мишка сидел рядом, а Лили, слушая веселую мелодию, знала, что"
+          }
+        ],
+        "role": "model"
+      }
+    }
+  ],
+  "usageMetadata": {
+    "promptTokenCount": 13,
+    "totalTokenCount": 13,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 13
+      }
+    ]
+  },
+  "modelVersion": "gemini-1.5-pro-002"
+}
+,
+{
+  "candidates": [
+    {
+      "content": {
+        "parts": [
+          {
+            "text": " в мире есть место для маленьких чудес и больших добрых сердец.  И это знание согревало ее лучше любого одеяла.\n"
+          }
+        ],
+        "role": "model"
+      },
+      "finishReason": "STOP"
+    }
+  ],
+  "usageMetadata": {
+    "promptTokenCount": 12,
+    "candidatesTokenCount": 420,
+    "totalTokenCount": 432,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 12
+      }
+    ],
+    "candidatesTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 420
+      }
+    ]
+  },
+  "modelVersion": "gemini-1.5-pro-002"
+}
+]
