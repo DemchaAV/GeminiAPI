@@ -154,12 +154,11 @@ public class ApiErrorHandler {
 
         @Override
         public String toString() {
-            return "ApiError{" +
-                   "httpErrorCode=" + httpErrorCode +
-                   ", canonicalErrorCode='" + canonicalErrorCode + '\'' +
-                   ", cause='" + cause + '\'' +
-                   ", solution='" + solution + '\'' +
-                   '}';
+            return "ApiError Details:\n" +
+                   "  HTTP Status Code: " + httpErrorCode + "\n" +
+                   "  Error Code:         " + canonicalErrorCode + "\n" +
+                   "  Cause:              " + cause + "\n" +
+                   "  Solution:           " + solution;
         }
 
         /**

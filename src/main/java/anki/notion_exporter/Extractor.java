@@ -3,6 +3,7 @@ package anki.notion_exporter;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.Getter;
+import lombok.extern.slf4j.Slf4j;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 
@@ -11,6 +12,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+@Slf4j
 @AllArgsConstructor
 @Data
 public class Extractor {
@@ -30,21 +32,24 @@ public class Extractor {
     }
 
     public File getFile(int index) {
+        log.trace("Processing File index: {}", index);
         return files[index];
     }
 
     public Document getDocument(int index) throws IOException {
         if (index < 0 || index > files.length) {
+            log.error("{} can be from 0 to {}", "index", files.length);
             throw new IndexOutOfBoundsException("%s can be from 0 to %d".formatted("index", files.length));
         }
         Document doc = null;
-        doc = Jsoup.parse(getFile(index), "UTF-8");
+        File file = getFile(index);
+        doc = Jsoup.parse(file, "UTF-8");
         return doc;
     }
 
     public String getText(int index) throws IOException {
         String bodyText = null;
-        Document doc = null;
+        Document doc ;
         doc = getDocument(index);
         bodyText = doc.body().text();
         return bodyText;
@@ -66,18 +71,4 @@ public class Extractor {
         return pages;
     }
 
-}
-
-class Test {
-    public static void main(String[] args) {
-
-
-        Extractor extractor = new Extractor("C:\\Users\\Demch\\OneDrive\\Рабочий стол\\Lerning\\Java\\Notion\\notion becupe");
-        try {
-            System.out.println(extractor.getPages().size());
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-
-    }
 }

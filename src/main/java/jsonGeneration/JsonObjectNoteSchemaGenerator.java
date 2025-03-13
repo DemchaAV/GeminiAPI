@@ -8,7 +8,7 @@ import com.fasterxml.jackson.databind.node.ObjectNode;
 import java.lang.reflect.Field;
 import java.lang.reflect.ParameterizedType;
 import java.util.List;
-
+//TODO change SchemaGeneration
 public class JsonObjectNoteSchemaGenerator {
 
     public static ObjectNode generateJsonSchema(Class<?> clazz) {

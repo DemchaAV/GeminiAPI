@@ -23,7 +23,7 @@ class TestImgResponse {
     public static void main(String[] args) {
         ObjectNode schema;
 
-        String prompt = readFileFromResources("prompt_anki.txt");
+        String prompt = readTextFileFromResources("prompt_anki.txt");
 
         String lesson;
 
@@ -86,7 +86,7 @@ class TestImgResponse {
 
     }
 
-    public static String readFileFromResources(String fileName) {
+    public static String readTextFileFromResources(String fileName) {
         ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
         try (InputStream inputStream = classLoader.getResourceAsStream(fileName);
              BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream, StandardCharsets.UTF_8))) {

@@ -29,16 +29,10 @@ public class Main {
             if (prompt.equalsIgnoreCase("stop")) break;
 
             if (prompt.startsWith("-cd ")) {
-                try {
-                    String pathString = prompt.substring(prompt.indexOf("-cd ") + 4, prompt.indexOf(" [")).replace("\"", "").trim();
-                    Path imagePath = Path.of(pathString);
-                    image = new Image(imagePath).loadData();
-                    prompt = prompt.substring(prompt.indexOf(" [") + 2, prompt.indexOf("]")).trim();
-                } catch (IOException | IllegalArgumentException e) {
-                    System.err.println("Error loading image: " + e.getMessage());
-                    image = null;
-                    continue;
-                }
+                String pathString = prompt.substring(prompt.indexOf("-cd ") + 4, prompt.indexOf(" [")).replace("\"", "").trim();
+                Path imagePath = Path.of(pathString);
+                image = new Image(imagePath);
+                prompt = prompt.substring(prompt.indexOf(" [") + 2, prompt.indexOf("]")).trim();
             }
 
             try {

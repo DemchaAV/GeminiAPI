@@ -7,7 +7,7 @@ import org.gemini.core.client.model_config.Model;
 import java.io.IOException;
 import java.nio.file.Path;
 
-public class TestChat {
+public class UserChatWithImage {
         public static void main(String[] args) {
             var client = GeminiClient.builder()
                     .apiKey(System.getenv("API_KEY"))
@@ -15,18 +15,12 @@ public class TestChat {
                     .httpClient(GeminiClient.DEFAULT_HTTP_CLIENT)
                     .build();
             Chat chat = new Chat(new User("Artem", 2356456564L), client);
-
             Path path = Path.of("C:\\Users\\Demch\\OneDrive\\Рабочий стол\\Lerning\\Java\\test_gemini_picture.jpg");
             Image image = new Image(path);
+            String prompt ="Hello what do you see in this picture";
 
             try {
-                image.loadData();
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
-
-            try {
-                System.out.println(chat.chat("Привет напиши что ты видишь на этом изображении ", image));
+                System.out.println(chat.chat(prompt, image));
             } catch (IOException | InterruptedException e) {
                 throw new RuntimeException(e);
             }

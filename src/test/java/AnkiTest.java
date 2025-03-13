@@ -41,7 +41,7 @@ public class AnkiTest {
             }
 
             try {
-                ankiClient.export(lesson, pages.get(i).title(), "C:\\Users\\Demch\\OneDrive\\Рабочий стол\\Lerning\\Java\\Notion\\dec\\test");
+                ankiClient.exportAnki(lesson, pages.get(i).title(), "C:\\Users\\Demch\\OneDrive\\Рабочий стол\\Lerning\\Java\\Notion\\dec\\test");
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }

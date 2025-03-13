@@ -19,12 +19,7 @@ public class Image {
     public Image(@NonNull Path path, String format) {
         this.path = path;
         this.format = format;
-        try {
-            loadData();
-            log.info("Image loaded successfully from path: {}", path);
-        } catch (IOException e) {
-            log.error("Failed to load image from {}: {}", path, e.getMessage(), e);
-        }
+        loadData();
     }
 
     public Image(Path path) {
@@ -37,9 +32,14 @@ public class Image {
         this(path, extension);
     }
 
-    public Image loadData() throws IOException {
-        imageBytes = Files.readAllBytes(path);
-        log.debug("Image bytes loaded from: {}", path);
+    private Image loadData() {
+        try {
+            imageBytes = Files.readAllBytes(path);
+            log.info("Image loaded successfully from path: {}", path);
+        } catch (IOException e) {
+            log.error("Failed to load image from {}: {}", path, e.getMessage(), e);
+            throw new RuntimeException("An error occurred during loading image from path ", e);
+        }
         return this;
     }
 

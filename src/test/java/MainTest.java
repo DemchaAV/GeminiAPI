@@ -26,18 +26,15 @@ public class MainTest {
 
         client.sendRequest(request).getResponse();
         content = client.takeContent();
-        content.forEach(System.out::println);
 
-        System.out.println("//////");
-        content.add(new Content("user", "Ты можешь сгенерировать изображение?"));
         request = GeminiRequest.builder()
                 .contents(content)
                 .build();
 
         client.sendRequest(request).getResponse();
-        content = client.takeContent();
-        content.forEach(System.out::println);
+        var contentString =  client.takeContentAsString();
 
+        System.out.println(contentString);
 
     }
 }
