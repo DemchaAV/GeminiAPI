@@ -5,5 +5,5 @@ import lombok.Builder;
 
 @Builder
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public record CitationSources(Integer startIndex, Integer endIndex, String uri ) {
+public record CitationSources(Integer startIndex, Integer endIndex, String uri, String license) {
 }
