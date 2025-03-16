@@ -1,11 +1,13 @@
 package org.gemini.core.client.request_response.response.candidate.safety_rating;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Builder;
 
 /**
  * Safety rating for a specific harm category
  */
 @Builder
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public record SafetyRating(
         /**
          * The safety category being rated.

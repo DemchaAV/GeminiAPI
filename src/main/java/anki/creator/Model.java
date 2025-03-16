@@ -117,6 +117,7 @@ public class Model {
                 }
 
                 if (requiredFields.isEmpty()) {
+                    log.error("Could not compute required fields for template: {}",template);
                     throw new RuntimeException("Could not compute required fields for template: " + template);
                 }
 

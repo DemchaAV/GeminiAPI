@@ -22,9 +22,10 @@ import java.util.Map;
 /**
  * Root request model for Gemini API calls
  */
-@JsonInclude(JsonInclude.Include.NON_NULL)
+//@JsonInclude(JsonInclude.Include.NON_NULL)
 @Builder
 @Slf4j
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public record GeminiRequest(
         /**
          * Optional: string
@@ -64,7 +65,7 @@ public record GeminiRequest(
                 .addContent(new Content("user", message.text()))
                 .build();
     }
-    public static GeminiRequest requestMessage(@NonNull Message message, User user) {
+    public static GeminiRequest requestMessage(@NonNull Message message, User user, long chatID) {
         if (message.text() == null || message.text().isBlank()) {
             log.warn("Received empty or null message.");
             throw new IllegalArgumentException("Message cannot be null or empty");
@@ -76,7 +77,7 @@ public record GeminiRequest(
         } else {
             log.info("Return request with user history chat!");
             return GeminiRequest.builder()
-                    .contents(user.getHistoryChat())
+                    .contents(user.getChatHistory(chatID))
                     .addContent(new Content("user",message.text())).build();
         }
     }
@@ -112,7 +113,7 @@ public record GeminiRequest(
         } else {
             log.info("Return request with user history chat!");
             return GeminiRequest.builder()
-                    .contents(user.getHistoryChat())
+//                    .contents(user.getHistoryChat())
                     .addContent(contentBuilder.build()).build();
         }
     }

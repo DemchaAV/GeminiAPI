@@ -1,11 +1,13 @@
 package org.gemini.core.client.request_response.response.candidate.citation_metadata;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Builder;
 
 /**
  * Information about a specific citation
  */
 @Builder
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public record Citation(
         /**
          * An integer that specifies where a citation starts in the content.

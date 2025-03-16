@@ -34,9 +34,9 @@ public class AnkiDatabaseInserter {
             Package ankiPackage = new Package(deck, List.of());
             ankiPackage.writeToFile(absolutePath, null);
 
-            log.info("✅ Anki package created: {} in directory {}", fileName, path);
+            log.info("Anki package created: {} in directory {}", fileName, path);
         } catch (Exception e) {
-            log.error("❌ Error creating Anki package", e);
+            log.error("Error creating Anki package", e);
         }
     }
 
@@ -45,11 +45,13 @@ public class AnkiDatabaseInserter {
         log.info("Note {} added: {}", result ? "successfully" : "failed", note);
         return result;
     }
-
-    public boolean addSimpleNote(String question, String answer, String[] tags) {
-        Note note = new Note(this.model, List.of(question, answer), null, List.of(tags), null, 0);
+    public boolean addSimpleNote(String question, String answer, List<String>tags) {
+        Note note = new Note(this.model, List.of(question, answer), null, tags, null, 0);
         boolean result = addNote(note);
         log.info("Simple note added with question: '{}' and answer: '{}'", question, answer);
         return result;
+    }
+    public boolean addSimpleNote(String question, String answer, String[] tags) {
+      return   addSimpleNote(question, answer, List.of(tags));
     }
 }

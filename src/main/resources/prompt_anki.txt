@@ -1,31 +1,65 @@
-Сгенерируй список вопросов по данному образовательному уроку, охватывая все ключевые моменты темы. Особое внимание удели методам (methods).
+Generate a list of questions based on the given educational lesson, covering all key aspects of the topic. Pay special attention to methods (functions). The questions will be used in the Anki application.
 
-Требования к вопросам:
+Question Requirements:
+Method Notation:
 
-Все методы должны быть указаны в полном виде с круглыми скобками:
+If the method does not take parameters: <code>methodName()</code>
+If the method takes parameters, specify them: <code>methodName(param1, param2)</code>
+Types of Questions:
 
-Если метод не принимает параметры: methodName()
-Если метод принимает параметры, обязательно указать параметры: methodName(param1, param2)
-Вопросы должны включать следующие типы:
+Method description → method name
+<i>Example:</i>
+"Which method removes an element by index?"
+Answer: <code>remove(int index)</code>
 
-Описание метода → название метода
-(Например: «Какой метод удаляет элемент по индексу?» Ответ: remove(int index).)
-Название метода → описание действия метода
-(Например: «Что делает метод clear()?» Ответ: Удаляет все элементы коллекции.)
-Тип возвращаемого значения (return type)
-(Например: «Какой return type у метода size()?» Ответ: int.)
-Перегрузка методов (method overloading)
-(Например: «Чем отличаются методы add(Object obj) и add(int index, Object obj)?»)
-Разница между похожими по смыслу методами
-(Например: «Чем отличается метод get() от метода peek()?»)
-Область применения методов и структур данных
-(Например: «В каких случаях предпочтительнее использовать LinkedList вместо ArrayList?»)
-Вопросы могут быть разных типов:
-Открытые вопросы
-Вопросы с множественным выбором (multiple-choice)
-Вопросы на соответствие (matching)
-Правда или ложь (true/false)
-Формируй вопросы таким образом, чтобы они:
+Method name → method description
+<i>Example:</i>
+"What does the method <code>clear()</code> do?"
+Answer: Removes all elements from the collection.
 
-Помогали закрепить материал
-Развивали понимание различий и областей применения методов
+Return type (return type identification)
+<i>Example:</i>
+"What is the return type of the method <code>size()</code>?"
+Answer: <code>int</code>
+
+Method overloading
+<i>Example:</i>
+"What is the difference between <code>add(Object obj)</code> and <code>add(int index, Object obj)</code>?"
+
+Difference between similar methods
+<i>Example:</i>
+"What is the difference between <code>get()</code> and <code>peek()</code>?"
+
+Method usage and data structure applications
+<i>Example:</i>
+"When is it preferable to use <code>LinkedList</code> instead of <code>ArrayList</code>?"
+
+Question Formats:
+
+Open-ended questions
+Multiple-choice questions
+Matching questions
+True/False questions
+Examples:
+
+Multiple-choice:
+"Which method adds an element to the end of a list?"
+a) <code>add(int index, Object obj)</code>
+b) <code>add(Object obj)</code> ✅
+c) <code>put(Object obj)</code>
+
+True/False:
+"The <code>contains(Object obj)</code> method checks if an element is present in the collection." ✅
+
+HTML Formatting:
+
+Use HTML for better readability and formatting:
+<p> for paragraphs
+<code> for code
+<b> for highlighting key terms
+<ul> and <li> for lists
+Question Goals:
+
+Reinforce the material
+Develop an understanding of method differences
+Deepen knowledge of data structure applications

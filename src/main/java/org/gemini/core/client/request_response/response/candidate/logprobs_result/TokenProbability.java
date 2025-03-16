@@ -1,11 +1,13 @@
 package org.gemini.core.client.request_response.response.candidate.logprobs_result;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Builder;
 
 /**
  * Token and its probability information
  */
 @Builder
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public record TokenProbability(
         /**
          * Generative AI models break down text data into tokens for processing,

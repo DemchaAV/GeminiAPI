@@ -58,5 +58,6 @@ public enum FinishReason {
     FINISH_REASON_OTHER,
 
     STOP,
+
     MAX_TOKENS
 }

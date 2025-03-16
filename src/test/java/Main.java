@@ -1,7 +1,7 @@
 import org.gemini.core.chat.Chat;
 import org.gemini.core.chat.Image;
 import org.gemini.core.chat.User;
-import org.gemini.core.client.GeminiClient;
+import org.gemini.core.client.GeminiConnection;
 import org.gemini.core.client.model_config.Model;
 
 import java.io.IOException;
@@ -11,15 +11,16 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
-        var client = GeminiClient.builder()
+        var client = GeminiConnection.builder()
                 .apiKey(System.getenv("API_KEY"))
                 .defaultModel(Model.GEMINI_2_0_FLASH_LATEST)
-                .httpClient(GeminiClient.DEFAULT_HTTP_CLIENT)
+                .httpClient(GeminiConnection.DEFAULT_HTTP_CLIENT)
                 .build();
 
         Scanner scanner = new Scanner(System.in);
         String prompt;
         User user = new User("Artem Demchyshyn", 2388564587L);
+        long chatID  = user.createNewChat();
         Chat chat = new Chat(user, client);
         Image image = null;
 
@@ -36,14 +37,14 @@ public class Main {
             }
 
             try {
-                System.out.println(chat.chat(prompt, image));
+                System.out.println(chat.chat(prompt, image,chatID));
                 image = null;
             } catch (IOException | InterruptedException e) {
                 System.err.println("Error during chat: " + e.getMessage());
             }
         }
 
-        user.getHistoryChat().forEach(System.out::println);
+        user.getChatHistory(chatID).forEach(System.out::println);
         scanner.close();
     }
 }

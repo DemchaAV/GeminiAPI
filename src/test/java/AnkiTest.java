@@ -12,8 +12,9 @@ public class AnkiTest {
         AnkiClient<Lesson> ankiClient = new AnkiClient<>(Lesson.class, System.getenv("API_KEY"))
                 .readFileFromResources("prompt_anki.txt");
 
-
-        Extractor extractor = new Extractor("C:\\Users\\Demch\\OneDrive\\Рабочий стол\\Lerning\\Java\\Notion\\notion becupe");
+        String folderPathNotionsFiles = "C:\\Users\\Demch\\OneDrive\\Рабочий стол\\Lerning\\Java\\Notion\\notion becupe";
+        String folderPathAnkisFiles = "C:\\Users\\Demch\\OneDrive\\Рабочий стол\\Lerning\\Java\\Notion\\dec\\test";
+        Extractor extractor = new Extractor(folderPathNotionsFiles);
         List<Page> pages = null;
         try {
             pages = extractor.getPages();
@@ -23,28 +24,13 @@ public class AnkiTest {
 
 
         String dataLesson;
-        for (int i = 0; i < pages.size(); i++) {
+        for (int i = 15; i < 16; i++) {
             dataLesson = pages.get(i).bodyText();
             Lesson lesson = null;
-            try {
+            lesson = ankiClient.generateQuestions(dataLesson);
+            System.out.println(lesson);
+            ankiClient.exportAnki(lesson, pages.get(i).title(), folderPathAnkisFiles);
 
-                lesson = ankiClient.generateQuestions(dataLesson);
-            } catch (Exception e) {
-                try {
-                    lesson = ankiClient.generateQuestions(dataLesson);
-                } catch (Exception ex) {
-                    try{ lesson = ankiClient.generateQuestions(dataLesson);} catch (Exception exc) {
-                        exc.printStackTrace();
-                        System.err.println("Exception occurs with " + pages.get(i).title());
-                    }
-                }
-            }
-
-            try {
-                ankiClient.exportAnki(lesson, pages.get(i).title(), "C:\\Users\\Demch\\OneDrive\\Рабочий стол\\Lerning\\Java\\Notion\\dec\\test");
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
         }
 
 

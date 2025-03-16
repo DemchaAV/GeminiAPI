@@ -2,8 +2,9 @@ package org.gemini.core.chat;
 
 import lombok.NonNull;
 import lombok.extern.slf4j.Slf4j;
-import org.gemini.core.client.GeminiClient;
+import org.gemini.core.client.GeminiConnection;
 import org.gemini.core.client.request_response.content.Content;
+import org.gemini.core.client.request_response.content.part.Part;
 import org.gemini.core.client.request_response.request.GeminiRequest;
 import org.gemini.core.client.request_response.response.GeminiResponse;
 
@@ -11,33 +12,37 @@ import java.io.IOException;
 
 @Slf4j
 public class Chat {
-    private final GeminiClient connection;
+    private final GeminiConnection connection;
     private final User user;
 
-    public Chat(User user, GeminiClient connection) {
+    public Chat(User user, GeminiConnection connection) {
         this.user = user;
         this.connection = connection;
         log.info("Chat instance created for user: {}", user.getUserName());
     }
-
+//TODO НЕправильная логика чата нужно переделать  стоит заглушка которая не работает
     public String chat(String message) throws IOException, InterruptedException {
-        return chat(message, null);
+        long chatId = 0;
+        if (user.getHistoryChat().isEmpty()) {
+          chatId=  user.createNewChat();
+        }
+        return chat(message, null,chatId);
     }
 
-    public String chat(String message, Image image) throws IOException, InterruptedException {
-        GeminiRequest request = image == null ? GeminiRequest.requestMessage(new Message(message), user)
+    public String chat(String message, Image image, long chatID) throws IOException, InterruptedException {
+        GeminiRequest request = image == null ? GeminiRequest.requestMessage(new Message(message), user,chatID)
                 : GeminiRequest.requestImage(new Message(message == null ? "" : message), image, user);
 
         GeminiResponse response;
         try {
             response = connection.sendRequest(request).getResponse();
         } catch (Exception e) {
-            log.error("Error while sending request to GeminiClient: ", e);
+            log.error("Error while sending request to GeminiConnection: ", e);
             return null;
         }
 
         if (response == null) {
-            log.warn("Received null response from GeminiClient.");
+            log.warn("Received null response from GeminiConnection.");
             return null;
         }
 
@@ -46,7 +51,7 @@ public class Chat {
 
         if (connection.isReadyContent()) {
             user.getHistoryChat().clear();
-            user.getHistoryChat().addAll(connection.takeContent());
+            user.getChatHistory(chatID).addAll(connection.takeContent());
         }
         return responseText;
     }

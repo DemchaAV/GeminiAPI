@@ -1,11 +1,11 @@
-import org.gemini.core.client.GeminiClient;
+import org.gemini.core.client.GeminiConnection;
 import org.gemini.core.client.model_config.Model;
 
 public class TestQuestionAnswer {
     public static void main(String[] args) {
-        var client = GeminiClient.builder()
+        var client = GeminiConnection.builder()
                 .apiKey(System.getenv("API_KEY"))
-                .httpClient(GeminiClient.DEFAULT_HTTP_CLIENT)
+                .httpClient(GeminiConnection.DEFAULT_HTTP_CLIENT)
                 .defaultModel(Model.GEMINI_2_0_FLASH_LATEST)
                 .build();
         String message = "Как твои дела Gemini";

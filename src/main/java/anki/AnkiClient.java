@@ -10,7 +10,7 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NonNull;
 import lombok.extern.slf4j.Slf4j;
-import org.gemini.core.client.GeminiClient;
+import org.gemini.core.client.GeminiConnection;
 import org.gemini.core.client.model_config.GenerationConfig;
 import org.gemini.core.client.model_config.Model;
 import org.gemini.core.client.request_response.content.Content;
@@ -28,13 +28,14 @@ import java.util.stream.Collectors;
 @Builder
 @AllArgsConstructor()
 public class AnkiClient<T> {
+    @Getter
     private final Class<T> clazz;
     @Getter
     private String prompt;
-    private GenerationConfig defaultConfig;
+    @Getter
     private GenerationConfig config;
     @NonNull
-    private GeminiClient client;
+    private GeminiConnection client;
 
 
 
@@ -42,28 +43,36 @@ public class AnkiClient<T> {
         log.info("Initializing AnkiClient with API key");
         this.clazz = clazz;
         this.config = getDefaultConfig();
-        this.client = GeminiClient.builder()
+        this.client = GeminiConnection.builder()
                 .apiKey(apiKey)
-                .httpClient(GeminiClient.DEFAULT_HTTP_CLIENT)
-                .defaultModel(Model.GEMINI_2_0_FLASH_LATEST.getVersion())
-                .generationConfig(defaultConfig)
+                .httpClient(GeminiConnection.DEFAULT_HTTP_CLIENT)
+                .defaultModel(Model.GEMINI_2_0_FLASH_LATEST)
+                .generationConfig(config)
                 .build();
     }
-    public AnkiClient(String prompt, GeminiClient client, Class<T> clazz) {
+    public AnkiClient(String prompt, GeminiConnection client, Class<T> clazz) {
         this.prompt = prompt;
         this.client = client;
         this.clazz = clazz;
         if (clazz == null) {
             throw new NullPointerException("Object clazz is null");
         }
-        this.config = defaultConfig;
-        client.setGenerationConfig(config);
+        this.config = getDefaultConfig();
     }
 
-    public AnkiClient(Class<T> clazz, GeminiClient client) {
+    /**
+     * Required field in GeminiConnection {@code response_mime_type} and {@code response_mime_type}
+     * @param clazz
+     * @param client
+     */
+    public AnkiClient(Class<T> clazz, GeminiConnection client) {
         this(null, client, clazz);
     }
 
+    /**
+     * Current config can be initialized after {@link Class<T> clazz} initialized
+     * @return
+     */
     private GenerationConfig getDefaultConfig() {
         return GenerationConfig.builder()
                 .responseSchema(clazz)
@@ -137,11 +146,11 @@ public class AnkiClient<T> {
         }
     }
 
-    public boolean exportAnki(Lesson lesson, String title, String pathOut) throws IOException {
+    public boolean exportAnki(Lesson lesson, String title, String pathOut) {
         return exportAnki(lesson, title, pathOut, true);
     }
 
-    public boolean exportAnki(Lesson lesson, String title, String pathOut, boolean reWriteExisting) throws IOException {
+    public boolean exportAnki(Lesson lesson, String title, String pathOut, boolean reWriteExisting) {
         if (lesson == null) {
             log.warn("Lesson is null, cannot export");
             return false;
@@ -155,7 +164,7 @@ public class AnkiClient<T> {
         Deck deck = new Deck(uniqueDeckId, title, lesson.description());
         AnkiDatabaseInserter inserter = new AnkiDatabaseInserter(deck);
         for (Question question : lesson.questions()) {
-            inserter.addSimpleNote(question.question(), question.answer(), new String[]{question.tage1(), question.tage2()});
+            inserter.addSimpleNote(question.question(), question.answer(), question.tags());
         }
         File directory = new File(pathOut);
         if (!directory.exists()) {
@@ -169,12 +178,12 @@ public class AnkiClient<T> {
         return true;
     }
 
-    public boolean exportCSV(Lesson lesson, String pathOut) throws IOException {
+    public boolean exportCSV(Lesson lesson, String pathOut) {
         String defaultSeparator = ",";
         return exportCSV(lesson, pathOut, defaultSeparator);
     }
 
-    public boolean exportCSV(Lesson lesson, String pathOut, String separator) throws IOException {
+    public boolean exportCSV(Lesson lesson, String pathOut, String separator) {
         if (lesson == null) {
             System.err.println("lesson is null");
             return false;

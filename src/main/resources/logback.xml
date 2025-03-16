@@ -17,7 +17,7 @@
     </appender>
 
     <!-- Логгер для пакета com.myapp -->
-    <logger name="anki.AnkiClient" level="INFO"/>
+
 
     <!-- Корневой логгер, который записывает в оба аппендера -->
     <root level="OFF">

@@ -6,8 +6,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.*;
-import java.util.regex.Pattern;
 import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 @Getter
 public class Note {
     private final Model model;
@@ -17,13 +17,11 @@ public class Note {
     private final String guid;
     private final int due;
 
-    // Новый regex: Проверяет только валидные HTML-теги, исключая дженерики
-    private static final Pattern INVALID_HTML_TAG_RE = Pattern.compile(
-            "<(?!/?[a-z]+[0-9]?\\b)(?:.|\\n)*?>", Pattern.CASE_INSENSITIVE
-    );
+    private static final Pattern INVALID_HTML_TAG_RE = Pattern.compile("<(?!/?[a-zA-Z0-9]+(?: .*|/?)>|!--|!\\[CDATA\\[)(?:.|\\n)*?>");
 
 //TODO if the top version will work
-//    private static final Pattern INVALID_HTML_TAG_RE = Pattern.compile("<(?!/?[a-zA-Z0-9]+(?: .*|/?)>|!--|!\\[CDATA\\[)(?:.|\\n)*?>");
+//    private static final Pattern INVALID_HTML_TAG_RE = Pattern.compile("<(?!/?[a-z]+[0-9]?\\b)(?:.|\\n)*?>", Pattern.CASE_INSENSITIVE);
+
 
     public Note(Model model, List<String> fields, String sortField, List<String> tags, String guid, int due) {
         this.model = model;

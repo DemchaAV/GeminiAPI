@@ -7,6 +7,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import jsonGeneration.JsonObjectNoteSchemaGenerator;
 import lombok.Builder;
+import org.gemini.core.client.GeminiConnection;
 
 import java.util.List;
 
@@ -337,7 +338,7 @@ import java.util.List;
  * @param logprobs            Number of top log probabilities to return per token.
  * @param audioTimestamp      Whether to include timestamps for audio segments.
  * @param responseModalities  Desired response modalities (e.g., "TEXT", "AUDIO", "IMAGE").
- * @see org.gemini.core.client.GeminiClient
+ * @see GeminiConnection
  * @see org.gemini.core.client.request_response.request.GeminiRequest
  * @see org.gemini.core.client.request_response.response.GeminiResponse
  */
