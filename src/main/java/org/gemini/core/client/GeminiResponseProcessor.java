@@ -1,15 +1,10 @@
 package org.gemini.core.client;
 
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 import org.gemini.core.client.request_response.response.GeminiResponse;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
 import java.util.Queue;
 import java.util.concurrent.ConcurrentLinkedQueue;
 
@@ -88,23 +83,3 @@ public class GeminiResponseProcessor {
     }
 }
 
-class TestProcessor {
-    public static void main(String[] args) {
-        GeminiResponseProcessor processor = new GeminiResponseProcessor();
-
-        try (BufferedReader reader = new BufferedReader(new FileReader("C:\\Users\\Demch\\OneDrive\\Java\\Gemini\\src\\main\\resources\\testChunks.txt"))) {
-            String line;
-            while ((line = reader.readLine()) != null) {
-                processor.addChunk(line);
-                GeminiResponse response = processor.getResponseQueue().poll();
-                if (response != null) {
-                    System.out.printf("Received response: %s\n", response);
-                }
-            }
-        } catch (IOException e) {
-            System.out.printf("Error reading file: %s\n", e.getMessage(), e);
-        }
-
-        processor.processResponses();
-    }
-}

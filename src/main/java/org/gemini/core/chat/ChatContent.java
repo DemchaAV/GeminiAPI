@@ -1,4 +1,4 @@
-package org.gemini.core.client;
+package org.gemini.core.chat;
 
 import lombok.Builder;
 import org.gemini.core.client.request_response.content.Content;

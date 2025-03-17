@@ -3,9 +3,9 @@ package org.gemini.core.client;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.gemini.core.chat.ChatContent;
 import org.gemini.core.chat.Image;
 import org.gemini.core.chat.Message;
-import org.gemini.core.client.model_config.Model;
 import org.gemini.core.client.request_response.content.Content;
 import org.gemini.core.client.request_response.content.part.Blob;
 import org.gemini.core.client.request_response.content.part.Part;
@@ -13,12 +13,10 @@ import org.gemini.core.client.request_response.request.GeminiRequest;
 import org.gemini.core.client.request_response.response.GeminiResponse;
 
 import java.io.IOException;
-import java.nio.file.Path;
 import java.time.Instant;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Objects;
 import java.util.function.Consumer;
 
 @RequiredArgsConstructor
@@ -105,22 +103,3 @@ public class GeminiClient {
 
 }
 
-class TestClient {
-    public static void main(String[] args) throws IOException {
-        String message = "Какой твой любимый язык программирования?";
-
-        var connection = GeminiConnection.builder()
-                .apiKey(System.getenv("API_KEY"))
-                .httpClient(GeminiConnection.DEFAULT_HTTP_CLIENT)
-                .defaultModel(Model.GEMINI_2_0_FLASH_LITE)
-                .build();
-        GeminiClient client = new GeminiClient(connection);
-        String path = "C:\\Users\\Demch\\OneDrive\\Рабочий стол\\Lerning\\Java\\test_gemini_picture.jpg";
-        Image img = new Image(Path.of(path));
-        client.generateResponseAsStream(message, GeminiResponse::printContent);
-
-
-        System.out.println("Finish reasoning");
-    }
-
-}

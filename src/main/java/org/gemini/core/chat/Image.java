@@ -57,6 +57,16 @@ public class Image {
 
     }
 
+    public Image(@NonNull Path path) {
+        String fileName = path.getFileName().toString();
+        String extension = "";
+        int dotIndex = fileName.lastIndexOf('.');
+        if (dotIndex > 0 && dotIndex < fileName.length() - 1) {
+            extension = fileName.substring(dotIndex + 1);
+        }
+        this(path, extension);
+    }
+
     public static List<Image> extractPack(@NonNull GeminiResponse response, String format) {
         List<Image> imagesPack = new ArrayList<>();
         var predictions = response.predictions();
@@ -67,16 +77,6 @@ public class Image {
             imagesPack.add(new Image(prediction, format));
         }
         return imagesPack;
-    }
-
-    public Image(Path path) {
-        String fileName = path.getFileName().toString();
-        String extension = "";
-        int dotIndex = fileName.lastIndexOf('.');
-        if (dotIndex > 0 && dotIndex < fileName.length() - 1) {
-            extension = fileName.substring(dotIndex + 1);
-        }
-        this(path, extension);
     }
 
     private Image loadData() {
@@ -158,6 +158,7 @@ public class Image {
 
         return this.writeTo(fullPath);
     }
+
     public String getBase64Image() {
         if (imageBytes == null) {
             log.warn("No image data found for path: {}", path);

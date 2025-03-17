@@ -406,6 +406,7 @@ public class GeminiConnection {
         sendRequest(request).getResponse();
         return takeContentAsString();
     }
+
     public GeminiResponse getResponse() {
         return getResponse(false);
     }
@@ -520,7 +521,6 @@ public class GeminiConnection {
             throw new GeminiApiException("Error reading stream from Gemini API", e);
         }
     }
-
 
     private GeminiResponse parseJson(String jsonObject) {
         GeminiResponse geminiResponse = null;
