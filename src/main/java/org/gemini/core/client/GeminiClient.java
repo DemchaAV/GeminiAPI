@@ -63,6 +63,7 @@ public class GeminiClient {
         var request = GeminiRequest.requestMessage(message);
         return connection.sendRequest(request).getResponse();
     }
+
     public void generateResponseAsStream(String message, Consumer<GeminiResponse> responseConsumer){
         var request = GeminiRequest.requestMessage(new Message(message));
         try {
