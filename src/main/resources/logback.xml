@@ -20,7 +20,7 @@
 
 
     <!-- Корневой логгер, который записывает в оба аппендера -->
-    <root level="OFF">
+    <root level="off">
         <appender-ref ref="STDOUT"/>
         <appender-ref ref="FILE"/>
     </root>
