@@ -113,6 +113,7 @@ public class SchemaGenerator {
             throw new RuntimeException("Failed to generate JSON schema", e);
         }
     }
+    
     public static JsonNode generateJsonNode(Class<?> clazz) {
         return generateJsonNode(clazz,true,true);
     }
