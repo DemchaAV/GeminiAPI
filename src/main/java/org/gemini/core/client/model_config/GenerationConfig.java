@@ -1,13 +1,14 @@
 package org.gemini.core.client.model_config;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
-import org.gemini.core.client.request_schema_generation.JsonObjectNoteSchemaGenerator;
 import lombok.Builder;
 import org.gemini.core.client.GeminiConnection;
+import org.gemini.core.client.request_schema_generation.SchemaGenerator;
 
 import java.util.List;
 
@@ -410,7 +411,7 @@ public record GenerationConfig(
             return  this;
         }
         public <T> GenerationConfigBuilder responseSchema(Class<T>responseClassSchema){
-            this.responseSchema = JsonObjectNoteSchemaGenerator.generateJsonSchema( responseClassSchema);
+            this.responseSchema = SchemaGenerator.generateJsonNode(responseClassSchema);
             return  this;
         }
     }

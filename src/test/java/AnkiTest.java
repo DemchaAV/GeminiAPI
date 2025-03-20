@@ -13,7 +13,7 @@ public class AnkiTest {
                 .readFileFromResources("prompt_anki.txt");
 
         String folderPathNotionsFiles = "C:\\Users\\Demch\\OneDrive\\Рабочий стол\\Lerning\\Java\\Notion\\notion becupe";
-        String folderPathAnkisFiles = "C:\\Users\\Demch\\OneDrive\\Рабочий стол\\Lerning\\Java\\Notion\\dec\\test";
+        String folderPathAnkisFiles = "C:\\Users\\Demch\\OneDrive\\Рабочий стол\\Lerning\\Java\\Notion\\dec";
         Extractor extractor = new Extractor(folderPathNotionsFiles);
         List<Page> pages = null;
         try {
@@ -24,7 +24,7 @@ public class AnkiTest {
 
 
         String dataLesson;
-        for (int i = 15; i < 16; i++) {
+        for (int i = 1; i < pages.size(); i++) {
             dataLesson = pages.get(i).bodyText();
             Lesson lesson = null;
             lesson = ankiClient.generateQuestions(dataLesson);

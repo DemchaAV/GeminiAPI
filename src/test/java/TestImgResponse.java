@@ -1,17 +1,18 @@
 import anki.data.Lesson;
 import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import org.gemini.core.client.model.GeminiModel;
 import org.gemini.core.client.model.ImagenModel;
 import org.gemini.core.client.model.VerAPI;
 import org.gemini.core.client.model.enums.*;
-import org.gemini.core.client.request_schema_generation.JsonObjectNoteSchemaGenerator;
 import org.gemini.core.client.GeminiConnection;
 import org.gemini.core.client.model_config.GenerationConfig;
 import org.gemini.core.client.request_response.content.Content;
 import org.gemini.core.client.request_response.content.part.Part;
 import org.gemini.core.client.request_response.request.GeminiRequest;
+import org.gemini.core.client.request_schema_generation.SchemaGenerator;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -25,7 +26,7 @@ import java.util.stream.Collectors;
 
 class TestImgResponse {
     public static void main(String[] args) {
-        ObjectNode schema;
+        JsonNode schema;
 
         String prompt = readTextFileFromResources("prompt_anki.txt");
 
@@ -54,7 +55,7 @@ class TestImgResponse {
                         .build())
                 .build();
 
-        schema = JsonObjectNoteSchemaGenerator.generateJsonSchema(Lesson.class);
+        schema = SchemaGenerator.generateJsonNode(Lesson.class);
 
 
         GenerationConfig config = GenerationConfig.builder()
