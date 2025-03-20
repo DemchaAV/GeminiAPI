@@ -1,10 +1,12 @@
-import org.gemini.core.chat.Chat;
-import org.gemini.core.chat.Image;
-import org.gemini.core.chat.User;
+import chat.Chat;
+import org.gemini.core.client.model.GeminiModel;
+import org.gemini.core.client.model.VerAPI;
+import org.gemini.core.client.model.enums.GeminiVariation;
+import org.gemini.core.client.model.enums.GeminiVersion;
+import org.gemini.core.client.request_response.content.Image;
+import chat.User;
 import org.gemini.core.client.GeminiConnection;
-import org.gemini.core.client.model_config.Model;
 
-import java.io.IOException;
 import java.nio.file.Path;
 import java.time.Instant;
 
@@ -12,7 +14,11 @@ public class UserChatWithImage {
         public static void main(String[] args) {
             var client = GeminiConnection.builder()
                     .apiKey(System.getenv("API_KEY"))
-                    .defaultModel(Model.GEMINI_2_0_FLASH_LATEST.getVersion())
+                    .geminiModel(GeminiModel.builder()
+                            .verAPI(VerAPI.V1BETA)
+                            .variation(GeminiVariation._2_0)
+                            .version(GeminiVersion.FLASH)
+                            .build())
                     .httpClient(GeminiConnection.DEFAULT_HTTP_CLIENT)
                     .build();
             Chat chat = new Chat(new User("Artem", 2356456564L), client);
@@ -21,11 +27,6 @@ public class UserChatWithImage {
             Image image = new Image(path);
             String prompt ="Hello what do you see in this picture";
 
-            try {
-                System.out.println(chat.chat(prompt, image,chatID));
-            } catch (IOException | InterruptedException e) {
-                throw new RuntimeException(e);
-            }
 
 
         }

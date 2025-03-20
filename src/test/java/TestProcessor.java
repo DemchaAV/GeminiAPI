@@ -1,4 +1,4 @@
-import org.gemini.core.client.GeminiResponseProcessor;
+import org.gemini.core.client.ResponseStreamProcessor;
 import org.gemini.core.client.request_response.response.GeminiResponse;
 
 import java.io.BufferedReader;
@@ -7,9 +7,9 @@ import java.io.IOException;
 
 class TestProcessor {
     public static void main(String[] args) {
-        GeminiResponseProcessor processor = new GeminiResponseProcessor();
+        ResponseStreamProcessor processor = new ResponseStreamProcessor();
 
-        try (BufferedReader reader = new BufferedReader(new FileReader("C:\\Users\\Demch\\OneDrive\\Java\\Gemini\\src\\main\\resources\\testChunks.txt"))) {
+        try (BufferedReader reader = new BufferedReader(new FileReader("C:\\Users\\Demch\\OneDrive\\Java\\Gemini\\src\\main\\resources\\testProcessorChunks.txt"))) {
             String line;
             while ((line = reader.readLine()) != null) {
                 processor.addChunk(line);

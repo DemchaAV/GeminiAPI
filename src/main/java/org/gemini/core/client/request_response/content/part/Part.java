@@ -2,6 +2,7 @@ package org.gemini.core.client.request_response.content.part;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Builder;
+import org.gemini.core.client.model_config.tool.Function;
 import org.gemini.core.client.request_response.content.part.video_metadata.VideoMetadata;
 
 /**
@@ -13,7 +14,7 @@ public record Part(
         String text,
         Blob inlineData,
         FileData fileData,
-        FunctionCall functionCall,
+        Function Function,
         FunctionResponse functionResponse,
         VideoMetadata videoMetadata
 ) {

@@ -1,50 +1,44 @@
-import org.gemini.core.chat.Chat;
-import org.gemini.core.chat.Image;
-import org.gemini.core.chat.User;
-import org.gemini.core.client.GeminiConnection;
-import org.gemini.core.client.model_config.Model;
+import org.gemini.core.client.model.GeminiModel;
+import org.gemini.core.client.model.ImagenModel;
+import org.gemini.core.client.model.VerAPI;
+import org.gemini.core.client.model.enums.*;
 
 import java.io.IOException;
-import java.nio.file.Path;
-import java.util.Scanner;
+import java.net.URI;
+import java.net.URL;
+import java.net.http.HttpClient;
+import java.net.http.HttpRequest;
+import java.net.http.HttpResponse;
+import java.nio.charset.StandardCharsets;
+import java.time.Duration;
 
 public class Main {
-    public static void main(String[] args) {
+    private final String API_KEY = System.getenv("API_KEY"); // Замените на ваш API ключ
+    private final String URL = "https://generativelanguage.googleapis.com/v1beta/models?key=" + API_KEY;
+    private final String listModel ="https://generativelanguage.googleapis.com/v1beta/models/%s?key=%s";
 
-        var client = GeminiConnection.builder()
-                .apiKey(System.getenv("API_KEY"))
-                .defaultModel(Model.GEMINI_2_0_FLASH_LATEST)
-                .httpClient(GeminiConnection.DEFAULT_HTTP_CLIENT)
+    public static void main(String[] args) {
+        Main example = new Main();
+        example.getModels();
+    }
+
+    public void getModels() {
+        HttpClient client = HttpClient.newBuilder()
+                .connectTimeout(Duration.ofSeconds(10))
                 .build();
 
-        Scanner scanner = new Scanner(System.in);
-        String prompt;
-        User user = new User("Artem Demchyshyn", 2388564587L);
-        long chatID  = user.createNewChat();
-        Chat chat = new Chat(user, client);
-        Image image = null;
+        HttpRequest request = HttpRequest.newBuilder()
+                .uri(URI.create(URL))
+                .GET() // Используем GET метод
+//                .header("Content-Type", "application/json") //Можно убрать, так как GET не имеет тела.
+                .build();
 
-        while (true) {
-            System.out.println("Type your question");
-            prompt = scanner.nextLine();
-            if (prompt.equalsIgnoreCase("stop")) break;
-
-            if (prompt.startsWith("-cd ")) {
-                String pathString = prompt.substring(prompt.indexOf("-cd ") + 4, prompt.indexOf(" [")).replace("\"", "").trim();
-                Path imagePath = Path.of(pathString);
-                image = new Image(imagePath);
-                prompt = prompt.substring(prompt.indexOf(" [") + 2, prompt.indexOf("]")).trim();
-            }
-
-            try {
-                System.out.println(chat.chat(prompt, image,chatID));
-                image = null;
-            } catch (IOException | InterruptedException e) {
-                System.err.println("Error during chat: " + e.getMessage());
-            }
+        try {
+            HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+            System.out.println("Status code: " + response.statusCode());
+            System.out.println("Response body: " + response.body());
+        } catch (IOException | InterruptedException e) {
+            e.printStackTrace();
         }
-
-        user.getChatHistory(chatID).forEach(System.out::println);
-        scanner.close();
     }
 }

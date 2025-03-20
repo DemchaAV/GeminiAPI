@@ -10,7 +10,7 @@ import lombok.Getter;
  */
 @Getter
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public enum Model {
+public enum GeminiModel {
 
     /**
      * <p><strong>Inputs:</strong> Audio, images, videos, and text</p>
@@ -67,7 +67,7 @@ public enum Model {
      *
      * @param version A string identifier for the version
      */
-    Model(String version) {
+    GeminiModel(String version) {
         this.version = version;
     }
 

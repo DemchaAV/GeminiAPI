@@ -1,10 +1,14 @@
 import anki.data.Lesson;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
-import jsonGeneration.JsonObjectNoteSchemaGenerator;
+import org.gemini.core.client.model.GeminiModel;
+import org.gemini.core.client.model.ImagenModel;
+import org.gemini.core.client.model.VerAPI;
+import org.gemini.core.client.model.enums.*;
+import org.gemini.core.client.request_schema_generation.JsonObjectNoteSchemaGenerator;
 import org.gemini.core.client.GeminiConnection;
 import org.gemini.core.client.model_config.GenerationConfig;
-import org.gemini.core.client.model_config.Model;
 import org.gemini.core.client.request_response.content.Content;
 import org.gemini.core.client.request_response.content.part.Part;
 import org.gemini.core.client.request_response.request.GeminiRequest;
@@ -66,22 +70,36 @@ class TestImgResponse {
         var client = GeminiConnection.builder()
                 .apiKey(System.getenv("API_KEY"))
                 .httpClient(GeminiConnection.DEFAULT_HTTP_CLIENT)
-                .defaultModel(Model.GEMINI_2_0_FLASH_LITE.getVersion())
+                .geminiModel(GeminiModel.builder()
+                        .verAPI(VerAPI.V1BETA)
+                        .variation(GeminiVariation._2_0)
+                        .version(GeminiVersion.FLASH_LATEST)
+                        .build())
+                .imagenModel(ImagenModel.builder()
+                        .verAPI(VerAPI.V1BETA)
+                        .generateMethod(ImagenGenerateMethod.PREDICT)
+                        .variation(ImagenVariation._3_0)
+                        .version(ImagenVersion.GENERATE_001)
+                        .build())
                 .generationConfig(config)
                 .build();
 
-        try {
-            var response = client.sendRequest(request).getResponse();
-            var s = response.candidates().getFirst().content().parts().getFirst().text();
+
+        var response = client.sendRequest(request).getResponse();
+        response.ifPresent(response1 -> {
+            var s = response1.candidates().getFirst().content().parts().getFirst().text();
             System.out.println(s);
             ObjectMapper mapper = new ObjectMapper();
-            var lessonQuestion = mapper.readValue(s, Lesson.class);
+            Lesson lessonQuestion = null;
+            try {
+                lessonQuestion = mapper.readValue(s, Lesson.class);
+            } catch (JsonProcessingException e) {
+                throw new RuntimeException(e);
+            }
             System.out.println(lessonQuestion);
 
             System.out.println(s);
-        } catch (IOException  e) {
-            throw new RuntimeException(e);
-        }
+        });
 
 
     }

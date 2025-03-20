@@ -2,7 +2,7 @@ package org.gemini.core.client.request_response.content.part;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Builder;
-import org.gemini.core.chat.Image;
+import org.gemini.core.client.request_response.content.Image;
 
 /**
  * Blob for inline binary data

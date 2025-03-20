@@ -30,7 +30,7 @@ public class Model {
 
     public Model(int modelId, String name, Object fields, Object templates, String css, int modelType,
                  String latexPre, String latexPost, int sortFieldIndex) {
-        log.info("Initializing Model with ID: {} and name: {}", modelId, name);
+        log.info("Initializing GeminiModel with ID: {} and name: {}", modelId, name);
         this.modelId = modelId;
         this.name = name;
         this.css = css;
@@ -67,7 +67,7 @@ public class Model {
     }
 
     public List<Object[]> computeRequiredFields() {
-        log.info("Computing required fields for Model: {}", name);
+        log.info("Computing required fields for GeminiModel: {}", name);
         try {
             List<Object[]> req = new ArrayList<>();
             String sentinel = "SeNtInEl";
@@ -189,7 +189,7 @@ public class Model {
 
     @Override
     public String toString() {
-        return "Model{" +
+        return "GeminiModel{" +
                "modelId=" + modelId +
                ", name='" + name + '\'' +
                ", fields=" + fields +

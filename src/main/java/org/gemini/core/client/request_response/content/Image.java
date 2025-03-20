@@ -1,4 +1,4 @@
-package org.gemini.core.chat;
+package org.gemini.core.client.request_response.content;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -67,7 +67,7 @@ public class Image {
         this(path, extension);
     }
 
-    public static List<Image> extractPack(@NonNull GeminiResponse response, String format) {
+    public static List<Image> extractPack(@NonNull  GeminiResponse response, String format) {
         List<Image> imagesPack = new ArrayList<>();
         var predictions = response.predictions();
         if (predictions==null|| predictions.isEmpty()){

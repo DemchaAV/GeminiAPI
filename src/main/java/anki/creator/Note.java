@@ -141,7 +141,7 @@ public class Note {
     public void writeToDb(Connection conn, long timestamp, long deckId, Iterator<Long> idGen) throws SQLException {
         checkInvalidHtmlTags();
         if (model.getFields().size() != fields.size()) {
-            throw new IllegalArgumentException("Number of fields in Model does not match Note fields.");
+            throw new IllegalArgumentException("Number of fields in GeminiModel does not match Note fields.");
         }
 
         String sql = "INSERT INTO notes VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
@@ -187,7 +187,7 @@ public class Note {
     }
 
     public static void main(String[] args) {
-        Model model = new Model(123456789, "Example Model",
+        Model model = new Model(123456789, "Example GeminiModel",
                 List.of(Map.of("name", "Front"), Map.of("name", "Back")),
                 List.of(Map.of("name", "Card 1", "qfmt", "{{Front}}")),
                 ".card { font-family: arial; font-size: 20px; }",

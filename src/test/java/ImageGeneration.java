@@ -1,9 +1,15 @@
-import org.gemini.core.chat.Image;
 import org.gemini.core.client.GeminiConnection;
-import org.gemini.core.client.model_config.Model;
+import org.gemini.core.client.model.ImagenModel;
+import org.gemini.core.client.model.VerAPI;
+import org.gemini.core.client.model.enums.ImagenGenerateMethod;
+import org.gemini.core.client.model.enums.ImagenVariation;
+import org.gemini.core.client.model.enums.ImagenVersion;
+import org.gemini.core.client.request_response.content.Image;
 import org.gemini.core.client.request_response.request.ImgGenRequest;
-import org.gemini.core.client.request_response.request.Instance;
-import org.gemini.core.client.request_response.request.Parameters;
+import org.gemini.core.client.request_response.Instance;
+import org.gemini.core.client.request_response.parameters_image_request.Parameters;
+import org.gemini.core.client.request_response.parameters_image_request.enums_image_gen.AspectRatio;
+import org.gemini.core.client.request_response.parameters_image_request.enums_image_gen.PersonGeneration;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
@@ -23,7 +29,12 @@ public class ImageGeneration {
 
         GeminiConnection connection = GeminiConnection.builder()
                 .apiKey(System.getenv("API_KEY"))
-                .defaultModel(Model.GEMINI_1_5_PRO)
+                .imagenModel(ImagenModel.builder()
+                        .verAPI(VerAPI.V1BETA)
+                        .generateMethod(ImagenGenerateMethod.PREDICT)
+                        .variation(ImagenVariation._3_0)
+                        .version(ImagenVersion.GENERATE_001)
+                        .build())
                 .httpClient(GeminiConnection.DEFAULT_HTTP_CLIENT)
                 .build();
 
@@ -34,82 +45,82 @@ public class ImageGeneration {
                         )
                 )
                 .parameters(Parameters.builder()
-                        .sampleCount(3)
-                        .imageFormat("jpeg")
-                        .width(512)
-                        .height(512)
+                        .sampleCount(1)
+                        .personGeneration(PersonGeneration.allow_adult)
+                        .aspectRatio(AspectRatio.RATIO_9_16)
                         .build())
                 .build();
-        var response = connection.sendRequest(imageRequest).getResponse(true);
+        var responseOptional = connection.sendRequest(imageRequest).getResponse(true);
 
 
         String pathFolder = "C:\\Users\\Demch\\OneDrive\\Рабочий стол\\Lerning\\Java\\";
-        String fileName = "Test2";
+        String fileName = "pinkFlowers";
 
-        List<Image> images = Image.extractPack(response, "jpeg");
-        Image.writeTo(images, pathFolder, fileName);
-
+        responseOptional.ifPresent(response -> {
+            List<Image> images = Image.extractPack(response, "jpeg");
+            Image.writeTo(images, pathFolder, fileName);
+        });
     }
 
+
+    class ImageFrame extends JFrame {
+        public ImageFrame(String imagePath) {
+            ImagePanel panel = new ImagePanel(imagePath);
+            add(panel);
+            pack(); // Adjust frame size to panel's preferred size
+            setTitle("Original Size Image Viewer");
+            setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            setLocationRelativeTo(null);
+            setVisible(true);
+        }
+
+        public ImageFrame(Path imagePath) {
+            ImagePanel panel = new ImagePanel(imagePath);
+            add(panel);
+            pack(); // Adjust frame size to panel's preferred size
+            setTitle("Original Size Image Viewer");
+            setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            setLocationRelativeTo(null);
+            setVisible(true);
+        }
+
+        class ImagePanel extends JPanel {
+            private BufferedImage image;
+
+            public ImagePanel(String imagePath) {
+                try {
+                    image = ImageIO.read(new File(imagePath));
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+
+            public ImagePanel(Path imagePath) {
+                try {
+                    image = ImageIO.read(imagePath.toFile());
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+
+            @Override
+            protected void paintComponent(Graphics g) {
+                super.paintComponent(g);
+                if (image != null) {
+                    g.drawImage(image, 0, 0, this); // Draw at original size
+                }
+            }
+
+            @Override
+            public Dimension getPreferredSize() {
+                if (image != null) {
+                    return new Dimension(image.getWidth(), image.getHeight());
+                } else {
+                    return super.getPreferredSize();
+                }
+            }
+        }
+    }
 
 }
 
-
-class ImageFrame extends JFrame {
-    public ImageFrame(String imagePath) {
-        ImagePanel panel = new ImagePanel(imagePath);
-        add(panel);
-        pack(); // Adjust frame size to panel's preferred size
-        setTitle("Original Size Image Viewer");
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setLocationRelativeTo(null);
-        setVisible(true);
-    }
-
-    public ImageFrame(Path imagePath) {
-        ImagePanel panel = new ImagePanel(imagePath);
-        add(panel);
-        pack(); // Adjust frame size to panel's preferred size
-        setTitle("Original Size Image Viewer");
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setLocationRelativeTo(null);
-        setVisible(true);
-    }
-
-    class ImagePanel extends JPanel {
-        private BufferedImage image;
-
-        public ImagePanel(String imagePath) {
-            try {
-                image = ImageIO.read(new File(imagePath));
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-
-        public ImagePanel(Path imagePath) {
-            try {
-                image = ImageIO.read(imagePath.toFile());
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-
-        @Override
-        protected void paintComponent(Graphics g) {
-            super.paintComponent(g);
-            if (image != null) {
-                g.drawImage(image, 0, 0, this); // Draw at original size
-            }
-        }
-
-        @Override
-        public Dimension getPreferredSize() {
-            if (image != null) {
-                return new Dimension(image.getWidth(), image.getHeight());
-            } else {
-                return super.getPreferredSize();
-            }
-        }
-    }
-}

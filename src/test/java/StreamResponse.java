@@ -1,8 +1,12 @@
 import org.gemini.core.client.GeminiConnection;
-import org.gemini.core.client.model_config.Model;
+import org.gemini.core.client.model.GeminiModel;
+import org.gemini.core.client.model.VerAPI;
+import org.gemini.core.client.model.enums.GeminiVariation;
+import org.gemini.core.client.model.enums.GeminiVersion;
 import org.gemini.core.client.request_response.content.Content;
 import org.gemini.core.client.request_response.content.part.Part;
 import org.gemini.core.client.request_response.request.GeminiRequest;
+import org.gemini.core.client.request_response.response.GeminiResponse;
 
 import java.io.IOException;
 
@@ -11,7 +15,11 @@ public class StreamResponse {
         var client = GeminiConnection.builder()
                 .apiKey(System.getenv("API_KEY"))
                 .httpClient(GeminiConnection.DEFAULT_HTTP_CLIENT)
-                .defaultModel(Model.GEMINI_1_5_PRO)
+                .geminiModel( GeminiModel.builder()
+                        .verAPI(VerAPI.V1BETA)
+                        .variation(GeminiVariation._2_0)
+                        .version(GeminiVersion.FLASH)
+                        .build())
                 .build();
 
         String message = "Что ты можешь мне рассказать про Http запросы на Java";
@@ -27,15 +35,10 @@ public class StreamResponse {
                         .build())
                 .build();
 
-        client.sendRequest(request);
+         client.sendRequest(request);
+
         try {
-            client.getResponseAsStream(response -> {
-                response.candidates().forEach(candidate -> {
-                    candidate.content().parts().forEach(part -> {
-                        System.out.print(part.text());
-                    });
-                });
-            });
+            client.getResponseAsStream(GeminiResponse::printContent);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

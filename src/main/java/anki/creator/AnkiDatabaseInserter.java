@@ -15,7 +15,7 @@ public class AnkiDatabaseInserter {
 
     public AnkiDatabaseInserter(Deck deck) {
         this(new Model(
-                123456789, "Basic Model",
+                123456789, "Basic GeminiModel",
                 List.of(Map.of("name", "Front"), Map.of("name", "Back")),
                 List.of(Map.of("name", "Card 1", "qfmt", "{{Front}}", "afmt", "{{FrontSide}}\n\n<hr id=answer>\n\n{{Back}}")),
                 ".card { font-family: arial; font-size: 20px; text-align: center; color: black; background-color: white; }",

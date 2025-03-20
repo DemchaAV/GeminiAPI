@@ -48,7 +48,7 @@ public class ApiErrorHandler {
         ERROR_CAUSES.put(504, "The client sets a deadline shorter than the server's default deadline (10 minutes), and the request didn't finish within the client-provided deadline.");
 
         // Error solutions
-        ERROR_SOLUTIONS.put(400, "Refer to the Model API reference for Generative AI for request parameters, token count, and other parameters.");
+        ERROR_SOLUTIONS.put(400, "Refer to the GeminiModel API reference for Generative AI for request parameters, token count, and other parameters.");
         ERROR_SOLUTIONS.put(403, "Verify that all necessary APIs are enabled, and the service account has the right permission to access the selected service. Ensure P4SA is granted necessary permission to access referenced resources.");
         ERROR_SOLUTIONS.put(404, "Check and fix the file location.");
         ERROR_SOLUTIONS.put(429, "Check quota limits. If needed, apply for a higher quota. Retry after a few seconds. If the error persists, contact support.");

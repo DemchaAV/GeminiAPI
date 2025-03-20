@@ -1,15 +1,31 @@
+import org.gemini.core.client.GeminiClient;
 import org.gemini.core.client.GeminiConnection;
-import org.gemini.core.client.model_config.Model;
+import org.gemini.core.client.model.GeminiModel;
+import org.gemini.core.client.model.VerAPI;
+import org.gemini.core.client.model.enums.GeminiVariation;
+import org.gemini.core.client.model.enums.GeminiVersion;
+import org.gemini.core.client.model_config.GenerationConfig;
+import org.gemini.core.client.request_response.content.Message;
+
+import java.util.List;
 
 public class TestQuestionAnswer {
     public static void main(String[] args) {
-        var client = GeminiConnection.builder()
+        var connection = GeminiConnection.builder()
                 .apiKey(System.getenv("API_KEY"))
                 .httpClient(GeminiConnection.DEFAULT_HTTP_CLIENT)
-                .defaultModel(Model.GEMINI_2_0_FLASH_LATEST)
+                .geminiModel(GeminiModel.builder()
+                        .verAPI(VerAPI.V1BETA)
+                        .variation(GeminiVariation._2_0)
+                        .version(GeminiVersion.FLASH_IMG_GEN)
+                        .build())
+                .generationConfig(GenerationConfig.builder()
+                        .build())
                 .build();
-        String message = "Как твои дела Gemini";
-        System.out.println(client.generateContent(message));
+
+        var client = GeminiClient.builder().connection(connection).build();
+        String message = "Привет как ты ?";
+        client.generateResponse(message).ifPresent(System.out::println);
         System.out.println("Finish reasoning");
     }
 }

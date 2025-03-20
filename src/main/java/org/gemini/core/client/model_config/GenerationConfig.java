@@ -5,7 +5,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
-import jsonGeneration.JsonObjectNoteSchemaGenerator;
+import org.gemini.core.client.request_schema_generation.JsonObjectNoteSchemaGenerator;
 import lombok.Builder;
 import org.gemini.core.client.GeminiConnection;
 
@@ -43,7 +43,7 @@ import java.util.List;
  * <strong>Range:</strong>  {@code 0.0} to {@code 1.0} (inclusive).
  * </p>
  * <p>
- * <strong>Default Value:</strong> Model-dependent, consult the Gemini API documentation for defaults.
+ * <strong>Default Value:</strong> GeminiModel-dependent, consult the Gemini API documentation for defaults.
  * </p>
  * <p>
  * <strong>Details:</strong>
@@ -65,7 +65,7 @@ import java.util.List;
  * <strong>Range:</strong> {@code 0.0} to {@code 1.0} (inclusive).
  * </p>
  * <p>
- * <strong>Default Value:</strong> Model-dependent, consult the Gemini API documentation for defaults.
+ * <strong>Default Value:</strong> GeminiModel-dependent, consult the Gemini API documentation for defaults.
  * </p>
  * <p>
  * <strong>Details:</strong>
@@ -86,7 +86,7 @@ import java.util.List;
  * <strong>Range:</strong> Positive integer (e.g., 1, 10, 40).
  * </p>
  * <p>
- * <strong>Default Value:</strong> Model-dependent, consult the Gemini API documentation for defaults.
+ * <strong>Default Value:</strong> GeminiModel-dependent, consult the Gemini API documentation for defaults.
  * </p>
  * <p>
  * <strong>Details:</strong>
@@ -107,7 +107,7 @@ import java.util.List;
  * <strong>Range:</strong> Positive integer (e.g., 1, 3, 5).
  * </p>
  * <p>
- * <strong>Default Value:</strong> Model-dependent, consult the Gemini API documentation for defaults.
+ * <strong>Default Value:</strong> GeminiModel-dependent, consult the Gemini API documentation for defaults.
  * </p>
  * <p>
  * <strong>Details:</strong>
@@ -128,7 +128,7 @@ import java.util.List;
  * <strong>Range:</strong> Positive integer (e.g., 64, 256, 1024).
  * </p>
  * <p>
- * <strong>Default Value:</strong> Model-dependent, consult the Gemini API documentation for defaults.
+ * <strong>Default Value:</strong> GeminiModel-dependent, consult the Gemini API documentation for defaults.
  * </p>
  * <p>
  * <strong>Details:</strong>
@@ -149,7 +149,7 @@ import java.util.List;
  * <strong>Range:</strong> {@code -2.0} to {@code 2.0} (inclusive).
  * </p>
  * <p>
- * <strong>Default Value:</strong> Model-dependent, consult the Gemini API documentation for defaults.
+ * <strong>Default Value:</strong> GeminiModel-dependent, consult the Gemini API documentation for defaults.
  * </p>
  * <p>
  * <strong>Details:</strong>
@@ -169,7 +169,7 @@ import java.util.List;
  * <strong>Range:</strong> {@code -2.0} to {@code 2.0} (inclusive).
  * </p>
  * <p>
- * <strong>Default Value:</strong> Model-dependent, consult the Gemini API documentation for defaults.
+ * <strong>Default Value:</strong> GeminiModel-dependent, consult the Gemini API documentation for defaults.
  * </p>
  * <p>
  * <strong>Details:</strong>
@@ -277,7 +277,7 @@ import java.util.List;
  * <strong>Range:</strong> Positive integer (e.g., 1, 5, 10).
  * </p>
  * <p>
- * <strong>Default Value:</strong> Model-dependent, consult the Gemini API documentation for defaults when {@code responseLogprobs} is true.
+ * <strong>Default Value:</strong> GeminiModel-dependent, consult the Gemini API documentation for defaults when {@code responseLogprobs} is true.
  * </p>
  * <p>
  * <strong>Details:</strong>
@@ -309,7 +309,7 @@ import java.util.List;
  * Specifies the types of content the model should generate in the response.
  * </p>
  * <p>
- * <strong>Default Value:</strong>  Model-dependent, typically defaults to "TEXT".
+ * <strong>Default Value:</strong>  GeminiModel-dependent, typically defaults to "TEXT".
  * </p>
  * <p>
  * <strong>Details:</strong>

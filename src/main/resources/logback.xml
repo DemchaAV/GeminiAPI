@@ -18,9 +18,12 @@
 
     <!-- Логгер для пакета com.myapp -->
 
+<appender name="MonitorClass" class="GeminiClient">
+    <appender-ref ref="STDOUT"/>
 
+</appender>
     <!-- Корневой логгер, который записывает в оба аппендера -->
-    <root level="off">
+    <root level="INFO">
         <appender-ref ref="STDOUT"/>
         <appender-ref ref="FILE"/>
     </root>

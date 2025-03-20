@@ -1,5 +1,9 @@
 import org.gemini.core.client.GeminiConnection;
-import org.gemini.core.client.model_config.Model;
+import org.gemini.core.client.model.GeminiModel;
+import org.gemini.core.client.model.VerAPI;
+import org.gemini.core.client.model.enums.GeminiGenerateMethod;
+import org.gemini.core.client.model.enums.GeminiVariation;
+import org.gemini.core.client.model.enums.GeminiVersion;
 import org.gemini.core.client.request_response.content.Content;
 import org.gemini.core.client.request_response.request.GeminiRequest;
 
@@ -11,7 +15,12 @@ public class MainTest {
         var client = GeminiConnection.builder()
                 .apiKey(System.getenv("API_KEY"))
                 .httpClient(GeminiConnection.DEFAULT_HTTP_CLIENT)
-                .defaultModel(Model.GEMINI_1_5_PRO)
+                .geminiModel(GeminiModel.builder()
+                        .verAPI(VerAPI.V1BETA)
+                        .variation(GeminiVariation._1_5)
+                        .version(GeminiVersion.PRO_LATEST)
+                        .generateMethod(GeminiGenerateMethod.GENERATE_CONTENT)
+                        .build())
                 .build();
 
         List<Content> content = new ArrayList<>();

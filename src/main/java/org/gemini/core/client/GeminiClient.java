@@ -1,11 +1,12 @@
 package org.gemini.core.client;
 
+import lombok.Builder;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.gemini.core.chat.ChatContent;
-import org.gemini.core.chat.Image;
-import org.gemini.core.chat.Message;
+import chat.ChatContent;
+import org.gemini.core.client.request_response.content.Image;
+import org.gemini.core.client.request_response.content.Message;
 import org.gemini.core.client.request_response.content.Content;
 import org.gemini.core.client.request_response.content.part.Blob;
 import org.gemini.core.client.request_response.content.part.Part;
@@ -17,14 +18,16 @@ import java.time.Instant;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import java.util.function.Consumer;
 
 @RequiredArgsConstructor
 @Slf4j
+@Builder
 public class GeminiClient {
     private final GeminiConnection connection;
 
-    public GeminiResponse generateResponse(@NonNull Message message, Image image) {
+    public Optional<GeminiResponse> generateResponse(@NonNull Message message, Image image) {
         GeminiRequest request = null;
 
         log.info("Processing message: '{}' from user", message.text());
@@ -45,18 +48,18 @@ public class GeminiClient {
         return connection.sendRequest(request).getResponse();
     }
 
-    public GeminiResponse generateResponse(String prompt, Image image) {
+    public Optional<GeminiResponse> generateResponse(String prompt, Image image) {
         prompt = (prompt == null) ? "" : prompt;
         return generateResponse(new Message(prompt), image);
     }
 
-    public GeminiResponse generateResponse(String prompt) {
+    public Optional<GeminiResponse> generateResponse(String prompt) {
         log.info("Generating content for prompt: {}", prompt);
         var request = GeminiRequest.requestMessage(new Message(prompt));
         return connection.sendRequest(request).getResponse();
     }
 
-    public GeminiResponse generateResponse(Message message) {
+    public Optional<GeminiResponse> generateResponse(Message message) {
         log.info("Generating content for prompt: {}", message);
         var request = GeminiRequest.requestMessage(message);
         return connection.sendRequest(request).getResponse();

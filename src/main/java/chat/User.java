@@ -1,4 +1,4 @@
-package org.gemini.core.chat;
+package chat;
 
 import lombok.Data;
 import lombok.NonNull;
@@ -29,7 +29,7 @@ public class User {
      * @param content
      * @return
      */
-    public boolean addContent(@NonNull long chatID, @NonNull Content content) {
+    public boolean addContent(long chatID, @NonNull Content content) {
         historyChat.computeIfAbsent(chatID, k -> {
             log.info("Creating new chat with ID: {}", chatID);
             return new ArrayList<>();

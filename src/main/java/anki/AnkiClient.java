@@ -11,8 +11,12 @@ import lombok.Getter;
 import lombok.NonNull;
 import lombok.extern.slf4j.Slf4j;
 import org.gemini.core.client.GeminiConnection;
+import org.gemini.core.client.model.GeminiModel;
+import org.gemini.core.client.model.VerAPI;
+import org.gemini.core.client.model.enums.GeminiGenerateMethod;
+import org.gemini.core.client.model.enums.GeminiVariation;
+import org.gemini.core.client.model.enums.GeminiVersion;
 import org.gemini.core.client.model_config.GenerationConfig;
-import org.gemini.core.client.model_config.Model;
 import org.gemini.core.client.request_response.content.Content;
 import org.gemini.core.client.request_response.content.part.Part;
 import org.gemini.core.client.request_response.request.GeminiRequest;
@@ -46,7 +50,12 @@ public class AnkiClient<T> {
         this.client = GeminiConnection.builder()
                 .apiKey(apiKey)
                 .httpClient(GeminiConnection.DEFAULT_HTTP_CLIENT)
-                .defaultModel(Model.GEMINI_2_0_FLASH_LATEST)
+                .geminiModel(GeminiModel.builder()
+                        .verAPI(VerAPI.V1BETA)
+                        .variation(GeminiVariation._2_0)
+                        .version(GeminiVersion.FLASH)
+                        .generateMethod(GeminiGenerateMethod.GENERATE_CONTENT)
+                        .build())
                 .generationConfig(config)
                 .build();
     }
@@ -105,7 +114,10 @@ public class AnkiClient<T> {
                         .build();
 
                 var response = client.sendRequest(request).getResponse();
-                var jsonResponse = response.candidates().getFirst().content().parts().getFirst().text();
+
+                var jsonResponse = response.orElseThrow(() ->
+                                new IllegalStateException("API didn't return a response"))
+                        .candidates().getFirst().content().parts().getFirst().text();
 
                 // Attempt to deserialize response into the Lesson class
                 return mapper.readValue(jsonResponse, clazz);
