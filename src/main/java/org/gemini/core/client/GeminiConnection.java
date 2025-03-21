@@ -464,7 +464,11 @@ public class GeminiConnection {
         response = parseJson(httpResponse.body());
         if (!isImage) {
         totalTokens.getAndAdd(response.usageMetadata().totalTokenCount());
-            addHistoryContent();
+            if (addHistoryContent()) {
+                log.info("History content has been added");
+            }else {
+                log.warn("History content hasn't been added!!");
+            }
         }
         Optional<GeminiResponse> geminiResponse = Optional.ofNullable(!hasAnyNotNullField(response) ? null : response);
         return geminiResponse;
