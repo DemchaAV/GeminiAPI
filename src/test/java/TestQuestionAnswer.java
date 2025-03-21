@@ -1,13 +1,10 @@
 import org.gemini.core.client.GeminiClient;
 import org.gemini.core.client.GeminiConnection;
 import org.gemini.core.client.model.GeminiModel;
-import org.gemini.core.client.model.VerAPI;
-import org.gemini.core.client.model.enums.GeminiVariation;
-import org.gemini.core.client.model.enums.GeminiVersion;
+import org.gemini.core.client.model.enums.VerAPI;
+import org.gemini.core.client.model.enums.gemini.GeminiVariation;
+import org.gemini.core.client.model.enums.gemini.GeminiVersion;
 import org.gemini.core.client.model_config.GenerationConfig;
-import org.gemini.core.client.request_response.content.Message;
-
-import java.util.List;
 
 public class TestQuestionAnswer {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package org.gemini.core.client.model.enums;
+package org.gemini.core.client.model.enums.imagen;
 
 public enum ImagenVersion {
     GENERATE_001("generate-001"),

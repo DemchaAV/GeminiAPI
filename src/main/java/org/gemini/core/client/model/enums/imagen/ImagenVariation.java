@@ -1,4 +1,4 @@
-package org.gemini.core.client.model.enums;
+package org.gemini.core.client.model.enums.imagen;
 
 // Перечисления для Imagen
 public enum ImagenVariation {

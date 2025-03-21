@@ -1,17 +1,19 @@
 package org.gemini.core.client.model;
 
 import lombok.NonNull;
-import org.gemini.core.client.model.enums.ImagenGenerateMethod;
-import org.gemini.core.client.model.enums.ImagenVariation;
-import org.gemini.core.client.model.enums.ImagenVersion;
+import org.gemini.core.client.model.enums.*;
+import org.gemini.core.client.model.enums.imagen.ImagenGenerateMethod;
+import org.gemini.core.client.model.enums.imagen.ImagenVariation;
+import org.gemini.core.client.model.enums.imagen.ImagenVersion;
+import org.jetbrains.annotations.NotNull;
 
 public class ImagenModel implements ModelType<ImagenVariation, ImagenVersion, ImagenGenerateMethod> {
     private final @NonNull VerAPI verAPI;
     private final @NonNull ImagenVariation variation;
     private final @NonNull ImagenVersion version;
-    private final  ImagenGenerateMethod generateMethod;
+    private final @NotNull ImagenGenerateMethod generateMethod;
 
-    private ImagenModel(VerAPI verAPI, ImagenVariation variation, ImagenVersion version, ImagenGenerateMethod generateMethod) {
+    private ImagenModel(@NotNull VerAPI verAPI, @NotNull ImagenVariation variation,@NotNull ImagenVersion version,@NotNull ImagenGenerateMethod generateMethod) {
         this.verAPI = verAPI;
         this.variation = variation;
         this.version = version;
@@ -22,6 +24,7 @@ public class ImagenModel implements ModelType<ImagenVariation, ImagenVersion, Im
         return new ImagenModelBuilder();
     }
 
+    @NotNull
     @Override
     public VerAPI getVerAPI() {
         return verAPI;
@@ -33,16 +36,19 @@ public class ImagenModel implements ModelType<ImagenVariation, ImagenVersion, Im
     }
 
     @Override
+    @NonNull
     public ImagenVariation getVariation() {
         return variation;
     }
 
     @Override
+    @NonNull
     public ImagenVersion getVersion() {
         return version;
     }
 
     @Override
+    @NonNull
     public ImagenGenerateMethod getGenerateMethod() {
         return generateMethod;
     }

@@ -1,9 +1,9 @@
 import org.gemini.core.client.GeminiConnection;
 import org.gemini.core.client.model.GeminiModel;
-import org.gemini.core.client.model.VerAPI;
-import org.gemini.core.client.model.enums.GeminiGenerateMethod;
-import org.gemini.core.client.model.enums.GeminiVariation;
-import org.gemini.core.client.model.enums.GeminiVersion;
+import org.gemini.core.client.model.enums.VerAPI;
+import org.gemini.core.client.model.enums.gemini.GeminiGenerateMethod;
+import org.gemini.core.client.model.enums.gemini.GeminiVariation;
+import org.gemini.core.client.model.enums.gemini.GeminiVersion;
 import org.gemini.core.client.request_response.content.Content;
 import org.gemini.core.client.request_response.request.GeminiRequest;
 

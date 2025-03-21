@@ -13,10 +13,10 @@ import org.gemini.core.client.error.ApiErrorHandler;
 import org.gemini.core.client.error.GeminiApiException;
 import org.gemini.core.client.model.GeminiModel;
 import org.gemini.core.client.model.ImagenModel;
-import org.gemini.core.client.model.VerAPI;
-import org.gemini.core.client.model.enums.GeminiGenerateMethod;
-import org.gemini.core.client.model.enums.GeminiVariation;
-import org.gemini.core.client.model.enums.GeminiVersion;
+import org.gemini.core.client.model.enums.VerAPI;
+import org.gemini.core.client.model.enums.gemini.GeminiGenerateMethod;
+import org.gemini.core.client.model.enums.gemini.GeminiVariation;
+import org.gemini.core.client.model.enums.gemini.GeminiVersion;
 import org.gemini.core.client.model_config.GenerationConfig;
 import org.gemini.core.client.model_config.SystemInstruction;
 import org.gemini.core.client.model_config.safe_setting.SafetySetting;
@@ -184,16 +184,6 @@ import java.util.stream.Collectors;
  *         }
  * }</pre>
  *
- * <h2>Generating Simple Text Content</h2>
- * <p>
- * For quick text generation, you can use the {@link #generateContent(String)} method.
- * This method simplifies the process of sending a text prompt and retrieving the generated text response as a String.
- * </p>
- * <pre>{@code
- * String prompt = "Write a short poem about the moon.";
- * String poem = client.generateContent(prompt);
- * System.out.println("Generated Poem:\n" + poem);
- * }</pre>
  *
  * <h2>Retrieving Content History</h2>
  * <p>
@@ -239,7 +229,6 @@ public class GeminiConnection {
     //org.gemini.core.client.model.model_test.Model constants settings
     @NonNull
     private final String apiKey;
-    @NonNull
     private final GeminiModel geminiModel;
     private final ImagenModel imagenModel;
     private final SystemInstruction systemInstruction;
@@ -302,70 +291,6 @@ public class GeminiConnection {
 
     //Methods
 
-    public GeminiConnection sendRequest(GeminiRequest request) {
-        log.debug("Preparing request: {}", request);
-        request = GeminiRequest.builder()
-                .contents(request.contents())
-                .systemInstruction(systemInstruction)
-                .cachedContent(request.cachedContent())
-                .tools(tools)
-                .safetySettings(safetySettings)
-                .generationConfig(generationConfig)
-                .labels(labels)
-                .build();
-        this.request = request;
-
-        return this;
-    }
-
-    public GeminiConnection sendRequest(ImgGenRequest request) {
-        this.imageRequest = request;
-        return this;
-    }
-
-    public static boolean hasAnyNotNullField(Object obj) {
-        if (obj == null) {
-            return false; // Если объект null, значит, все поля по умолчанию null
-        }
-
-        for (Field field : obj.getClass().getDeclaredFields()) {
-            if (Modifier.isStatic(field.getModifiers()) || Modifier.isTransient(field.getModifiers())) {
-                continue; // Пропускаем static и transient поля
-            }
-
-            field.setAccessible(true);
-            try {
-                if (field.get(obj) != null) {
-                    return true;
-                }
-            } catch (IllegalAccessException e) {
-                throw new RuntimeException("Error to access field: " + field.getName(), e);
-            }
-        }
-        return false; // Все поля null
-    }
-
-
-    private String generateStringHttpJsonFromRequest() {
-        if (request == null) {
-            log.error("This.request is null please sed the  request before");
-            throw new GeminiApiException("This.request is null please sed the  request before");
-        }
-        return getStringJson(request);
-    }
-
-    private <T> String getStringJson(T request) {
-        String stringRequest = null;
-        try {
-            stringRequest = mapper.writeValueAsString(request);
-            log.debug("Serialized request: {}", stringRequest);
-        } catch (JsonProcessingException e) {
-            log.error("Error serializing request", e);
-            throw new RuntimeException(e);
-        }
-        return stringRequest;
-    }
-
     /**
      * @param jsonGeminiRequest request with existing jsonObject as String
      * @return return client to execute a request uses a method {@code getResponse>()} or {@code getResponseAsStream()}
@@ -391,6 +316,35 @@ public class GeminiConnection {
         return sendRequest(request);
     }
 
+    public GeminiConnection sendRequest(GeminiRequest request) {
+        log.debug("Preparing request: {}", request);
+        request = GeminiRequest.builder()
+                .contents(request.contents())
+                .systemInstruction(systemInstruction)
+                .cachedContent(request.cachedContent())
+                .tools(tools)
+                .safetySettings(safetySettings)
+                .generationConfig(generationConfig)
+                .labels(labels)
+                .build();
+        this.request = request;
+
+        return this;
+    }
+
+    public GeminiConnection sendRequest(ImgGenRequest request) {
+        this.imageRequest = request;
+        return this;
+    }
+
+    private String generateStringHttpJsonFromRequest() {
+        if (request == null) {
+            log.error("This.request is null please sed the  request before");
+            throw new GeminiApiException("This.request is null please sed the  request before");
+        }
+        return getStringJson(request);
+    }
+
     private void createHttpRequest() {
         createHttpRequest(false);
     }
@@ -413,7 +367,7 @@ public class GeminiConnection {
 
 
         log.info("Sending request to API {}", asStream ? "as Stream" : "");
-        
+
         String url = null;
         if (isImageGeneration) {
             this.url = imagenModel.getUrl();
@@ -438,11 +392,6 @@ public class GeminiConnection {
 
     }
 
-
-    public Optional<GeminiResponse> getResponse() {
-        return getResponse(false);
-    }
-
     private void processHttpRequest(String url) {
         this.httpRequest = HttpRequest.newBuilder()
                 .uri(URI.create(url))
@@ -451,6 +400,23 @@ public class GeminiConnection {
                 .build();
 
         log.debug("HTTP Request built: {}", this.httpRequest);
+    }
+
+    private <T> String getStringJson(T request) {
+        String stringRequest;
+        try {
+            stringRequest = mapper.writeValueAsString(request);
+            log.debug("Serialized request: {}", stringRequest);
+        } catch (JsonProcessingException e) {
+            log.error("Error serializing request", e);
+            throw new RuntimeException(e);
+        }
+        return stringRequest;
+    }
+
+
+    public Optional<GeminiResponse> getResponse() {
+        return getResponse(false);
     }
 
     public Optional<GeminiResponse> getResponse(boolean isImage) {
@@ -472,6 +438,41 @@ public class GeminiConnection {
             }
         }
         return Optional.ofNullable(!hasAnyNotNullField(response) ? null : response);
+    }
+
+    public void getResponseAsStream(Consumer<GeminiResponse> responseConsumer) throws IOException {
+        createHttpRequest(true);
+        HttpResponse<InputStream> httpResponse = fetchHttpResponse(HttpResponse.BodyHandlers.ofInputStream());
+
+
+        try (InputStream inputStream = httpResponse.body();
+             BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream))) {
+
+            String line;
+            GeminiResponse geminiResponse;
+            int totalTokens = 0;
+            ResponseStreamProcessor processor = new ResponseStreamProcessor();
+            while ((line = reader.readLine()) != null) {
+                log.trace(line);
+                processor.addChunk(line);
+                if (!processor.getResponseQueue().isEmpty()) {
+                    log.trace("Object response ready in the queue");
+                    geminiResponse = processor.getResponseQueue().poll();
+                    if (geminiResponse != null) {
+                        log.trace("Put an object \"GeminiResponse\" in to the queue");
+                        totalTokens = geminiResponse.usageMetadata().totalTokenCount();
+                        responseConsumer.accept(geminiResponse);
+                    }
+                }
+            }
+            this.totalTokens.getAndAdd(totalTokens);
+        } catch (IOException e) {
+            log.error("Error reading stream from Gemini API", e);
+            throw new GeminiApiException("Error reading stream from Gemini API", e);
+        } finally {
+            this.bodyHttpRequest = null;
+        }
+
     }
 
     private <T> HttpResponse<T> sendWithRetries(HttpRequest httpRequest, HttpResponse.BodyHandler<T> bodyHandler)
@@ -536,6 +537,30 @@ public class GeminiConnection {
                 responseErrorCode, error,this.url, responseBody, this.bodyHttpRequest));
     }
 
+    public static boolean hasAnyNotNullField(Object obj) {
+        if (obj == null) {
+            return false; // Если объект null, значит, все поля по умолчанию null
+        }
+
+        for (Field field : obj.getClass().getDeclaredFields()) {
+            if (Modifier.isStatic(field.getModifiers()) || Modifier.isTransient(field.getModifiers())) {
+                continue; // Пропускаем static и transient поля
+            }
+
+            field.setAccessible(true);
+            try {
+                if (field.get(obj) != null) {
+                    return true;
+                }
+            } catch (IllegalAccessException e) {
+                throw new RuntimeException("Error to access field: " + field.getName(), e);
+            }
+        }
+        return false; // Все поля null
+    }
+
+    //tools
+
     private GeminiResponse parseJson(String jsonObject) {
         GeminiResponse geminiResponse = null;
         try {
@@ -577,7 +602,7 @@ public class GeminiConnection {
         return true;
     }
 
-//Retrive content
+//Retrieve content
 
     public List<Content> takeContent() {
         List<Content> contentList = null;
@@ -607,44 +632,8 @@ public class GeminiConnection {
                 .collect(Collectors.joining());
     }
 
-
     public boolean isReadyContent() {
         return contents != null;
-    }
-
-    public void getResponseAsStream(Consumer<GeminiResponse> responseConsumer) throws IOException {
-        createHttpRequest(true);
-        HttpResponse<InputStream> httpResponse = fetchHttpResponse(HttpResponse.BodyHandlers.ofInputStream());
-
-
-        try (InputStream inputStream = httpResponse.body();
-             BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream))) {
-
-            String line;
-            GeminiResponse geminiResponse;
-            int totalTokens = 0;
-            ResponseStreamProcessor processor = new ResponseStreamProcessor();
-            while ((line = reader.readLine()) != null) {
-                log.trace(line);
-                processor.addChunk(line);
-                if (!processor.getResponseQueue().isEmpty()) {
-                    log.trace("Object response ready in the queue");
-                    geminiResponse = processor.getResponseQueue().poll();
-                    if (geminiResponse != null) {
-                        log.trace("Put an object \"GeminiResponse\" in to the queue");
-                        totalTokens = geminiResponse.usageMetadata().totalTokenCount();
-                        responseConsumer.accept(geminiResponse);
-                    }
-                }
-            }
-            this.totalTokens.getAndAdd(totalTokens);
-        } catch (IOException e) {
-            log.error("Error reading stream from Gemini API", e);
-            throw new GeminiApiException("Error reading stream from Gemini API", e);
-        } finally {
-            this.bodyHttpRequest = null;
-        }
-
     }
 
 }

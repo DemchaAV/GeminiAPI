@@ -1,9 +1,9 @@
 import org.gemini.core.client.GeminiConnection;
 import org.gemini.core.client.model.ImagenModel;
-import org.gemini.core.client.model.VerAPI;
-import org.gemini.core.client.model.enums.ImagenGenerateMethod;
-import org.gemini.core.client.model.enums.ImagenVariation;
-import org.gemini.core.client.model.enums.ImagenVersion;
+import org.gemini.core.client.model.enums.VerAPI;
+import org.gemini.core.client.model.enums.imagen.ImagenGenerateMethod;
+import org.gemini.core.client.model.enums.imagen.ImagenVariation;
+import org.gemini.core.client.model.enums.imagen.ImagenVersion;
 import org.gemini.core.client.request_response.content.Image;
 import org.gemini.core.client.request_response.request.ImgGenRequest;
 import org.gemini.core.client.request_response.Instance;

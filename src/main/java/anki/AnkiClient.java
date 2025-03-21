@@ -12,10 +12,10 @@ import lombok.NonNull;
 import lombok.extern.slf4j.Slf4j;
 import org.gemini.core.client.GeminiConnection;
 import org.gemini.core.client.model.GeminiModel;
-import org.gemini.core.client.model.VerAPI;
-import org.gemini.core.client.model.enums.GeminiGenerateMethod;
-import org.gemini.core.client.model.enums.GeminiVariation;
-import org.gemini.core.client.model.enums.GeminiVersion;
+import org.gemini.core.client.model.enums.VerAPI;
+import org.gemini.core.client.model.enums.gemini.GeminiGenerateMethod;
+import org.gemini.core.client.model.enums.gemini.GeminiVariation;
+import org.gemini.core.client.model.enums.gemini.GeminiVersion;
 import org.gemini.core.client.model_config.GenerationConfig;
 import org.gemini.core.client.request_response.content.Content;
 import org.gemini.core.client.request_response.content.part.Part;
@@ -71,8 +71,8 @@ public class AnkiClient<T> {
 
     /**
      * Required field in GeminiConnection {@code response_mime_type} and {@code response_mime_type}
-     * @param clazz
-     * @param client
+     * @param clazz - class witch represents the output construction from Gemini
+     * @param client custom client for generation questions
      */
     public AnkiClient(Class<T> clazz, GeminiConnection client) {
         this(null, client, clazz);
@@ -80,7 +80,7 @@ public class AnkiClient<T> {
 
     /**
      * Current config can be initialized after {@link Class<T> clazz} initialized
-     * @return
+     * @return {@link GenerationConfig}
      */
     private GenerationConfig getDefaultConfig() {
         return GenerationConfig.builder()
