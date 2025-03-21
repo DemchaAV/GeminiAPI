@@ -1,4 +1,4 @@
-package org.gemini.core.client.model;
+package org.gemini.core.client.model.enums;
 
 public enum VerAPI {
     V1BETA("v1beta");
