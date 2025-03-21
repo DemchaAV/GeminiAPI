@@ -391,6 +391,10 @@ public class GeminiConnection {
         return sendRequest(request);
     }
 
+    private void createHttpRequest() {
+        createHttpRequest(false);
+    }
+
     private void createHttpRequest(boolean asStream) {
         createHttpRequest(asStream, false);
     }
