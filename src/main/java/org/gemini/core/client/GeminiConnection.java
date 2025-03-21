@@ -437,15 +437,6 @@ public class GeminiConnection {
 
     }
 
-    /**
-     * Send a simple text prompt to the Gemini API
-     */
-    public String generateContent(String prompt) {
-        log.info("Generating content for prompt: {}", prompt);
-        var request = GeminiRequest.requestMessage(new Message(prompt));
-        sendRequest(request).getResponse();
-        return takeContentAsString();
-    }
 
     public Optional<GeminiResponse> getResponse() {
         return getResponse(false);
