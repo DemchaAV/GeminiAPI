@@ -8,30 +8,30 @@ If the method takes parameters, specify them: <code>methodName(param1, param2)</
 Types of Questions:
 
 Method description → method name
-<i>org.gemini.core.client.model.model_test.Example:</i>
+<i>org.gemini.model.model_test.Example:</i>
 "Which method removes an element by index?"
 Answer: <code>remove(int index)</code>
 
 Method name → method description
-<i>org.gemini.core.client.model.model_test.Example:</i>
+<i>org.gemini.model.model_test.Example:</i>
 "What does the method <code>clear()</code> do?"
 Answer: Removes all elements from the collection.
 
 Return type (return type identification)
-<i>org.gemini.core.client.model.model_test.Example:</i>
+<i>org.gemini.model.model_test.Example:</i>
 "What is the return type of the method <code>size()</code>?"
 Answer: <code>int</code>
 
 Method overloading
-<i>org.gemini.core.client.model.model_test.Example:</i>
+<i>org.gemini.model.model_test.Example:</i>
 "What is the difference between <code>add(Object obj)</code> and <code>add(int index, Object obj)</code>?"
 
 Difference between similar methods
-<i>org.gemini.core.client.model.model_test.Example:</i>
+<i>org.gemini.model.model_test.Example:</i>
 "What is the difference between <code>get()</code> and <code>peek()</code>?"
 
 Method usage and data structure applications
-<i>org.gemini.core.client.model.model_test.Example:</i>
+<i>org.gemini.model.model_test.Example:</i>
 "When is it preferable to use <code>LinkedList</code> instead of <code>ArrayList</code>?"
 
 Question Formats:

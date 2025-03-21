@@ -1,7 +1,7 @@
 package chat;
 
 import lombok.extern.slf4j.Slf4j;
-import org.gemini.core.client.GeminiConnection;
+import org.gemini.GeminiConnection;
 
 @Slf4j
 public class Chat {

@@ -1,3 +1,3 @@
-Manifest-org.gemini.core.client.model.model_test.Version: 1.0
+Manifest-org.gemini.model.model_test.Version: 1.0
 Main-Class: Main
 

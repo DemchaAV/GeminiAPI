@@ -1,11 +1,11 @@
 import chat.Chat;
-import org.gemini.core.client.model.GeminiModel;
-import org.gemini.core.client.model.enums.VerAPI;
-import org.gemini.core.client.model.enums.gemini.GeminiVariation;
-import org.gemini.core.client.model.enums.gemini.GeminiVersion;
-import org.gemini.core.client.request_response.content.Image;
+import org.gemini.model.GeminiModel;
+import org.gemini.model.enums.VerAPI;
+import org.gemini.model.enums.gemini.GeminiVariation;
+import org.gemini.model.enums.gemini.GeminiVersion;
+import org.gemini.request_response.content.Image;
 import chat.User;
-import org.gemini.core.client.GeminiConnection;
+import org.gemini.GeminiConnection;
 
 import java.nio.file.Path;
 import java.time.Instant;

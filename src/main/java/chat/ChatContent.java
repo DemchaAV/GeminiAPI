@@ -1,7 +1,7 @@
 package chat;
 
 import lombok.Builder;
-import org.gemini.core.client.request_response.content.Content;
+import org.gemini.request_response.content.Content;
 
 /**
  * Current class exactly the same as Content byt have an additional field {@code timeStamp}

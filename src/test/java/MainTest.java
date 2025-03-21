@@ -1,11 +1,11 @@
-import org.gemini.core.client.GeminiConnection;
-import org.gemini.core.client.model.GeminiModel;
-import org.gemini.core.client.model.enums.VerAPI;
-import org.gemini.core.client.model.enums.gemini.GeminiGenerateMethod;
-import org.gemini.core.client.model.enums.gemini.GeminiVariation;
-import org.gemini.core.client.model.enums.gemini.GeminiVersion;
-import org.gemini.core.client.request_response.content.Content;
-import org.gemini.core.client.request_response.request.GeminiRequest;
+import org.gemini.GeminiConnection;
+import org.gemini.model.GeminiModel;
+import org.gemini.model.enums.VerAPI;
+import org.gemini.model.enums.gemini.GeminiGenerateMethod;
+import org.gemini.model.enums.gemini.GeminiVariation;
+import org.gemini.model.enums.gemini.GeminiVersion;
+import org.gemini.request_response.content.Content;
+import org.gemini.request_response.request.GeminiRequest;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,15 +1,14 @@
-import org.gemini.core.client.GeminiConnection;
-import org.gemini.core.client.model.ImagenModel;
-import org.gemini.core.client.model.enums.VerAPI;
-import org.gemini.core.client.model.enums.imagen.ImagenGenerateMethod;
-import org.gemini.core.client.model.enums.imagen.ImagenVariation;
-import org.gemini.core.client.model.enums.imagen.ImagenVersion;
-import org.gemini.core.client.request_response.content.Image;
-import org.gemini.core.client.request_response.request.ImgGenRequest;
-import org.gemini.core.client.request_response.Instance;
-import org.gemini.core.client.request_response.parameters_image_request.Parameters;
-import org.gemini.core.client.request_response.parameters_image_request.enums_image_gen.AspectRatio;
-import org.gemini.core.client.request_response.parameters_image_request.enums_image_gen.PersonGeneration;
+import org.gemini.GeminiConnection;
+import org.gemini.model.ImagenModel;
+import org.gemini.model.enums.VerAPI;
+import org.gemini.model.enums.imagen.ImagenGenerateMethod;
+import org.gemini.model.enums.imagen.ImagenVariation;
+import org.gemini.model.enums.imagen.ImagenVersion;
+import org.gemini.request_response.Instance;
+import org.gemini.request_response.content.Image;
+import org.gemini.request_response.parameters_image_request.Parameters;
+import org.gemini.request_response.parameters_image_request.enums_image_gen.AspectRatio;
+import org.gemini.request_response.request.ImgGenRequest;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
@@ -33,7 +32,7 @@ public class ImageGeneration {
                         .verAPI(VerAPI.V1BETA)
                         .generateMethod(ImagenGenerateMethod.PREDICT)
                         .variation(ImagenVariation._3_0)
-                        .version(ImagenVersion.GENERATE_001)
+                        .version(ImagenVersion.GENERATE_002)
                         .build())
                 .httpClient(GeminiConnection.DEFAULT_HTTP_CLIENT)
                 .build();
@@ -46,24 +45,25 @@ public class ImageGeneration {
                 )
                 .parameters(Parameters.builder()
                         .sampleCount(1)
-                        .personGeneration(PersonGeneration.allow_adult)
                         .aspectRatio(AspectRatio.RATIO_9_16)
                         .build())
                 .build();
-        var responseOptional = connection.sendRequest(imageRequest).getResponse(true);
+        var responseOptional = connection.sendRequest(imageRequest).getImageResponse();
 
 
         String pathFolder = "C:\\Users\\Demch\\OneDrive\\Рабочий стол\\Lerning\\Java\\";
-        String fileName = "pinkFlowers";
+        String fileName = "chair";
 
         responseOptional.ifPresent(response -> {
             List<Image> images = Image.extractPack(response, "jpeg");
             Image.writeTo(images, pathFolder, fileName);
+            System.out.println(pathFolder + "\\" + fileName + "." + images.getFirst().getFormat());
+            ImageFrame imageFrame = new ImageFrame(pathFolder + "\\" + fileName + "(0)." + images.getFirst().getFormat());
         });
     }
 
 
-    class ImageFrame extends JFrame {
+    static class ImageFrame extends JFrame {
         public ImageFrame(String imagePath) {
             ImagePanel panel = new ImagePanel(imagePath);
             add(panel);
@@ -114,7 +114,7 @@ public class ImageGeneration {
             @Override
             public Dimension getPreferredSize() {
                 if (image != null) {
-                    return new Dimension(image.getWidth(), image.getHeight());
+                    return new Dimension(image.getWidth()/2, image.getHeight()/2);
                 } else {
                     return super.getPreferredSize();
                 }

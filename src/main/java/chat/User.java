@@ -3,7 +3,7 @@ package chat;
 import lombok.Data;
 import lombok.NonNull;
 import lombok.extern.slf4j.Slf4j;
-import org.gemini.core.client.request_response.content.Content;
+import org.gemini.request_response.content.Content;
 
 import java.time.Instant;
 import java.util.ArrayList;

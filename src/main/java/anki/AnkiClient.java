@@ -10,16 +10,16 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NonNull;
 import lombok.extern.slf4j.Slf4j;
-import org.gemini.core.client.GeminiConnection;
-import org.gemini.core.client.model.GeminiModel;
-import org.gemini.core.client.model.enums.VerAPI;
-import org.gemini.core.client.model.enums.gemini.GeminiGenerateMethod;
-import org.gemini.core.client.model.enums.gemini.GeminiVariation;
-import org.gemini.core.client.model.enums.gemini.GeminiVersion;
-import org.gemini.core.client.model_config.GenerationConfig;
-import org.gemini.core.client.request_response.content.Content;
-import org.gemini.core.client.request_response.content.part.Part;
-import org.gemini.core.client.request_response.request.GeminiRequest;
+import org.gemini.GeminiConnection;
+import org.gemini.model.GeminiModel;
+import org.gemini.model.enums.VerAPI;
+import org.gemini.model.enums.gemini.GeminiGenerateMethod;
+import org.gemini.model.enums.gemini.GeminiVariation;
+import org.gemini.model.enums.gemini.GeminiVersion;
+import org.gemini.model_config.GenerationConfig;
+import org.gemini.request_response.content.Content;
+import org.gemini.request_response.content.part.Part;
+import org.gemini.request_response.request.GeminiRequest;
 
 import java.io.*;
 import java.nio.charset.StandardCharsets;
@@ -59,7 +59,7 @@ public class AnkiClient<T> {
                 .generationConfig(config)
                 .build();
     }
-    public AnkiClient(String prompt, GeminiConnection client, Class<T> clazz) {
+    public AnkiClient(String prompt,@NonNull GeminiConnection client, Class<T> clazz) {
         this.prompt = prompt;
         this.client = client;
         this.clazz = clazz;
