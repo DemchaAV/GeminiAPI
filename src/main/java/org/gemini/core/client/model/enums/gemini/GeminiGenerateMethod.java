@@ -1,4 +1,4 @@
-package org.gemini.core.client.model.enums;
+package org.gemini.core.client.model.enums.gemini;
 
 public enum GeminiGenerateMethod {
     GENERATE_CONTENT("generateContent"),
