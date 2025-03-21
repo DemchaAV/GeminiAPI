@@ -2,6 +2,9 @@ package org.gemini.core.client.model;
 
 import lombok.NonNull;
 import org.gemini.core.client.model.enums.*;
+import org.gemini.core.client.model.enums.gemini.GeminiGenerateMethod;
+import org.gemini.core.client.model.enums.gemini.GeminiVariation;
+import org.gemini.core.client.model.enums.gemini.GeminiVersion;
 
 /**
  * "gemini-2.0-flash"
