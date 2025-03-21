@@ -136,14 +136,6 @@ public class ApiErrorHandler {
             this.solution = ApiErrorHandler.getErrorSolution(httpErrorCode);
         }
 
-        public int getHttpErrorCode() {
-            return httpErrorCode;
-        }
-
-        public String getCanonicalErrorCode() {
-            return canonicalErrorCode;
-        }
-
         public String getErrorCause() {
             return cause;
         }
