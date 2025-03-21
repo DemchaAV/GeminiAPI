@@ -409,10 +409,7 @@ public class GeminiConnection {
 
 
         log.info("Sending request to API {}", asStream ? "as Stream" : "");
-
-        String imageGen = "https://generativelanguage.googleapis.com/v1beta/models/imagen-3.0-generate-002:predict?key=";
-
-        //TODO изменить логику для выбора моделей
+        
         String url = null;
         if (isImageGeneration) {
             this.url = imagenModel.getUrl();
