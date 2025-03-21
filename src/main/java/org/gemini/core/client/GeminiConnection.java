@@ -470,8 +470,7 @@ public class GeminiConnection {
                 log.warn("History content hasn't been added!!");
             }
         }
-        Optional<GeminiResponse> geminiResponse = Optional.ofNullable(!hasAnyNotNullField(response) ? null : response);
-        return geminiResponse;
+        return Optional.ofNullable(!hasAnyNotNullField(response) ? null : response);
     }
 
     private <T> HttpResponse<T> sendWithRetries(HttpRequest httpRequest, HttpResponse.BodyHandler<T> bodyHandler)
