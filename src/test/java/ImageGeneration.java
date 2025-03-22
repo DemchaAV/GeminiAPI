@@ -1,9 +1,7 @@
 import org.gemini.GeminiConnection;
 import org.gemini.model.ImagenModel;
 import org.gemini.model.enums.VerAPI;
-import org.gemini.model.enums.imagen.ImagenGenerateMethod;
-import org.gemini.model.enums.imagen.ImagenVariation;
-import org.gemini.model.enums.imagen.ImagenVersion;
+import org.gemini.model.enums.imagen.*;
 import org.gemini.request_response.Instance;
 import org.gemini.request_response.content.Image;
 import org.gemini.request_response.parameters_image_request.Parameters;
