@@ -1,7 +1,5 @@
-package anki.notion_exporter;
+package anki.io;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 import org.jsoup.Jsoup;
@@ -13,33 +11,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Slf4j
-@AllArgsConstructor
-@Data
-public class Extractor {
+public class NotionExtractor extends ExtractorBase {
     @Getter
-    private final String path;
     private Document document;
-    private File[] files;
 
-    public Extractor(String path) {
-        this.path = path;
-        loadFiles();
+    public NotionExtractor(String path) {
+        super(path);
     }
 
-    private void loadFiles() {
-        File folder = new File(path);
-        this.files = folder.listFiles();
-    }
-
-    public File getFile(int index) {
-        log.trace("Processing File index: {}", index);
-        return files[index];
-    }
 
     public Document getDocument(int index) throws IOException {
-        if (index < 0 || index > files.length) {
-            log.error("{} can be from 0 to {}", "index", files.length);
-            throw new IndexOutOfBoundsException("%s can be from 0 to %d".formatted("index", files.length));
+        if (index < 0 || index > getFiles().length) {
+            log.error("{} can be from 0 to {}", "index", getFiles().length);
+            throw new IndexOutOfBoundsException("%s can be from 0 to %d".formatted("index", getFiles().length));
         }
         Document doc = null;
         File file = getFile(index);
@@ -61,7 +45,7 @@ public class Extractor {
         Page page;
         String title;
         String bodyText;
-        for (int i = 0; i < files.length; i++) {
+        for (int i = 0; i < getFiles().length; i++) {
             doc = getDocument(i);
             title = doc.head().text();
             bodyText = doc.body().text();

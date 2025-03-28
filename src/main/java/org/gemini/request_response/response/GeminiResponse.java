@@ -75,7 +75,7 @@ public record GeminiResponse(
             System.out.print(character + "█");
             System.out.flush();
             try {
-                Thread.sleep(7);
+                Thread.sleep(6);
                 System.out.print("\b");
             } catch (InterruptedException e) {
                 log.error("Occur exception during stream ",e);

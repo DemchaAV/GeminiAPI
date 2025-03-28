@@ -6,6 +6,7 @@ import org.gemini.request_response.Instance;
 import org.gemini.request_response.content.Image;
 import org.gemini.request_response.parameters_image_request.Parameters;
 import org.gemini.request_response.parameters_image_request.enums_image_gen.AspectRatio;
+import org.gemini.request_response.parameters_image_request.enums_image_gen.SafetySetting;
 import org.gemini.request_response.request.ImgGenRequest;
 
 import javax.imageio.ImageIO;
@@ -43,14 +44,15 @@ public class ImageGeneration {
                 )
                 .parameters(Parameters.builder()
                         .sampleCount(1)
-                        .aspectRatio(AspectRatio.RATIO_9_16)
+                        .aspectRatio(AspectRatio.RATIO_3_4)
+                        .safetySetting(SafetySetting.block_low_and_above)
                         .build())
                 .build();
         var responseOptional = connection.sendRequest(imageRequest).getImageResponse();
 
 
         String pathFolder = "C:\\Users\\Demch\\OneDrive\\Рабочий стол\\Lerning\\Java\\";
-        String fileName = "chair";
+        String fileName = "cocktail";
 
         responseOptional.ifPresent(response -> {
             List<Image> images = Image.extractPack(response, "jpeg");

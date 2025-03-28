@@ -9,8 +9,8 @@ target/
 .idea/compiler.xml
 .idea/libraries/
 logs/
-*.log
 out/
+*.log
 *.iws
 *.iml
 *.ipr

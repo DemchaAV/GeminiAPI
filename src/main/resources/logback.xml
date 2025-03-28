@@ -16,14 +16,14 @@
         </encoder>
     </appender>
 
-    <logger name="org.gemini.GeminiConnection" level="INFO" additivity="false">
+    <logger name="GeminiModelLister" level="WARN" additivity="false">
         <appender-ref ref="STDOUT"/>
         <appender-ref ref="FILE"/>
     </logger>
 
 
     <!-- Корневой логгер, который записывает в оба аппендера -->
-    <root level="OFF">
+    <root level="Info">
         <appender-ref ref="STDOUT"/>
         <appender-ref ref="FILE"/>
     </root>

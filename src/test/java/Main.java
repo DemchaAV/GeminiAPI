@@ -9,7 +9,6 @@ public class Main {
     private final String API_KEY = System.getenv("API_KEY"); // Замените на ваш API ключ
     private final String URL = "https://generativelanguage.googleapis.com/v1beta/models?key=" + API_KEY;
     private final String listModel ="https://generativelanguage.googleapis.com/v1beta/models/%s?key=%s";
-
     public static void main(String[] args) {
         Main example = new Main();
         example.getModels();

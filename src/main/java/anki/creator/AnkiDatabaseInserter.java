@@ -25,14 +25,14 @@ public class AnkiDatabaseInserter {
         this.deck.addModel(this.model);
     }
 
-    public void insertIntoDB(String path) {
+    public void insertIntoDB(String path, boolean reWriteExisting) {
         try {
             String safeDeckName = deck.getName().toLowerCase().replaceAll("[^a-z0-9_\\-]", "_");
             String fileName = "%s.apkg".formatted(safeDeckName);
             String absolutePath = Paths.get(path, fileName).toString();
 
             Package ankiPackage = new Package(deck, List.of());
-            ankiPackage.writeToFile(absolutePath, null);
+            ankiPackage.writeToFile(absolutePath, null,reWriteExisting);
 
             log.info("Anki package created: {} in directory {}", fileName, path);
         } catch (Exception e) {

@@ -1,6 +1,7 @@
 package anki.creator;
 
 import anki.creator.schema.APKGSchema;
+import anki.io.file_writer.FileWriter;
 import com.google.gson.Gson;
 
 import java.io.File;
@@ -39,34 +40,34 @@ public class Package {
             e.printStackTrace();
         }
     }
-
-    private static String getNewFilePath(String filePath) {
-        File file = new File(filePath);
-
-        if (!file.exists()) {
-            return filePath; // Если файла нет, оставляем оригинальное имя
-        }
-
-        // Извлекаем имя файла без пути
-        String directory = file.getParent();
-        String fileName = file.getName();
-
-        // Шаблон для поиска (числа) в скобках перед расширением файла
-        Pattern pattern = Pattern.compile("\\((\\d+)\\)\\.apkg$");
-        Matcher matcher = pattern.matcher(fileName);
-
-        String newFileName;
-        if (matcher.find()) {
-            // Если нашли номер в скобках, увеличиваем его
-            int number = Integer.parseInt(matcher.group(1)) + 1;
-            newFileName = fileName.replaceAll("\\(\\d+\\)\\.apkg$", "(" + number + ").apkg");
-        } else {
-            // Если номера нет, добавляем (1)
-            newFileName = fileName.replace(".apkg", "(1).apkg");
-        }
-
-        return directory + "\\" + newFileName;
-    }
+//TODO delete method after check
+//    private static String getNewFilePath(String filePath) {
+//        File file = new File(filePath);
+//
+//        if (!file.exists()) {
+//            return filePath; // Если файла нет, оставляем оригинальное имя
+//        }
+//
+//        // Извлекаем имя файла без пути
+//        String directory = file.getParent();
+//        String fileName = file.getName();
+//
+//        // Шаблон для поиска (числа) в скобках перед расширением файла
+//        Pattern pattern = Pattern.compile("\\((\\d+)\\)\\.apkg$");
+//        Matcher matcher = pattern.matcher(fileName);
+//
+//        String newFileName;
+//        if (matcher.find()) {
+//            // Если нашли номер в скобках, увеличиваем его
+//            int number = Integer.parseInt(matcher.group(1)) + 1;
+//            newFileName = fileName.replaceAll("\\(\\d+\\)\\.apkg$", "(" + number + ").apkg");
+//        } else {
+//            // Если номера нет, добавляем (1)
+//            newFileName = fileName.replace(".apkg", "(1).apkg");
+//        }
+//
+//        return directory + "\\" + newFileName;
+//    }
 
     public void writeToFile(String filePath, Long inputTimestamp) throws IOException, SQLException {
         writeToFile(filePath, inputTimestamp, true);
@@ -105,7 +106,7 @@ public class Package {
         File file = new File(filePath);
 
         if (!reWriteExisting) {
-            filePath = getNewFilePath(filePath);
+            filePath = FileWriter.findNewNamePath(file).toString();
         }
         try (FileOutputStream fos = new FileOutputStream(filePath);
              ZipOutputStream zipOut = new ZipOutputStream(fos)) {

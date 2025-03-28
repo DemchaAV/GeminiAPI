@@ -4,7 +4,10 @@ import anki.creator.AnkiDatabaseInserter;
 import anki.creator.Deck;
 import anki.data.Lesson;
 import anki.data.Question;
+import anki.io.file_writer.FileWriter;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.SerializationFeature;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -40,7 +43,7 @@ public class AnkiClient<T> {
     private GenerationConfig config;
     @NonNull
     private GeminiConnection client;
-
+    private final ObjectMapper mapper = new ObjectMapper().enable(SerializationFeature.INDENT_OUTPUT);
 
 
     public AnkiClient(Class<T> clazz, String apiKey) {
@@ -186,8 +189,35 @@ public class AnkiClient<T> {
                 log.error("Failed to create directory '{}'", directory.getAbsolutePath());
             }
         }
-        inserter.insertIntoDB(pathOut);
+        inserter.insertIntoDB(pathOut, reWriteExisting);
         return true;
+    }
+
+    public boolean serializeInJsonFile(Lesson lesson, String pathOut, boolean reWriteExisting) {
+        if (lesson == null) {
+            log.error("Object {} is null:", "lesson");
+            return false;
+        }
+        if (pathOut == null || pathOut.isBlank()) {
+            log.error("Object {} hasn't be null or blank", "pathOut");
+        }
+        String jsonObject = null;
+
+        try {
+            jsonObject = mapper.writeValueAsString(lesson);
+        } catch (JsonProcessingException e) {
+            log.error("Json serialize has benn failed!\n", e);
+            throw new RuntimeException(e);
+        }
+
+        String fileName = lesson.lessonName().toLowerCase().replaceAll("[^a-z0-9_\\-]", "_");
+
+        return FileWriter.writeFile(jsonObject, pathOut + File.separator + fileName + ".json", reWriteExisting);
+
+    }
+
+    public boolean serializeInJsonFile(Lesson lesson, String pathOut) {
+        return serializeInJsonFile(lesson, pathOut, true);
     }
 
     public boolean exportCSV(Lesson lesson, String pathOut) {

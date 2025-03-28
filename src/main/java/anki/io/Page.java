@@ -1,4 +1,4 @@
-package anki.notion_exporter;
+package anki.io;
 
 public record Page(String title, String bodyText) {
 }

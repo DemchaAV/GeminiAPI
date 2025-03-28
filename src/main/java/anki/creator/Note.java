@@ -1,6 +1,7 @@
 package anki.creator;
 
 import lombok.Getter;
+import lombok.extern.slf4j.Slf4j;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -8,7 +9,7 @@ import java.sql.SQLException;
 import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-@Getter
+@Getter @Slf4j
 public class Note {
     private final Model model;
     private final List<String> fields;
@@ -57,6 +58,7 @@ public class Note {
         } else if (model.getModelType() == Model.CLOZE) {
             return clozeCards();
         }
+        log.error("Expected model_type CLOZE or FRONT_BACK");
         throw new IllegalArgumentException("Expected model_type CLOZE or FRONT_BACK");
     }
 
@@ -125,14 +127,14 @@ public class Note {
 
             // Исключаем Java-дженерики `<?>`, `<? super E>`
             if (field.matches("^<\\?.*?>$")) { // Только если строка полностью состоит из дженерика
-                System.out.println("Skipping Java generic: " + field);
+                log.info("Skipping Java generic: " + field);
                 continue;
             }
 
 
             Matcher matcher = INVALID_HTML_TAG_RE.matcher(field);
             if (matcher.find()) {
-                System.err.println("Warning: Field contains invalid HTML tags: " + matcher.group());
+                log.warn("Warning: Field contains invalid HTML tags: " + matcher.group());
             }
         }
     }
@@ -141,6 +143,7 @@ public class Note {
     public void writeToDb(Connection conn, long timestamp, long deckId, Iterator<Long> idGen) throws SQLException {
         checkInvalidHtmlTags();
         if (model.getFields().size() != fields.size()) {
+            log.error("Number of fields in GeminiModel does not match Note fields.");
             throw new IllegalArgumentException("Number of fields in GeminiModel does not match Note fields.");
         }
 
