@@ -82,6 +82,7 @@ public record GeminiResponse(
                 throw new RuntimeException(e);
             }
         }
+        System.out.print("\b");
     }
 
     public Map<String, List<Content>> takeContentAsMap() {
