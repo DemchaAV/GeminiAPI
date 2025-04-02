@@ -81,6 +81,7 @@ public record GeminiResponse(
                 log.error("Occur exception during stream ",e);
                 throw new RuntimeException(e);
             }
+
         }
         System.out.print("\b");
     }
