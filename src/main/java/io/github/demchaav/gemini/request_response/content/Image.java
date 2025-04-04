@@ -42,10 +42,14 @@ public class Image {
     }
 
     public Image(@NonNull GeminiResponse response, String format) {
+        this(getPrediction(response), format);
+
+    }
+    private static Prediction getPrediction(GeminiResponse response){
         if (response.predictions().size() > 1) {
             log.warn("You are trying to retrieve an image from a response with multiple predictions. Consider using the extractPack() method instead.");
         }
-        this(response.predictions().getFirst(), format);
+        return response.predictions().getFirst();
     }
 
     public Image(@NonNull GeminiResponse response) {
@@ -58,13 +62,18 @@ public class Image {
     }
 
     public Image(@NonNull Path path) {
+        this(path, getExtension(path));
+    }
+
+
+    private static String getExtension(Path path){
         String fileName = path.getFileName().toString();
         String extension = "";
         int dotIndex = fileName.lastIndexOf('.');
         if (dotIndex > 0 && dotIndex < fileName.length() - 1) {
             extension = fileName.substring(dotIndex + 1);
         }
-        this(path, extension);
+        return extension;
     }
 
     public static List<Image> extractPack(@NonNull  GeminiResponse response, String format) {
