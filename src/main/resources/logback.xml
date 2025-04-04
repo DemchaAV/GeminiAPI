@@ -16,7 +16,7 @@
         </encoder>
     </appender>
 
-    <logger name="GeminiModelLister" level="WARN" additivity="false">
+    <logger name="io.github.demchaav.gemini.GeminiModelLister" level="WARN" additivity="false">
         <appender-ref ref="STDOUT"/>
         <appender-ref ref="FILE"/>
     </logger>

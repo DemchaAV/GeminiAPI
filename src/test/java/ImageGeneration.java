@@ -1,13 +1,15 @@
-import org.gemini.GeminiConnection;
-import org.gemini.model.ImagenModel;
-import org.gemini.model.enums.VerAPI;
-import org.gemini.model.enums.imagen.*;
-import org.gemini.request_response.Instance;
-import org.gemini.request_response.content.Image;
-import org.gemini.request_response.parameters_image_request.Parameters;
-import org.gemini.request_response.parameters_image_request.enums_image_gen.AspectRatio;
-import org.gemini.request_response.parameters_image_request.enums_image_gen.SafetySetting;
-import org.gemini.request_response.request.ImgGenRequest;
+import io.github.demchaav.gemini.GeminiConnection;
+import io.github.demchaav.gemini.model.ImagenModel;
+import io.github.demchaav.gemini.model.enums.VerAPI;
+import io.github.demchaav.gemini.model.enums.imagen.ImagenGenerateMethod;
+import io.github.demchaav.gemini.model.enums.imagen.ImagenVariation;
+import io.github.demchaav.gemini.model.enums.imagen.ImagenVersion;
+import io.github.demchaav.gemini.request_response.Instance;
+import io.github.demchaav.gemini.request_response.content.Image;
+import io.github.demchaav.gemini.request_response.parameters_image_request.Parameters;
+import io.github.demchaav.gemini.request_response.parameters_image_request.enums_image_gen.AspectRatio;
+import io.github.demchaav.gemini.request_response.parameters_image_request.enums_image_gen.SafetySetting;
+import io.github.demchaav.gemini.request_response.request.ImgGenRequest;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
@@ -15,15 +17,18 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.net.URISyntaxException;
+import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.List;
 
 public class ImageGeneration {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws URISyntaxException, IOException {
 
-        String PROMPT = TestImgResponse.readTextFileFromResources("ImageGenPrompt.txt");
+
 //        String PROMPT = "Passion fruit martini, image should be with clean white background";
 
+        String PROMPT = Files.readString( Path.of( Thread.currentThread().getContextClassLoader().getResource("prompt.txt").toURI()));
 
         GeminiConnection connection = GeminiConnection.builder()
                 .apiKey(System.getenv("API_KEY"))
@@ -64,6 +69,7 @@ public class ImageGeneration {
 
 
     static class ImageFrame extends JFrame {
+
         public ImageFrame(String imagePath) {
             ImagePanel panel = new ImagePanel(imagePath);
             add(panel);

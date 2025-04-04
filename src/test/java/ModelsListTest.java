@@ -1,3 +1,4 @@
+import io.github.demchaav.gemini.GeminiModelLister;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
@@ -35,7 +36,7 @@ public class ModelsListTest {
 
         } catch (IllegalArgumentException e) {
             // Логгируем ошибку инициализации с исключением
-            log.error("Ошибка инициализации GeminiModelLister", e);
+            log.error("Ошибка инициализации io.github.demchaav.gemini.GeminiModelLister", e);
         } catch (Exception e) {
             // Логгируем любые другие неожиданные ошибки
             log.error("Произошла непредвиденная ошибка во время выполнения", e);

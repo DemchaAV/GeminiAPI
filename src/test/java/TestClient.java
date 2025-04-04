@@ -1,9 +1,9 @@
-import org.gemini.GeminiClient;
-import org.gemini.GeminiConnection;
-import org.gemini.model.GeminiModel;
-import org.gemini.model.enums.VerAPI;
-import org.gemini.model.enums.gemini.GeminiVariation;
-import org.gemini.model.enums.gemini.GeminiVersion;
+import io.github.demchaav.gemini.GeminiClient;
+import io.github.demchaav.gemini.GeminiConnection;
+import io.github.demchaav.gemini.model.GeminiModel;
+import io.github.demchaav.gemini.model.enums.VerAPI;
+import io.github.demchaav.gemini.model.enums.gemini.GeminiVariation;
+import io.github.demchaav.gemini.model.enums.gemini.GeminiVersion;
 
 import java.io.IOException;
 

@@ -1,12 +1,12 @@
-import org.gemini.GeminiConnection;
-import org.gemini.model.GeminiModel;
-import org.gemini.model.enums.VerAPI;
-import org.gemini.model.enums.gemini.GeminiVariation;
-import org.gemini.model.enums.gemini.GeminiVersion;
-import org.gemini.request_response.content.Content;
-import org.gemini.request_response.content.part.Part;
-import org.gemini.request_response.request.GeminiRequest;
-import org.gemini.request_response.response.GeminiResponse;
+import io.github.demchaav.gemini.GeminiConnection;
+import io.github.demchaav.gemini.model.GeminiModel;
+import io.github.demchaav.gemini.model.enums.VerAPI;
+import io.github.demchaav.gemini.model.enums.gemini.GeminiVariation;
+import io.github.demchaav.gemini.model.enums.gemini.GeminiVersion;
+import io.github.demchaav.gemini.request_response.content.Content;
+import io.github.demchaav.gemini.request_response.content.part.Part;
+import io.github.demchaav.gemini.request_response.request.GeminiRequest;
+import io.github.demchaav.gemini.request_response.response.GeminiResponse;
 
 import java.io.IOException;
 

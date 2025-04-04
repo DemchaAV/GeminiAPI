@@ -1,4 +1,4 @@
-2025-03-22 11:04:32 [main] DEBUG org.gemini.GeminiConnection - Serialized request: {
+2025-03-22 11:04:32 [main] DEBUG io.github.demchaav.gemini.GeminiConnection - Serialized request: {
   "instances" : [ {
     "prompt" : "studio photo of a modern arm chair, natural lighting"
   } ],
@@ -7,10 +7,10 @@
     "aspectRatio" : "9:16"
   }
 }
-2025-03-22 11:04:32 [main] INFO  org.gemini.GeminiConnection - Sending request to API 
-2025-03-22 11:04:32 [main] DEBUG org.gemini.GeminiConnection - HTTP Request built: https://generativelanguage.googleapis.com/v1beta/models/imagen-3.0-generate-002:predict?key=AIzaSyA6MtW_KBUXKJCrIjCohA9umqW9X4nTrI4 POST
-2025-03-22 11:04:32 [main] INFO  org.gemini.GeminiConnection - Fetching response from API
-2025-03-22 11:04:41 [main] DEBUG org.gemini.GeminiConnection - {
+2025-03-22 11:04:32 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Sending request to API
+2025-03-22 11:04:32 [main] DEBUG io.github.demchaav.gemini.GeminiConnection - HTTP Request built: https://generativelanguage.googleapis.com/v1beta/models/imagen-3.0-generate-002:predict?key=AIzaSyA6MtW_KBUXKJCrIjCohA9umqW9X4nTrI4 POST
+2025-03-22 11:04:32 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Fetching response from API
+2025-03-22 11:04:41 [main] DEBUG io.github.demchaav.gemini.GeminiConnection - {
   "predictions": [
     {
       "mimeType": "image/png",
@@ -19,170 +19,170 @@
   ]
 }
 
-2025-03-22 11:04:41 [main] INFO  org.gemini.GeminiConnection - Response successfully parsed
-2025-03-22 11:08:14 [main] INFO  org.gemini.GeminiConnection - Sending request to API as Stream
-2025-03-22 11:08:14 [main] INFO  org.gemini.GeminiConnection - Fetching response from API
-2025-03-23 14:21:06 [main] INFO  org.gemini.GeminiConnection - Sending request to API as Stream
-2025-03-23 14:21:06 [main] INFO  org.gemini.GeminiConnection - Fetching response from API
-2025-03-24 13:29:36 [main] INFO  org.gemini.GeminiConnection - Sending request to API 
-2025-03-24 13:29:37 [main] INFO  org.gemini.GeminiConnection - Fetching response from API
-2025-03-24 13:29:41 [main] INFO  org.gemini.GeminiConnection - Response successfully parsed
-2025-03-24 13:29:41 [main] INFO  org.gemini.GeminiConnection - History content has been added
-2025-03-24 13:39:31 [main] INFO  org.gemini.GeminiConnection - Sending request to API 
-2025-03-24 13:39:31 [main] INFO  org.gemini.GeminiConnection - Fetching response from API
-2025-03-24 13:39:35 [main] INFO  org.gemini.GeminiConnection - Response successfully parsed
-2025-03-24 13:39:35 [main] INFO  org.gemini.GeminiConnection - History content has been added
-2025-03-24 17:00:57 [main] INFO  org.gemini.GeminiConnection - Sending request to API 
-2025-03-24 17:00:57 [main] INFO  org.gemini.GeminiConnection - Fetching response from API
-2025-03-24 17:01:05 [main] INFO  org.gemini.GeminiConnection - Response successfully parsed
-2025-03-24 17:01:05 [main] INFO  org.gemini.GeminiConnection - History content has been added
-2025-03-24 17:01:06 [main] INFO  org.gemini.GeminiConnection - Sending request to API 
-2025-03-24 17:01:06 [main] INFO  org.gemini.GeminiConnection - Fetching response from API
-2025-03-24 17:01:09 [main] INFO  org.gemini.GeminiConnection - Response successfully parsed
-2025-03-24 17:01:09 [main] INFO  org.gemini.GeminiConnection - History content has been added
-2025-03-24 17:01:10 [main] INFO  org.gemini.GeminiConnection - Sending request to API 
-2025-03-24 17:01:10 [main] INFO  org.gemini.GeminiConnection - Fetching response from API
-2025-03-24 17:01:40 [main] INFO  org.gemini.GeminiConnection - Sending request to API 
-2025-03-24 17:01:40 [main] INFO  org.gemini.GeminiConnection - Fetching response from API
-2025-03-24 17:01:48 [main] INFO  org.gemini.GeminiConnection - Response successfully parsed
-2025-03-24 17:01:48 [main] INFO  org.gemini.GeminiConnection - History content has been added
-2025-03-24 17:01:48 [main] INFO  org.gemini.GeminiConnection - Sending request to API 
-2025-03-24 17:01:48 [main] INFO  org.gemini.GeminiConnection - Fetching response from API
-2025-03-24 17:01:52 [main] INFO  org.gemini.GeminiConnection - Response successfully parsed
-2025-03-24 17:01:52 [main] INFO  org.gemini.GeminiConnection - History content has been added
-2025-03-24 17:01:52 [main] INFO  org.gemini.GeminiConnection - Sending request to API 
-2025-03-24 17:01:52 [main] INFO  org.gemini.GeminiConnection - Fetching response from API
-2025-03-24 17:03:32 [main] INFO  org.gemini.GeminiConnection - Sending request to API 
-2025-03-24 17:03:32 [main] INFO  org.gemini.GeminiConnection - Fetching response from API
-2025-03-24 17:03:40 [main] INFO  org.gemini.GeminiConnection - Response successfully parsed
-2025-03-24 17:03:40 [main] INFO  org.gemini.GeminiConnection - History content has been added
-2025-03-24 17:03:40 [main] INFO  org.gemini.GeminiConnection - Sending request to API 
-2025-03-24 17:03:40 [main] INFO  org.gemini.GeminiConnection - Fetching response from API
-2025-03-24 17:03:43 [main] INFO  org.gemini.GeminiConnection - Response successfully parsed
-2025-03-24 17:03:43 [main] INFO  org.gemini.GeminiConnection - History content has been added
-2025-03-24 17:51:08 [main] INFO  org.gemini.GeminiConnection - Sending request to API 
-2025-03-24 17:51:08 [main] INFO  org.gemini.GeminiConnection - Fetching response from API
-2025-03-24 17:51:16 [main] INFO  org.gemini.GeminiConnection - Response successfully parsed
-2025-03-24 17:51:16 [main] INFO  org.gemini.GeminiConnection - History content has been added
-2025-03-24 17:51:17 [main] INFO  org.gemini.GeminiConnection - Sending request to API 
-2025-03-24 17:51:17 [main] INFO  org.gemini.GeminiConnection - Fetching response from API
-2025-03-24 17:51:20 [main] INFO  org.gemini.GeminiConnection - Response successfully parsed
-2025-03-24 17:51:20 [main] INFO  org.gemini.GeminiConnection - History content has been added
-2025-03-24 17:52:05 [main] INFO  org.gemini.GeminiConnection - Sending request to API 
-2025-03-24 17:52:05 [main] INFO  org.gemini.GeminiConnection - Fetching response from API
-2025-03-24 17:52:13 [main] INFO  org.gemini.GeminiConnection - Response successfully parsed
-2025-03-24 17:52:13 [main] INFO  org.gemini.GeminiConnection - History content has been added
-2025-03-24 17:52:14 [main] INFO  org.gemini.GeminiConnection - Sending request to API 
-2025-03-24 17:52:14 [main] INFO  org.gemini.GeminiConnection - Fetching response from API
-2025-03-24 17:52:17 [main] INFO  org.gemini.GeminiConnection - Response successfully parsed
-2025-03-24 17:52:17 [main] INFO  org.gemini.GeminiConnection - History content has been added
-2025-03-24 19:34:11 [main] INFO  org.gemini.GeminiConnection - Sending request to API 
-2025-03-24 19:34:11 [main] INFO  org.gemini.GeminiConnection - Fetching response from API
-2025-03-24 19:34:20 [main] INFO  org.gemini.GeminiConnection - Response successfully parsed
-2025-03-24 19:34:20 [main] INFO  org.gemini.GeminiConnection - History content has been added
-2025-03-24 19:34:20 [main] INFO  org.gemini.GeminiConnection - Sending request to API 
-2025-03-24 19:34:20 [main] INFO  org.gemini.GeminiConnection - Fetching response from API
-2025-03-24 19:34:34 [main] INFO  org.gemini.GeminiConnection - Sending request to API 
-2025-03-24 19:34:34 [main] INFO  org.gemini.GeminiConnection - Fetching response from API
-2025-03-24 19:34:42 [main] INFO  org.gemini.GeminiConnection - Response successfully parsed
-2025-03-24 19:34:42 [main] INFO  org.gemini.GeminiConnection - History content has been added
-2025-03-24 19:34:42 [main] INFO  org.gemini.GeminiConnection - Sending request to API 
-2025-03-24 19:34:42 [main] INFO  org.gemini.GeminiConnection - Fetching response from API
-2025-03-24 19:34:45 [main] INFO  org.gemini.GeminiConnection - Response successfully parsed
-2025-03-24 19:34:45 [main] INFO  org.gemini.GeminiConnection - History content has been added
-2025-03-24 19:34:45 [main] INFO  org.gemini.GeminiConnection - Sending request to API 
-2025-03-24 19:34:45 [main] INFO  org.gemini.GeminiConnection - Fetching response from API
-2025-03-24 19:34:56 [main] INFO  org.gemini.GeminiConnection - Response successfully parsed
-2025-03-24 19:34:56 [main] INFO  org.gemini.GeminiConnection - History content has been added
-2025-03-24 19:34:56 [main] INFO  org.gemini.GeminiConnection - Sending request to API 
-2025-03-24 19:34:56 [main] INFO  org.gemini.GeminiConnection - Fetching response from API
-2025-03-24 19:35:02 [main] INFO  org.gemini.GeminiConnection - Response successfully parsed
-2025-03-24 19:35:02 [main] INFO  org.gemini.GeminiConnection - History content has been added
-2025-03-24 19:35:02 [main] INFO  org.gemini.GeminiConnection - Sending request to API 
-2025-03-24 19:35:02 [main] INFO  org.gemini.GeminiConnection - Fetching response from API
-2025-03-24 19:35:09 [main] INFO  org.gemini.GeminiConnection - Response successfully parsed
-2025-03-24 19:35:09 [main] INFO  org.gemini.GeminiConnection - History content has been added
-2025-03-24 19:35:09 [main] INFO  org.gemini.GeminiConnection - Sending request to API 
-2025-03-24 19:35:09 [main] INFO  org.gemini.GeminiConnection - Fetching response from API
-2025-03-24 19:35:14 [main] INFO  org.gemini.GeminiConnection - Response successfully parsed
-2025-03-24 19:35:14 [main] INFO  org.gemini.GeminiConnection - History content has been added
-2025-03-24 19:35:14 [main] INFO  org.gemini.GeminiConnection - Sending request to API 
-2025-03-24 19:35:14 [main] INFO  org.gemini.GeminiConnection - Fetching response from API
-2025-03-24 19:35:20 [main] INFO  org.gemini.GeminiConnection - Response successfully parsed
-2025-03-24 19:35:20 [main] INFO  org.gemini.GeminiConnection - History content has been added
-2025-03-24 19:35:20 [main] INFO  org.gemini.GeminiConnection - Sending request to API 
-2025-03-24 19:35:20 [main] INFO  org.gemini.GeminiConnection - Fetching response from API
-2025-03-24 19:54:16 [main] INFO  org.gemini.GeminiConnection - Sending request to API 
-2025-03-24 19:54:16 [main] INFO  org.gemini.GeminiConnection - Fetching response from API
-2025-03-24 19:54:24 [main] INFO  org.gemini.GeminiConnection - Response successfully parsed
-2025-03-24 19:54:24 [main] INFO  org.gemini.GeminiConnection - History content has been added
-2025-03-24 19:54:24 [main] INFO  org.gemini.GeminiConnection - Sending request to API 
-2025-03-24 19:54:24 [main] INFO  org.gemini.GeminiConnection - Fetching response from API
-2025-03-24 19:54:28 [main] INFO  org.gemini.GeminiConnection - Response successfully parsed
-2025-03-24 19:54:28 [main] INFO  org.gemini.GeminiConnection - History content has been added
-2025-03-24 19:54:28 [main] INFO  org.gemini.GeminiConnection - Sending request to API 
-2025-03-24 19:54:28 [main] INFO  org.gemini.GeminiConnection - Fetching response from API
-2025-03-24 19:54:38 [main] INFO  org.gemini.GeminiConnection - Response successfully parsed
-2025-03-24 19:54:38 [main] INFO  org.gemini.GeminiConnection - History content has been added
-2025-03-24 19:54:38 [main] INFO  org.gemini.GeminiConnection - Sending request to API 
-2025-03-24 19:54:38 [main] INFO  org.gemini.GeminiConnection - Fetching response from API
-2025-03-24 19:54:45 [main] INFO  org.gemini.GeminiConnection - Response successfully parsed
-2025-03-24 19:54:45 [main] INFO  org.gemini.GeminiConnection - History content has been added
-2025-03-24 19:54:45 [main] INFO  org.gemini.GeminiConnection - Sending request to API 
-2025-03-24 19:54:45 [main] INFO  org.gemini.GeminiConnection - Fetching response from API
-2025-03-24 19:54:51 [main] INFO  org.gemini.GeminiConnection - Response successfully parsed
-2025-03-24 19:54:51 [main] INFO  org.gemini.GeminiConnection - History content has been added
-2025-03-24 19:54:51 [main] INFO  org.gemini.GeminiConnection - Sending request to API 
-2025-03-24 19:54:51 [main] INFO  org.gemini.GeminiConnection - Fetching response from API
-2025-03-24 19:54:56 [main] INFO  org.gemini.GeminiConnection - Response successfully parsed
-2025-03-24 19:54:56 [main] INFO  org.gemini.GeminiConnection - History content has been added
-2025-03-24 19:54:56 [main] INFO  org.gemini.GeminiConnection - Sending request to API 
-2025-03-24 19:54:56 [main] INFO  org.gemini.GeminiConnection - Fetching response from API
-2025-03-24 19:55:03 [main] INFO  org.gemini.GeminiConnection - Response successfully parsed
-2025-03-24 19:55:03 [main] INFO  org.gemini.GeminiConnection - History content has been added
-2025-03-24 19:55:03 [main] INFO  org.gemini.GeminiConnection - Sending request to API 
-2025-03-24 19:55:03 [main] INFO  org.gemini.GeminiConnection - Fetching response from API
-2025-03-24 19:55:10 [main] INFO  org.gemini.GeminiConnection - Response successfully parsed
-2025-03-24 19:55:10 [main] INFO  org.gemini.GeminiConnection - History content has been added
-2025-03-24 19:55:10 [main] INFO  org.gemini.GeminiConnection - Sending request to API 
-2025-03-24 19:55:10 [main] INFO  org.gemini.GeminiConnection - Fetching response from API
-2025-03-24 19:55:18 [main] INFO  org.gemini.GeminiConnection - Response successfully parsed
-2025-03-24 19:55:18 [main] INFO  org.gemini.GeminiConnection - History content has been added
-2025-03-24 19:55:18 [main] INFO  org.gemini.GeminiConnection - Sending request to API 
-2025-03-24 19:55:18 [main] INFO  org.gemini.GeminiConnection - Fetching response from API
-2025-03-24 19:55:24 [main] INFO  org.gemini.GeminiConnection - Response successfully parsed
-2025-03-24 19:55:24 [main] INFO  org.gemini.GeminiConnection - History content has been added
-2025-03-24 19:55:24 [main] INFO  org.gemini.GeminiConnection - Sending request to API 
-2025-03-24 19:55:24 [main] INFO  org.gemini.GeminiConnection - Fetching response from API
-2025-03-24 19:55:29 [main] INFO  org.gemini.GeminiConnection - Response successfully parsed
-2025-03-24 19:55:29 [main] INFO  org.gemini.GeminiConnection - History content has been added
-2025-03-24 19:55:29 [main] INFO  org.gemini.GeminiConnection - Sending request to API 
-2025-03-24 19:55:29 [main] INFO  org.gemini.GeminiConnection - Fetching response from API
-2025-03-24 19:55:39 [main] INFO  org.gemini.GeminiConnection - Response successfully parsed
-2025-03-24 19:55:39 [main] INFO  org.gemini.GeminiConnection - History content has been added
-2025-03-24 19:55:39 [main] INFO  org.gemini.GeminiConnection - Sending request to API 
-2025-03-24 19:55:39 [main] INFO  org.gemini.GeminiConnection - Fetching response from API
-2025-03-24 19:55:43 [main] INFO  org.gemini.GeminiConnection - Response successfully parsed
-2025-03-24 19:55:43 [main] INFO  org.gemini.GeminiConnection - History content has been added
-2025-03-24 19:55:43 [main] INFO  org.gemini.GeminiConnection - Sending request to API 
-2025-03-24 19:55:43 [main] INFO  org.gemini.GeminiConnection - Fetching response from API
-2025-03-24 19:55:57 [main] INFO  org.gemini.GeminiConnection - Response successfully parsed
-2025-03-24 19:55:57 [main] INFO  org.gemini.GeminiConnection - History content has been added
-2025-03-24 19:55:59 [main] INFO  org.gemini.GeminiConnection - Sending request to API 
-2025-03-24 19:55:59 [main] INFO  org.gemini.GeminiConnection - Fetching response from API
-2025-03-24 19:56:12 [main] INFO  org.gemini.GeminiConnection - Response successfully parsed
-2025-03-24 19:56:12 [main] INFO  org.gemini.GeminiConnection - History content has been added
-2025-03-24 19:56:14 [main] INFO  org.gemini.GeminiConnection - Sending request to API 
-2025-03-24 19:56:14 [main] INFO  org.gemini.GeminiConnection - Fetching response from API
-2025-03-24 19:56:28 [main] INFO  org.gemini.GeminiConnection - Response successfully parsed
-2025-03-24 19:56:28 [main] INFO  org.gemini.GeminiConnection - History content has been added
-2025-03-24 19:56:28 [main] INFO  org.gemini.GeminiConnection - Sending request to API 
-2025-03-24 19:56:28 [main] INFO  org.gemini.GeminiConnection - Fetching response from API
-2025-03-24 19:56:32 [main] INFO  org.gemini.GeminiConnection - Response successfully parsed
-2025-03-24 19:56:32 [main] INFO  org.gemini.GeminiConnection - History content has been added
-2025-03-24 19:56:32 [main] INFO  org.gemini.GeminiConnection - Sending request to API 
-2025-03-24 19:56:32 [main] INFO  org.gemini.GeminiConnection - Fetching response from API
-2025-03-24 19:56:33 [main] ERROR org.gemini.GeminiConnection - API request failed with status code: 503, message: API Error (503): UNAVAILABLE
+2025-03-22 11:04:41 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Response successfully parsed
+2025-03-22 11:08:14 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Sending request to API as Stream
+2025-03-22 11:08:14 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Fetching response from API
+2025-03-23 14:21:06 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Sending request to API as Stream
+2025-03-23 14:21:06 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Fetching response from API
+2025-03-24 13:29:36 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Sending request to API
+2025-03-24 13:29:37 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Fetching response from API
+2025-03-24 13:29:41 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Response successfully parsed
+2025-03-24 13:29:41 [main] INFO  io.github.demchaav.gemini.GeminiConnection - History content has been added
+2025-03-24 13:39:31 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Sending request to API
+2025-03-24 13:39:31 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Fetching response from API
+2025-03-24 13:39:35 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Response successfully parsed
+2025-03-24 13:39:35 [main] INFO  io.github.demchaav.gemini.GeminiConnection - History content has been added
+2025-03-24 17:00:57 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Sending request to API
+2025-03-24 17:00:57 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Fetching response from API
+2025-03-24 17:01:05 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Response successfully parsed
+2025-03-24 17:01:05 [main] INFO  io.github.demchaav.gemini.GeminiConnection - History content has been added
+2025-03-24 17:01:06 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Sending request to API
+2025-03-24 17:01:06 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Fetching response from API
+2025-03-24 17:01:09 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Response successfully parsed
+2025-03-24 17:01:09 [main] INFO  io.github.demchaav.gemini.GeminiConnection - History content has been added
+2025-03-24 17:01:10 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Sending request to API
+2025-03-24 17:01:10 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Fetching response from API
+2025-03-24 17:01:40 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Sending request to API
+2025-03-24 17:01:40 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Fetching response from API
+2025-03-24 17:01:48 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Response successfully parsed
+2025-03-24 17:01:48 [main] INFO  io.github.demchaav.gemini.GeminiConnection - History content has been added
+2025-03-24 17:01:48 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Sending request to API
+2025-03-24 17:01:48 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Fetching response from API
+2025-03-24 17:01:52 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Response successfully parsed
+2025-03-24 17:01:52 [main] INFO  io.github.demchaav.gemini.GeminiConnection - History content has been added
+2025-03-24 17:01:52 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Sending request to API
+2025-03-24 17:01:52 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Fetching response from API
+2025-03-24 17:03:32 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Sending request to API
+2025-03-24 17:03:32 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Fetching response from API
+2025-03-24 17:03:40 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Response successfully parsed
+2025-03-24 17:03:40 [main] INFO  io.github.demchaav.gemini.GeminiConnection - History content has been added
+2025-03-24 17:03:40 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Sending request to API
+2025-03-24 17:03:40 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Fetching response from API
+2025-03-24 17:03:43 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Response successfully parsed
+2025-03-24 17:03:43 [main] INFO  io.github.demchaav.gemini.GeminiConnection - History content has been added
+2025-03-24 17:51:08 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Sending request to API
+2025-03-24 17:51:08 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Fetching response from API
+2025-03-24 17:51:16 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Response successfully parsed
+2025-03-24 17:51:16 [main] INFO  io.github.demchaav.gemini.GeminiConnection - History content has been added
+2025-03-24 17:51:17 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Sending request to API
+2025-03-24 17:51:17 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Fetching response from API
+2025-03-24 17:51:20 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Response successfully parsed
+2025-03-24 17:51:20 [main] INFO  io.github.demchaav.gemini.GeminiConnection - History content has been added
+2025-03-24 17:52:05 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Sending request to API
+2025-03-24 17:52:05 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Fetching response from API
+2025-03-24 17:52:13 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Response successfully parsed
+2025-03-24 17:52:13 [main] INFO  io.github.demchaav.gemini.GeminiConnection - History content has been added
+2025-03-24 17:52:14 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Sending request to API
+2025-03-24 17:52:14 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Fetching response from API
+2025-03-24 17:52:17 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Response successfully parsed
+2025-03-24 17:52:17 [main] INFO  io.github.demchaav.gemini.GeminiConnection - History content has been added
+2025-03-24 19:34:11 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Sending request to API
+2025-03-24 19:34:11 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Fetching response from API
+2025-03-24 19:34:20 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Response successfully parsed
+2025-03-24 19:34:20 [main] INFO  io.github.demchaav.gemini.GeminiConnection - History content has been added
+2025-03-24 19:34:20 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Sending request to API
+2025-03-24 19:34:20 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Fetching response from API
+2025-03-24 19:34:34 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Sending request to API
+2025-03-24 19:34:34 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Fetching response from API
+2025-03-24 19:34:42 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Response successfully parsed
+2025-03-24 19:34:42 [main] INFO  io.github.demchaav.gemini.GeminiConnection - History content has been added
+2025-03-24 19:34:42 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Sending request to API
+2025-03-24 19:34:42 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Fetching response from API
+2025-03-24 19:34:45 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Response successfully parsed
+2025-03-24 19:34:45 [main] INFO  io.github.demchaav.gemini.GeminiConnection - History content has been added
+2025-03-24 19:34:45 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Sending request to API
+2025-03-24 19:34:45 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Fetching response from API
+2025-03-24 19:34:56 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Response successfully parsed
+2025-03-24 19:34:56 [main] INFO  io.github.demchaav.gemini.GeminiConnection - History content has been added
+2025-03-24 19:34:56 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Sending request to API
+2025-03-24 19:34:56 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Fetching response from API
+2025-03-24 19:35:02 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Response successfully parsed
+2025-03-24 19:35:02 [main] INFO  io.github.demchaav.gemini.GeminiConnection - History content has been added
+2025-03-24 19:35:02 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Sending request to API
+2025-03-24 19:35:02 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Fetching response from API
+2025-03-24 19:35:09 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Response successfully parsed
+2025-03-24 19:35:09 [main] INFO  io.github.demchaav.gemini.GeminiConnection - History content has been added
+2025-03-24 19:35:09 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Sending request to API
+2025-03-24 19:35:09 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Fetching response from API
+2025-03-24 19:35:14 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Response successfully parsed
+2025-03-24 19:35:14 [main] INFO  io.github.demchaav.gemini.GeminiConnection - History content has been added
+2025-03-24 19:35:14 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Sending request to API
+2025-03-24 19:35:14 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Fetching response from API
+2025-03-24 19:35:20 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Response successfully parsed
+2025-03-24 19:35:20 [main] INFO  io.github.demchaav.gemini.GeminiConnection - History content has been added
+2025-03-24 19:35:20 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Sending request to API
+2025-03-24 19:35:20 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Fetching response from API
+2025-03-24 19:54:16 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Sending request to API
+2025-03-24 19:54:16 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Fetching response from API
+2025-03-24 19:54:24 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Response successfully parsed
+2025-03-24 19:54:24 [main] INFO  io.github.demchaav.gemini.GeminiConnection - History content has been added
+2025-03-24 19:54:24 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Sending request to API
+2025-03-24 19:54:24 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Fetching response from API
+2025-03-24 19:54:28 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Response successfully parsed
+2025-03-24 19:54:28 [main] INFO  io.github.demchaav.gemini.GeminiConnection - History content has been added
+2025-03-24 19:54:28 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Sending request to API
+2025-03-24 19:54:28 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Fetching response from API
+2025-03-24 19:54:38 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Response successfully parsed
+2025-03-24 19:54:38 [main] INFO  io.github.demchaav.gemini.GeminiConnection - History content has been added
+2025-03-24 19:54:38 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Sending request to API
+2025-03-24 19:54:38 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Fetching response from API
+2025-03-24 19:54:45 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Response successfully parsed
+2025-03-24 19:54:45 [main] INFO  io.github.demchaav.gemini.GeminiConnection - History content has been added
+2025-03-24 19:54:45 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Sending request to API
+2025-03-24 19:54:45 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Fetching response from API
+2025-03-24 19:54:51 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Response successfully parsed
+2025-03-24 19:54:51 [main] INFO  io.github.demchaav.gemini.GeminiConnection - History content has been added
+2025-03-24 19:54:51 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Sending request to API
+2025-03-24 19:54:51 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Fetching response from API
+2025-03-24 19:54:56 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Response successfully parsed
+2025-03-24 19:54:56 [main] INFO  io.github.demchaav.gemini.GeminiConnection - History content has been added
+2025-03-24 19:54:56 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Sending request to API
+2025-03-24 19:54:56 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Fetching response from API
+2025-03-24 19:55:03 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Response successfully parsed
+2025-03-24 19:55:03 [main] INFO  io.github.demchaav.gemini.GeminiConnection - History content has been added
+2025-03-24 19:55:03 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Sending request to API
+2025-03-24 19:55:03 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Fetching response from API
+2025-03-24 19:55:10 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Response successfully parsed
+2025-03-24 19:55:10 [main] INFO  io.github.demchaav.gemini.GeminiConnection - History content has been added
+2025-03-24 19:55:10 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Sending request to API
+2025-03-24 19:55:10 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Fetching response from API
+2025-03-24 19:55:18 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Response successfully parsed
+2025-03-24 19:55:18 [main] INFO  io.github.demchaav.gemini.GeminiConnection - History content has been added
+2025-03-24 19:55:18 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Sending request to API
+2025-03-24 19:55:18 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Fetching response from API
+2025-03-24 19:55:24 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Response successfully parsed
+2025-03-24 19:55:24 [main] INFO  io.github.demchaav.gemini.GeminiConnection - History content has been added
+2025-03-24 19:55:24 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Sending request to API
+2025-03-24 19:55:24 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Fetching response from API
+2025-03-24 19:55:29 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Response successfully parsed
+2025-03-24 19:55:29 [main] INFO  io.github.demchaav.gemini.GeminiConnection - History content has been added
+2025-03-24 19:55:29 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Sending request to API
+2025-03-24 19:55:29 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Fetching response from API
+2025-03-24 19:55:39 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Response successfully parsed
+2025-03-24 19:55:39 [main] INFO  io.github.demchaav.gemini.GeminiConnection - History content has been added
+2025-03-24 19:55:39 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Sending request to API
+2025-03-24 19:55:39 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Fetching response from API
+2025-03-24 19:55:43 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Response successfully parsed
+2025-03-24 19:55:43 [main] INFO  io.github.demchaav.gemini.GeminiConnection - History content has been added
+2025-03-24 19:55:43 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Sending request to API
+2025-03-24 19:55:43 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Fetching response from API
+2025-03-24 19:55:57 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Response successfully parsed
+2025-03-24 19:55:57 [main] INFO  io.github.demchaav.gemini.GeminiConnection - History content has been added
+2025-03-24 19:55:59 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Sending request to API
+2025-03-24 19:55:59 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Fetching response from API
+2025-03-24 19:56:12 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Response successfully parsed
+2025-03-24 19:56:12 [main] INFO  io.github.demchaav.gemini.GeminiConnection - History content has been added
+2025-03-24 19:56:14 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Sending request to API
+2025-03-24 19:56:14 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Fetching response from API
+2025-03-24 19:56:28 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Response successfully parsed
+2025-03-24 19:56:28 [main] INFO  io.github.demchaav.gemini.GeminiConnection - History content has been added
+2025-03-24 19:56:28 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Sending request to API
+2025-03-24 19:56:28 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Fetching response from API
+2025-03-24 19:56:32 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Response successfully parsed
+2025-03-24 19:56:32 [main] INFO  io.github.demchaav.gemini.GeminiConnection - History content has been added
+2025-03-24 19:56:32 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Sending request to API
+2025-03-24 19:56:32 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Fetching response from API
+2025-03-24 19:56:33 [main] ERROR io.github.demchaav.gemini.GeminiConnection - API request failed with status code: 503, message: API Error (503): UNAVAILABLE
 Cause: Service is temporarily unavailable.
 Solution: The unavailable status might be temporary. If the error persists, contact support. 
 requestUrl:  https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key= 
@@ -247,322 +247,322 @@ requestUrl:  https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-
     }
   }
 }
-2025-03-24 19:56:35 [main] INFO  org.gemini.GeminiConnection - Sending request to API 
-2025-03-24 19:56:35 [main] INFO  org.gemini.GeminiConnection - Fetching response from API
-2025-03-24 19:56:39 [main] INFO  org.gemini.GeminiConnection - Response successfully parsed
-2025-03-24 19:56:39 [main] INFO  org.gemini.GeminiConnection - History content has been added
-2025-03-24 19:56:40 [main] INFO  org.gemini.GeminiConnection - Sending request to API 
-2025-03-24 19:56:40 [main] INFO  org.gemini.GeminiConnection - Fetching response from API
-2025-03-24 19:56:43 [main] INFO  org.gemini.GeminiConnection - Response successfully parsed
-2025-03-24 19:56:43 [main] INFO  org.gemini.GeminiConnection - History content has been added
-2025-03-24 19:56:43 [main] INFO  org.gemini.GeminiConnection - Sending request to API 
-2025-03-24 19:56:43 [main] INFO  org.gemini.GeminiConnection - Fetching response from API
-2025-03-24 19:56:47 [main] INFO  org.gemini.GeminiConnection - Response successfully parsed
-2025-03-24 19:56:47 [main] INFO  org.gemini.GeminiConnection - History content has been added
-2025-03-24 19:56:47 [main] INFO  org.gemini.GeminiConnection - Sending request to API 
-2025-03-24 19:56:47 [main] INFO  org.gemini.GeminiConnection - Fetching response from API
-2025-03-24 19:56:53 [main] INFO  org.gemini.GeminiConnection - Response successfully parsed
-2025-03-24 19:56:53 [main] INFO  org.gemini.GeminiConnection - History content has been added
-2025-03-24 19:56:53 [main] INFO  org.gemini.GeminiConnection - Sending request to API 
-2025-03-24 19:56:53 [main] INFO  org.gemini.GeminiConnection - Fetching response from API
-2025-03-24 19:56:58 [main] INFO  org.gemini.GeminiConnection - Response successfully parsed
-2025-03-24 19:56:58 [main] INFO  org.gemini.GeminiConnection - History content has been added
-2025-03-24 19:56:58 [main] INFO  org.gemini.GeminiConnection - Sending request to API 
-2025-03-24 19:56:58 [main] INFO  org.gemini.GeminiConnection - Fetching response from API
-2025-03-24 19:57:03 [main] INFO  org.gemini.GeminiConnection - Response successfully parsed
-2025-03-24 19:57:03 [main] INFO  org.gemini.GeminiConnection - History content has been added
-2025-03-24 19:57:03 [main] INFO  org.gemini.GeminiConnection - Sending request to API 
-2025-03-24 19:57:03 [main] INFO  org.gemini.GeminiConnection - Fetching response from API
-2025-03-24 19:57:08 [main] INFO  org.gemini.GeminiConnection - Response successfully parsed
-2025-03-24 19:57:08 [main] INFO  org.gemini.GeminiConnection - History content has been added
-2025-03-24 19:57:08 [main] INFO  org.gemini.GeminiConnection - Sending request to API 
-2025-03-24 19:57:08 [main] INFO  org.gemini.GeminiConnection - Fetching response from API
-2025-03-24 19:57:14 [main] INFO  org.gemini.GeminiConnection - Response successfully parsed
-2025-03-24 19:57:14 [main] INFO  org.gemini.GeminiConnection - History content has been added
-2025-03-24 19:57:14 [main] INFO  org.gemini.GeminiConnection - Sending request to API 
-2025-03-24 19:57:14 [main] INFO  org.gemini.GeminiConnection - Fetching response from API
-2025-03-24 19:57:19 [main] INFO  org.gemini.GeminiConnection - Response successfully parsed
-2025-03-24 19:57:19 [main] INFO  org.gemini.GeminiConnection - History content has been added
-2025-03-24 19:57:19 [main] INFO  org.gemini.GeminiConnection - Sending request to API 
-2025-03-24 19:57:19 [main] INFO  org.gemini.GeminiConnection - Fetching response from API
-2025-03-24 19:57:23 [main] INFO  org.gemini.GeminiConnection - Response successfully parsed
-2025-03-24 19:57:23 [main] INFO  org.gemini.GeminiConnection - History content has been added
-2025-03-24 19:57:23 [main] INFO  org.gemini.GeminiConnection - Sending request to API 
-2025-03-24 19:57:23 [main] INFO  org.gemini.GeminiConnection - Fetching response from API
-2025-03-24 19:57:30 [main] INFO  org.gemini.GeminiConnection - Response successfully parsed
-2025-03-24 19:57:30 [main] INFO  org.gemini.GeminiConnection - History content has been added
-2025-03-24 19:57:30 [main] INFO  org.gemini.GeminiConnection - Sending request to API 
-2025-03-24 19:57:30 [main] INFO  org.gemini.GeminiConnection - Fetching response from API
-2025-03-24 19:57:36 [main] INFO  org.gemini.GeminiConnection - Response successfully parsed
-2025-03-24 19:57:36 [main] INFO  org.gemini.GeminiConnection - History content has been added
-2025-03-24 19:57:36 [main] INFO  org.gemini.GeminiConnection - Sending request to API 
-2025-03-24 19:57:36 [main] INFO  org.gemini.GeminiConnection - Fetching response from API
-2025-03-24 19:57:42 [main] INFO  org.gemini.GeminiConnection - Response successfully parsed
-2025-03-24 19:57:42 [main] INFO  org.gemini.GeminiConnection - History content has been added
-2025-03-24 19:57:42 [main] INFO  org.gemini.GeminiConnection - Sending request to API 
-2025-03-24 19:57:42 [main] INFO  org.gemini.GeminiConnection - Fetching response from API
-2025-03-24 19:57:47 [main] INFO  org.gemini.GeminiConnection - Response successfully parsed
-2025-03-24 19:57:47 [main] INFO  org.gemini.GeminiConnection - History content has been added
-2025-03-24 19:57:47 [main] INFO  org.gemini.GeminiConnection - Sending request to API 
-2025-03-24 19:57:47 [main] INFO  org.gemini.GeminiConnection - Fetching response from API
-2025-03-24 19:57:51 [main] INFO  org.gemini.GeminiConnection - Response successfully parsed
-2025-03-24 19:57:51 [main] INFO  org.gemini.GeminiConnection - History content has been added
-2025-03-24 19:57:51 [main] INFO  org.gemini.GeminiConnection - Sending request to API 
-2025-03-24 19:57:51 [main] INFO  org.gemini.GeminiConnection - Fetching response from API
-2025-03-24 19:57:58 [main] INFO  org.gemini.GeminiConnection - Response successfully parsed
-2025-03-24 19:57:58 [main] INFO  org.gemini.GeminiConnection - History content has been added
-2025-03-24 19:57:58 [main] INFO  org.gemini.GeminiConnection - Sending request to API 
-2025-03-24 19:57:58 [main] INFO  org.gemini.GeminiConnection - Fetching response from API
-2025-03-24 19:58:05 [main] INFO  org.gemini.GeminiConnection - Response successfully parsed
-2025-03-24 19:58:05 [main] INFO  org.gemini.GeminiConnection - History content has been added
-2025-03-24 19:58:05 [main] INFO  org.gemini.GeminiConnection - Sending request to API 
-2025-03-24 19:58:05 [main] INFO  org.gemini.GeminiConnection - Fetching response from API
-2025-03-24 19:58:12 [main] INFO  org.gemini.GeminiConnection - Response successfully parsed
-2025-03-24 19:58:12 [main] INFO  org.gemini.GeminiConnection - History content has been added
-2025-03-24 19:58:12 [main] INFO  org.gemini.GeminiConnection - Sending request to API 
-2025-03-24 19:58:12 [main] INFO  org.gemini.GeminiConnection - Fetching response from API
-2025-03-24 19:58:18 [main] INFO  org.gemini.GeminiConnection - Response successfully parsed
-2025-03-24 19:58:18 [main] INFO  org.gemini.GeminiConnection - History content has been added
-2025-03-24 19:58:18 [main] INFO  org.gemini.GeminiConnection - Sending request to API 
-2025-03-24 19:58:18 [main] INFO  org.gemini.GeminiConnection - Fetching response from API
-2025-03-24 19:58:30 [main] INFO  org.gemini.GeminiConnection - Response successfully parsed
-2025-03-24 19:58:30 [main] INFO  org.gemini.GeminiConnection - History content has been added
-2025-03-24 19:58:30 [main] INFO  org.gemini.GeminiConnection - Sending request to API 
-2025-03-24 19:58:30 [main] INFO  org.gemini.GeminiConnection - Fetching response from API
-2025-03-24 19:58:35 [main] INFO  org.gemini.GeminiConnection - Response successfully parsed
-2025-03-24 19:58:35 [main] INFO  org.gemini.GeminiConnection - History content has been added
-2025-03-24 19:58:35 [main] INFO  org.gemini.GeminiConnection - Sending request to API 
-2025-03-24 19:58:35 [main] INFO  org.gemini.GeminiConnection - Fetching response from API
-2025-03-24 19:58:41 [main] INFO  org.gemini.GeminiConnection - Response successfully parsed
-2025-03-24 19:58:41 [main] INFO  org.gemini.GeminiConnection - History content has been added
-2025-03-24 19:58:41 [main] INFO  org.gemini.GeminiConnection - Sending request to API 
-2025-03-24 19:58:41 [main] INFO  org.gemini.GeminiConnection - Fetching response from API
-2025-03-24 19:58:46 [main] INFO  org.gemini.GeminiConnection - Response successfully parsed
-2025-03-24 19:58:46 [main] INFO  org.gemini.GeminiConnection - History content has been added
-2025-03-24 19:58:46 [main] INFO  org.gemini.GeminiConnection - Sending request to API 
-2025-03-24 19:58:46 [main] INFO  org.gemini.GeminiConnection - Fetching response from API
-2025-03-24 19:58:53 [main] INFO  org.gemini.GeminiConnection - Response successfully parsed
-2025-03-24 19:58:53 [main] INFO  org.gemini.GeminiConnection - History content has been added
-2025-03-24 19:58:53 [main] INFO  org.gemini.GeminiConnection - Sending request to API 
-2025-03-24 19:58:53 [main] INFO  org.gemini.GeminiConnection - Fetching response from API
-2025-03-24 19:59:01 [main] INFO  org.gemini.GeminiConnection - Response successfully parsed
-2025-03-24 19:59:01 [main] INFO  org.gemini.GeminiConnection - History content has been added
-2025-03-24 19:59:01 [main] INFO  org.gemini.GeminiConnection - Sending request to API 
-2025-03-24 19:59:01 [main] INFO  org.gemini.GeminiConnection - Fetching response from API
-2025-03-24 19:59:09 [main] INFO  org.gemini.GeminiConnection - Response successfully parsed
-2025-03-24 19:59:09 [main] INFO  org.gemini.GeminiConnection - History content has been added
-2025-03-24 19:59:09 [main] INFO  org.gemini.GeminiConnection - Sending request to API 
-2025-03-24 19:59:09 [main] INFO  org.gemini.GeminiConnection - Fetching response from API
-2025-03-24 19:59:15 [main] INFO  org.gemini.GeminiConnection - Response successfully parsed
-2025-03-24 19:59:15 [main] INFO  org.gemini.GeminiConnection - History content has been added
-2025-03-24 19:59:15 [main] INFO  org.gemini.GeminiConnection - Sending request to API 
-2025-03-24 19:59:15 [main] INFO  org.gemini.GeminiConnection - Fetching response from API
-2025-03-24 19:59:20 [main] INFO  org.gemini.GeminiConnection - Response successfully parsed
-2025-03-24 19:59:20 [main] INFO  org.gemini.GeminiConnection - History content has been added
-2025-03-24 19:59:20 [main] INFO  org.gemini.GeminiConnection - Sending request to API 
-2025-03-24 19:59:20 [main] INFO  org.gemini.GeminiConnection - Fetching response from API
-2025-03-24 19:59:25 [main] INFO  org.gemini.GeminiConnection - Response successfully parsed
-2025-03-24 19:59:25 [main] INFO  org.gemini.GeminiConnection - History content has been added
-2025-03-24 19:59:25 [main] INFO  org.gemini.GeminiConnection - Sending request to API 
-2025-03-24 19:59:25 [main] INFO  org.gemini.GeminiConnection - Fetching response from API
-2025-03-24 19:59:39 [main] INFO  org.gemini.GeminiConnection - Response successfully parsed
-2025-03-24 19:59:39 [main] INFO  org.gemini.GeminiConnection - History content has been added
-2025-03-24 19:59:41 [main] INFO  org.gemini.GeminiConnection - Sending request to API 
-2025-03-24 19:59:41 [main] INFO  org.gemini.GeminiConnection - Fetching response from API
-2025-03-24 19:59:56 [main] INFO  org.gemini.GeminiConnection - Response successfully parsed
-2025-03-24 19:59:56 [main] INFO  org.gemini.GeminiConnection - History content has been added
-2025-03-24 19:59:58 [main] INFO  org.gemini.GeminiConnection - Sending request to API 
-2025-03-24 19:59:58 [main] INFO  org.gemini.GeminiConnection - Fetching response from API
-2025-03-24 20:00:13 [main] INFO  org.gemini.GeminiConnection - Response successfully parsed
-2025-03-24 20:00:13 [main] INFO  org.gemini.GeminiConnection - History content has been added
-2025-03-24 20:00:13 [main] INFO  org.gemini.GeminiConnection - Sending request to API 
-2025-03-24 20:00:13 [main] INFO  org.gemini.GeminiConnection - Fetching response from API
-2025-03-24 20:00:21 [main] INFO  org.gemini.GeminiConnection - Response successfully parsed
-2025-03-24 20:00:21 [main] INFO  org.gemini.GeminiConnection - History content has been added
-2025-03-24 20:00:21 [main] INFO  org.gemini.GeminiConnection - Sending request to API 
-2025-03-24 20:00:21 [main] INFO  org.gemini.GeminiConnection - Fetching response from API
-2025-03-24 20:00:27 [main] INFO  org.gemini.GeminiConnection - Response successfully parsed
-2025-03-24 20:00:27 [main] INFO  org.gemini.GeminiConnection - History content has been added
-2025-03-24 20:00:27 [main] INFO  org.gemini.GeminiConnection - Sending request to API 
-2025-03-24 20:00:27 [main] INFO  org.gemini.GeminiConnection - Fetching response from API
-2025-03-24 20:00:32 [main] INFO  org.gemini.GeminiConnection - Response successfully parsed
-2025-03-24 20:00:32 [main] INFO  org.gemini.GeminiConnection - History content has been added
-2025-03-24 20:00:32 [main] INFO  org.gemini.GeminiConnection - Sending request to API 
-2025-03-24 20:00:32 [main] INFO  org.gemini.GeminiConnection - Fetching response from API
-2025-03-24 20:00:43 [main] INFO  org.gemini.GeminiConnection - Response successfully parsed
-2025-03-24 20:00:43 [main] INFO  org.gemini.GeminiConnection - History content has been added
-2025-03-24 20:00:43 [main] INFO  org.gemini.GeminiConnection - Sending request to API 
-2025-03-24 20:00:43 [main] INFO  org.gemini.GeminiConnection - Fetching response from API
-2025-03-24 20:00:55 [main] INFO  org.gemini.GeminiConnection - Response successfully parsed
-2025-03-24 20:00:55 [main] INFO  org.gemini.GeminiConnection - History content has been added
-2025-03-24 20:00:55 [main] INFO  org.gemini.GeminiConnection - Sending request to API 
-2025-03-24 20:00:55 [main] INFO  org.gemini.GeminiConnection - Fetching response from API
-2025-03-24 20:00:58 [main] INFO  org.gemini.GeminiConnection - Response successfully parsed
-2025-03-24 20:00:58 [main] INFO  org.gemini.GeminiConnection - History content has been added
-2025-03-24 20:00:58 [main] INFO  org.gemini.GeminiConnection - Sending request to API 
-2025-03-24 20:00:58 [main] INFO  org.gemini.GeminiConnection - Fetching response from API
-2025-03-24 20:01:05 [main] INFO  org.gemini.GeminiConnection - Response successfully parsed
-2025-03-24 20:01:05 [main] INFO  org.gemini.GeminiConnection - History content has been added
-2025-03-24 20:01:05 [main] INFO  org.gemini.GeminiConnection - Sending request to API 
-2025-03-24 20:01:05 [main] INFO  org.gemini.GeminiConnection - Fetching response from API
-2025-03-24 20:01:10 [main] INFO  org.gemini.GeminiConnection - Response successfully parsed
-2025-03-24 20:01:10 [main] INFO  org.gemini.GeminiConnection - History content has been added
-2025-03-24 20:01:11 [main] INFO  org.gemini.GeminiConnection - Sending request to API 
-2025-03-24 20:01:11 [main] INFO  org.gemini.GeminiConnection - Fetching response from API
-2025-03-24 20:01:16 [main] INFO  org.gemini.GeminiConnection - Response successfully parsed
-2025-03-24 20:01:16 [main] INFO  org.gemini.GeminiConnection - History content has been added
-2025-03-24 20:01:16 [main] INFO  org.gemini.GeminiConnection - Sending request to API 
-2025-03-24 20:01:16 [main] INFO  org.gemini.GeminiConnection - Fetching response from API
-2025-03-24 20:01:19 [main] INFO  org.gemini.GeminiConnection - Response successfully parsed
-2025-03-24 20:01:19 [main] INFO  org.gemini.GeminiConnection - History content has been added
-2025-03-24 20:01:19 [main] INFO  org.gemini.GeminiConnection - Sending request to API 
-2025-03-24 20:01:19 [main] INFO  org.gemini.GeminiConnection - Fetching response from API
-2025-03-24 20:01:27 [main] INFO  org.gemini.GeminiConnection - Response successfully parsed
-2025-03-24 20:01:27 [main] INFO  org.gemini.GeminiConnection - History content has been added
-2025-03-24 20:01:27 [main] INFO  org.gemini.GeminiConnection - Sending request to API 
-2025-03-24 20:01:27 [main] INFO  org.gemini.GeminiConnection - Fetching response from API
-2025-03-24 20:01:31 [main] INFO  org.gemini.GeminiConnection - Response successfully parsed
-2025-03-24 20:01:31 [main] INFO  org.gemini.GeminiConnection - History content has been added
-2025-03-24 20:01:31 [main] INFO  org.gemini.GeminiConnection - Sending request to API 
-2025-03-24 20:01:31 [main] INFO  org.gemini.GeminiConnection - Fetching response from API
-2025-03-24 20:01:37 [main] INFO  org.gemini.GeminiConnection - Response successfully parsed
-2025-03-24 20:01:37 [main] INFO  org.gemini.GeminiConnection - History content has been added
-2025-03-24 20:01:37 [main] INFO  org.gemini.GeminiConnection - Sending request to API 
-2025-03-24 20:01:37 [main] INFO  org.gemini.GeminiConnection - Fetching response from API
-2025-03-24 20:01:47 [main] INFO  org.gemini.GeminiConnection - Response successfully parsed
-2025-03-24 20:01:47 [main] INFO  org.gemini.GeminiConnection - History content has been added
-2025-03-24 20:01:47 [main] INFO  org.gemini.GeminiConnection - Sending request to API 
-2025-03-24 20:01:47 [main] INFO  org.gemini.GeminiConnection - Fetching response from API
-2025-03-24 20:01:51 [main] INFO  org.gemini.GeminiConnection - Response successfully parsed
-2025-03-24 20:01:51 [main] INFO  org.gemini.GeminiConnection - History content has been added
-2025-03-24 20:01:51 [main] INFO  org.gemini.GeminiConnection - Sending request to API 
-2025-03-24 20:01:51 [main] INFO  org.gemini.GeminiConnection - Fetching response from API
-2025-03-24 20:01:56 [main] INFO  org.gemini.GeminiConnection - Response successfully parsed
-2025-03-24 20:01:56 [main] INFO  org.gemini.GeminiConnection - History content has been added
-2025-03-24 20:01:56 [main] INFO  org.gemini.GeminiConnection - Sending request to API 
-2025-03-24 20:01:56 [main] INFO  org.gemini.GeminiConnection - Fetching response from API
-2025-03-24 20:02:04 [main] INFO  org.gemini.GeminiConnection - Response successfully parsed
-2025-03-24 20:02:04 [main] INFO  org.gemini.GeminiConnection - History content has been added
-2025-03-24 20:02:04 [main] INFO  org.gemini.GeminiConnection - Sending request to API 
-2025-03-24 20:02:04 [main] INFO  org.gemini.GeminiConnection - Fetching response from API
-2025-03-24 20:02:11 [main] INFO  org.gemini.GeminiConnection - Response successfully parsed
-2025-03-24 20:02:11 [main] INFO  org.gemini.GeminiConnection - History content has been added
-2025-03-24 20:02:11 [main] INFO  org.gemini.GeminiConnection - Sending request to API 
-2025-03-24 20:02:11 [main] INFO  org.gemini.GeminiConnection - Fetching response from API
-2025-03-24 20:02:24 [main] INFO  org.gemini.GeminiConnection - Response successfully parsed
-2025-03-24 20:02:24 [main] INFO  org.gemini.GeminiConnection - History content has been added
-2025-03-24 20:02:26 [main] INFO  org.gemini.GeminiConnection - Sending request to API 
-2025-03-24 20:02:26 [main] INFO  org.gemini.GeminiConnection - Fetching response from API
-2025-03-24 20:02:39 [main] INFO  org.gemini.GeminiConnection - Response successfully parsed
-2025-03-24 20:02:39 [main] INFO  org.gemini.GeminiConnection - History content has been added
-2025-03-24 20:02:41 [main] INFO  org.gemini.GeminiConnection - Sending request to API 
-2025-03-24 20:02:41 [main] INFO  org.gemini.GeminiConnection - Fetching response from API
-2025-03-24 20:02:52 [main] INFO  org.gemini.GeminiConnection - Response successfully parsed
-2025-03-24 20:02:52 [main] INFO  org.gemini.GeminiConnection - History content has been added
-2025-03-24 20:02:52 [main] INFO  org.gemini.GeminiConnection - Sending request to API 
-2025-03-24 20:02:52 [main] INFO  org.gemini.GeminiConnection - Fetching response from API
-2025-03-24 20:02:58 [main] INFO  org.gemini.GeminiConnection - Response successfully parsed
-2025-03-24 20:02:58 [main] INFO  org.gemini.GeminiConnection - History content has been added
-2025-03-24 20:02:58 [main] INFO  org.gemini.GeminiConnection - Sending request to API 
-2025-03-24 20:02:58 [main] INFO  org.gemini.GeminiConnection - Fetching response from API
-2025-03-24 20:03:02 [main] INFO  org.gemini.GeminiConnection - Response successfully parsed
-2025-03-24 20:03:02 [main] INFO  org.gemini.GeminiConnection - History content has been added
-2025-03-24 20:03:02 [main] INFO  org.gemini.GeminiConnection - Sending request to API 
-2025-03-24 20:03:02 [main] INFO  org.gemini.GeminiConnection - Fetching response from API
-2025-03-24 20:03:08 [main] INFO  org.gemini.GeminiConnection - Response successfully parsed
-2025-03-24 20:03:08 [main] INFO  org.gemini.GeminiConnection - History content has been added
-2025-03-24 20:03:08 [main] INFO  org.gemini.GeminiConnection - Sending request to API 
-2025-03-24 20:03:08 [main] INFO  org.gemini.GeminiConnection - Fetching response from API
-2025-03-24 20:03:13 [main] INFO  org.gemini.GeminiConnection - Response successfully parsed
-2025-03-24 20:03:13 [main] INFO  org.gemini.GeminiConnection - History content has been added
-2025-03-24 20:03:13 [main] INFO  org.gemini.GeminiConnection - Sending request to API 
-2025-03-24 20:03:13 [main] INFO  org.gemini.GeminiConnection - Fetching response from API
-2025-03-24 20:03:20 [main] INFO  org.gemini.GeminiConnection - Response successfully parsed
-2025-03-24 20:03:20 [main] INFO  org.gemini.GeminiConnection - History content has been added
-2025-03-24 20:03:20 [main] INFO  org.gemini.GeminiConnection - Sending request to API 
-2025-03-24 20:03:20 [main] INFO  org.gemini.GeminiConnection - Fetching response from API
-2025-03-24 20:03:25 [main] INFO  org.gemini.GeminiConnection - Response successfully parsed
-2025-03-24 20:03:25 [main] INFO  org.gemini.GeminiConnection - History content has been added
-2025-03-24 20:03:25 [main] INFO  org.gemini.GeminiConnection - Sending request to API 
-2025-03-24 20:03:25 [main] INFO  org.gemini.GeminiConnection - Fetching response from API
-2025-03-24 20:03:31 [main] INFO  org.gemini.GeminiConnection - Response successfully parsed
-2025-03-24 20:03:31 [main] INFO  org.gemini.GeminiConnection - History content has been added
-2025-03-24 20:03:31 [main] INFO  org.gemini.GeminiConnection - Sending request to API 
-2025-03-24 20:03:31 [main] INFO  org.gemini.GeminiConnection - Fetching response from API
-2025-03-24 20:03:35 [main] INFO  org.gemini.GeminiConnection - Response successfully parsed
-2025-03-24 20:03:35 [main] INFO  org.gemini.GeminiConnection - History content has been added
-2025-03-24 20:03:35 [main] INFO  org.gemini.GeminiConnection - Sending request to API 
-2025-03-24 20:03:35 [main] INFO  org.gemini.GeminiConnection - Fetching response from API
-2025-03-24 20:03:45 [main] INFO  org.gemini.GeminiConnection - Response successfully parsed
-2025-03-24 20:03:45 [main] INFO  org.gemini.GeminiConnection - History content has been added
-2025-03-24 20:03:45 [main] INFO  org.gemini.GeminiConnection - Sending request to API 
-2025-03-24 20:03:45 [main] INFO  org.gemini.GeminiConnection - Fetching response from API
-2025-03-24 20:03:54 [main] INFO  org.gemini.GeminiConnection - Response successfully parsed
-2025-03-24 20:03:54 [main] INFO  org.gemini.GeminiConnection - History content has been added
-2025-03-24 20:03:54 [main] INFO  org.gemini.GeminiConnection - Sending request to API 
-2025-03-24 20:03:54 [main] INFO  org.gemini.GeminiConnection - Fetching response from API
-2025-03-24 20:04:04 [main] INFO  org.gemini.GeminiConnection - Response successfully parsed
-2025-03-24 20:04:04 [main] INFO  org.gemini.GeminiConnection - History content has been added
-2025-03-24 20:04:04 [main] INFO  org.gemini.GeminiConnection - Sending request to API 
-2025-03-24 20:04:04 [main] INFO  org.gemini.GeminiConnection - Fetching response from API
-2025-03-24 20:04:11 [main] INFO  org.gemini.GeminiConnection - Response successfully parsed
-2025-03-24 20:04:11 [main] INFO  org.gemini.GeminiConnection - History content has been added
-2025-03-24 20:04:11 [main] INFO  org.gemini.GeminiConnection - Sending request to API 
-2025-03-24 20:04:11 [main] INFO  org.gemini.GeminiConnection - Fetching response from API
-2025-03-24 20:04:16 [main] INFO  org.gemini.GeminiConnection - Response successfully parsed
-2025-03-24 20:04:16 [main] INFO  org.gemini.GeminiConnection - History content has been added
-2025-03-24 20:04:16 [main] INFO  org.gemini.GeminiConnection - Sending request to API 
-2025-03-24 20:04:16 [main] INFO  org.gemini.GeminiConnection - Fetching response from API
-2025-03-24 20:04:23 [main] INFO  org.gemini.GeminiConnection - Response successfully parsed
-2025-03-24 20:04:23 [main] INFO  org.gemini.GeminiConnection - History content has been added
-2025-03-24 20:04:23 [main] INFO  org.gemini.GeminiConnection - Sending request to API 
-2025-03-24 20:04:23 [main] INFO  org.gemini.GeminiConnection - Fetching response from API
-2025-03-24 20:04:29 [main] INFO  org.gemini.GeminiConnection - Response successfully parsed
-2025-03-24 20:04:29 [main] INFO  org.gemini.GeminiConnection - History content has been added
-2025-03-24 20:04:29 [main] INFO  org.gemini.GeminiConnection - Sending request to API 
-2025-03-24 20:04:29 [main] INFO  org.gemini.GeminiConnection - Fetching response from API
-2025-03-24 20:04:33 [main] INFO  org.gemini.GeminiConnection - Response successfully parsed
-2025-03-24 20:04:33 [main] INFO  org.gemini.GeminiConnection - History content has been added
-2025-03-24 20:04:33 [main] INFO  org.gemini.GeminiConnection - Sending request to API 
-2025-03-24 20:04:33 [main] INFO  org.gemini.GeminiConnection - Fetching response from API
-2025-03-24 20:04:37 [main] INFO  org.gemini.GeminiConnection - Response successfully parsed
-2025-03-24 20:04:37 [main] INFO  org.gemini.GeminiConnection - History content has been added
-2025-03-24 20:04:37 [main] INFO  org.gemini.GeminiConnection - Sending request to API 
-2025-03-24 20:04:37 [main] INFO  org.gemini.GeminiConnection - Fetching response from API
-2025-03-24 20:04:41 [main] INFO  org.gemini.GeminiConnection - Response successfully parsed
-2025-03-24 20:04:41 [main] INFO  org.gemini.GeminiConnection - History content has been added
-2025-03-24 20:04:41 [main] INFO  org.gemini.GeminiConnection - Sending request to API 
-2025-03-24 20:04:41 [main] INFO  org.gemini.GeminiConnection - Fetching response from API
-2025-03-24 20:04:45 [main] INFO  org.gemini.GeminiConnection - Response successfully parsed
-2025-03-24 20:04:45 [main] INFO  org.gemini.GeminiConnection - History content has been added
-2025-03-24 20:04:45 [main] INFO  org.gemini.GeminiConnection - Sending request to API 
-2025-03-24 20:04:45 [main] INFO  org.gemini.GeminiConnection - Fetching response from API
-2025-03-24 20:04:50 [main] INFO  org.gemini.GeminiConnection - Response successfully parsed
-2025-03-24 20:04:50 [main] INFO  org.gemini.GeminiConnection - History content has been added
-2025-03-24 20:04:50 [main] INFO  org.gemini.GeminiConnection - Sending request to API 
-2025-03-24 20:04:50 [main] INFO  org.gemini.GeminiConnection - Fetching response from API
-2025-03-24 20:04:56 [main] INFO  org.gemini.GeminiConnection - Response successfully parsed
-2025-03-24 20:04:56 [main] INFO  org.gemini.GeminiConnection - History content has been added
-2025-03-24 20:04:56 [main] INFO  org.gemini.GeminiConnection - Sending request to API 
-2025-03-24 20:04:56 [main] INFO  org.gemini.GeminiConnection - Fetching response from API
-2025-03-24 20:05:05 [main] INFO  org.gemini.GeminiConnection - Response successfully parsed
-2025-03-24 20:05:05 [main] INFO  org.gemini.GeminiConnection - History content has been added
-2025-03-24 20:05:05 [main] INFO  org.gemini.GeminiConnection - Sending request to API 
-2025-03-24 20:05:05 [main] INFO  org.gemini.GeminiConnection - Fetching response from API
-2025-03-24 20:05:10 [main] INFO  org.gemini.GeminiConnection - Response successfully parsed
-2025-03-24 20:05:10 [main] INFO  org.gemini.GeminiConnection - History content has been added
-2025-03-24 20:05:10 [main] INFO  org.gemini.GeminiConnection - Sending request to API 
-2025-03-24 20:05:10 [main] INFO  org.gemini.GeminiConnection - Fetching response from API
-2025-03-24 20:05:15 [main] INFO  org.gemini.GeminiConnection - Response successfully parsed
-2025-03-24 20:05:15 [main] INFO  org.gemini.GeminiConnection - History content has been added
-2025-03-24 20:05:15 [main] INFO  org.gemini.GeminiConnection - Sending request to API 
-2025-03-24 20:05:15 [main] INFO  org.gemini.GeminiConnection - Fetching response from API
-2025-03-24 20:05:20 [main] INFO  org.gemini.GeminiConnection - Response successfully parsed
-2025-03-24 20:05:20 [main] INFO  org.gemini.GeminiConnection - History content has been added
-2025-03-24 20:05:20 [main] INFO  org.gemini.GeminiConnection - Sending request to API 
-2025-03-24 20:05:20 [main] INFO  org.gemini.GeminiConnection - Fetching response from API
-2025-03-24 20:05:26 [main] INFO  org.gemini.GeminiConnection - Response successfully parsed
-2025-03-24 20:05:26 [main] INFO  org.gemini.GeminiConnection - History content has been added
+2025-03-24 19:56:35 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Sending request to API
+2025-03-24 19:56:35 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Fetching response from API
+2025-03-24 19:56:39 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Response successfully parsed
+2025-03-24 19:56:39 [main] INFO  io.github.demchaav.gemini.GeminiConnection - History content has been added
+2025-03-24 19:56:40 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Sending request to API
+2025-03-24 19:56:40 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Fetching response from API
+2025-03-24 19:56:43 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Response successfully parsed
+2025-03-24 19:56:43 [main] INFO  io.github.demchaav.gemini.GeminiConnection - History content has been added
+2025-03-24 19:56:43 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Sending request to API
+2025-03-24 19:56:43 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Fetching response from API
+2025-03-24 19:56:47 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Response successfully parsed
+2025-03-24 19:56:47 [main] INFO  io.github.demchaav.gemini.GeminiConnection - History content has been added
+2025-03-24 19:56:47 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Sending request to API
+2025-03-24 19:56:47 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Fetching response from API
+2025-03-24 19:56:53 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Response successfully parsed
+2025-03-24 19:56:53 [main] INFO  io.github.demchaav.gemini.GeminiConnection - History content has been added
+2025-03-24 19:56:53 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Sending request to API
+2025-03-24 19:56:53 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Fetching response from API
+2025-03-24 19:56:58 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Response successfully parsed
+2025-03-24 19:56:58 [main] INFO  io.github.demchaav.gemini.GeminiConnection - History content has been added
+2025-03-24 19:56:58 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Sending request to API
+2025-03-24 19:56:58 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Fetching response from API
+2025-03-24 19:57:03 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Response successfully parsed
+2025-03-24 19:57:03 [main] INFO  io.github.demchaav.gemini.GeminiConnection - History content has been added
+2025-03-24 19:57:03 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Sending request to API
+2025-03-24 19:57:03 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Fetching response from API
+2025-03-24 19:57:08 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Response successfully parsed
+2025-03-24 19:57:08 [main] INFO  io.github.demchaav.gemini.GeminiConnection - History content has been added
+2025-03-24 19:57:08 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Sending request to API
+2025-03-24 19:57:08 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Fetching response from API
+2025-03-24 19:57:14 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Response successfully parsed
+2025-03-24 19:57:14 [main] INFO  io.github.demchaav.gemini.GeminiConnection - History content has been added
+2025-03-24 19:57:14 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Sending request to API
+2025-03-24 19:57:14 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Fetching response from API
+2025-03-24 19:57:19 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Response successfully parsed
+2025-03-24 19:57:19 [main] INFO  io.github.demchaav.gemini.GeminiConnection - History content has been added
+2025-03-24 19:57:19 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Sending request to API
+2025-03-24 19:57:19 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Fetching response from API
+2025-03-24 19:57:23 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Response successfully parsed
+2025-03-24 19:57:23 [main] INFO  io.github.demchaav.gemini.GeminiConnection - History content has been added
+2025-03-24 19:57:23 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Sending request to API
+2025-03-24 19:57:23 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Fetching response from API
+2025-03-24 19:57:30 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Response successfully parsed
+2025-03-24 19:57:30 [main] INFO  io.github.demchaav.gemini.GeminiConnection - History content has been added
+2025-03-24 19:57:30 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Sending request to API
+2025-03-24 19:57:30 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Fetching response from API
+2025-03-24 19:57:36 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Response successfully parsed
+2025-03-24 19:57:36 [main] INFO  io.github.demchaav.gemini.GeminiConnection - History content has been added
+2025-03-24 19:57:36 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Sending request to API
+2025-03-24 19:57:36 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Fetching response from API
+2025-03-24 19:57:42 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Response successfully parsed
+2025-03-24 19:57:42 [main] INFO  io.github.demchaav.gemini.GeminiConnection - History content has been added
+2025-03-24 19:57:42 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Sending request to API
+2025-03-24 19:57:42 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Fetching response from API
+2025-03-24 19:57:47 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Response successfully parsed
+2025-03-24 19:57:47 [main] INFO  io.github.demchaav.gemini.GeminiConnection - History content has been added
+2025-03-24 19:57:47 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Sending request to API
+2025-03-24 19:57:47 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Fetching response from API
+2025-03-24 19:57:51 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Response successfully parsed
+2025-03-24 19:57:51 [main] INFO  io.github.demchaav.gemini.GeminiConnection - History content has been added
+2025-03-24 19:57:51 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Sending request to API
+2025-03-24 19:57:51 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Fetching response from API
+2025-03-24 19:57:58 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Response successfully parsed
+2025-03-24 19:57:58 [main] INFO  io.github.demchaav.gemini.GeminiConnection - History content has been added
+2025-03-24 19:57:58 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Sending request to API
+2025-03-24 19:57:58 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Fetching response from API
+2025-03-24 19:58:05 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Response successfully parsed
+2025-03-24 19:58:05 [main] INFO  io.github.demchaav.gemini.GeminiConnection - History content has been added
+2025-03-24 19:58:05 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Sending request to API
+2025-03-24 19:58:05 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Fetching response from API
+2025-03-24 19:58:12 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Response successfully parsed
+2025-03-24 19:58:12 [main] INFO  io.github.demchaav.gemini.GeminiConnection - History content has been added
+2025-03-24 19:58:12 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Sending request to API
+2025-03-24 19:58:12 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Fetching response from API
+2025-03-24 19:58:18 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Response successfully parsed
+2025-03-24 19:58:18 [main] INFO  io.github.demchaav.gemini.GeminiConnection - History content has been added
+2025-03-24 19:58:18 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Sending request to API
+2025-03-24 19:58:18 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Fetching response from API
+2025-03-24 19:58:30 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Response successfully parsed
+2025-03-24 19:58:30 [main] INFO  io.github.demchaav.gemini.GeminiConnection - History content has been added
+2025-03-24 19:58:30 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Sending request to API
+2025-03-24 19:58:30 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Fetching response from API
+2025-03-24 19:58:35 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Response successfully parsed
+2025-03-24 19:58:35 [main] INFO  io.github.demchaav.gemini.GeminiConnection - History content has been added
+2025-03-24 19:58:35 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Sending request to API
+2025-03-24 19:58:35 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Fetching response from API
+2025-03-24 19:58:41 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Response successfully parsed
+2025-03-24 19:58:41 [main] INFO  io.github.demchaav.gemini.GeminiConnection - History content has been added
+2025-03-24 19:58:41 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Sending request to API
+2025-03-24 19:58:41 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Fetching response from API
+2025-03-24 19:58:46 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Response successfully parsed
+2025-03-24 19:58:46 [main] INFO  io.github.demchaav.gemini.GeminiConnection - History content has been added
+2025-03-24 19:58:46 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Sending request to API
+2025-03-24 19:58:46 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Fetching response from API
+2025-03-24 19:58:53 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Response successfully parsed
+2025-03-24 19:58:53 [main] INFO  io.github.demchaav.gemini.GeminiConnection - History content has been added
+2025-03-24 19:58:53 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Sending request to API
+2025-03-24 19:58:53 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Fetching response from API
+2025-03-24 19:59:01 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Response successfully parsed
+2025-03-24 19:59:01 [main] INFO  io.github.demchaav.gemini.GeminiConnection - History content has been added
+2025-03-24 19:59:01 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Sending request to API
+2025-03-24 19:59:01 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Fetching response from API
+2025-03-24 19:59:09 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Response successfully parsed
+2025-03-24 19:59:09 [main] INFO  io.github.demchaav.gemini.GeminiConnection - History content has been added
+2025-03-24 19:59:09 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Sending request to API
+2025-03-24 19:59:09 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Fetching response from API
+2025-03-24 19:59:15 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Response successfully parsed
+2025-03-24 19:59:15 [main] INFO  io.github.demchaav.gemini.GeminiConnection - History content has been added
+2025-03-24 19:59:15 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Sending request to API
+2025-03-24 19:59:15 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Fetching response from API
+2025-03-24 19:59:20 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Response successfully parsed
+2025-03-24 19:59:20 [main] INFO  io.github.demchaav.gemini.GeminiConnection - History content has been added
+2025-03-24 19:59:20 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Sending request to API
+2025-03-24 19:59:20 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Fetching response from API
+2025-03-24 19:59:25 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Response successfully parsed
+2025-03-24 19:59:25 [main] INFO  io.github.demchaav.gemini.GeminiConnection - History content has been added
+2025-03-24 19:59:25 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Sending request to API
+2025-03-24 19:59:25 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Fetching response from API
+2025-03-24 19:59:39 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Response successfully parsed
+2025-03-24 19:59:39 [main] INFO  io.github.demchaav.gemini.GeminiConnection - History content has been added
+2025-03-24 19:59:41 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Sending request to API
+2025-03-24 19:59:41 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Fetching response from API
+2025-03-24 19:59:56 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Response successfully parsed
+2025-03-24 19:59:56 [main] INFO  io.github.demchaav.gemini.GeminiConnection - History content has been added
+2025-03-24 19:59:58 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Sending request to API
+2025-03-24 19:59:58 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Fetching response from API
+2025-03-24 20:00:13 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Response successfully parsed
+2025-03-24 20:00:13 [main] INFO  io.github.demchaav.gemini.GeminiConnection - History content has been added
+2025-03-24 20:00:13 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Sending request to API
+2025-03-24 20:00:13 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Fetching response from API
+2025-03-24 20:00:21 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Response successfully parsed
+2025-03-24 20:00:21 [main] INFO  io.github.demchaav.gemini.GeminiConnection - History content has been added
+2025-03-24 20:00:21 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Sending request to API
+2025-03-24 20:00:21 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Fetching response from API
+2025-03-24 20:00:27 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Response successfully parsed
+2025-03-24 20:00:27 [main] INFO  io.github.demchaav.gemini.GeminiConnection - History content has been added
+2025-03-24 20:00:27 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Sending request to API
+2025-03-24 20:00:27 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Fetching response from API
+2025-03-24 20:00:32 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Response successfully parsed
+2025-03-24 20:00:32 [main] INFO  io.github.demchaav.gemini.GeminiConnection - History content has been added
+2025-03-24 20:00:32 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Sending request to API
+2025-03-24 20:00:32 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Fetching response from API
+2025-03-24 20:00:43 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Response successfully parsed
+2025-03-24 20:00:43 [main] INFO  io.github.demchaav.gemini.GeminiConnection - History content has been added
+2025-03-24 20:00:43 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Sending request to API
+2025-03-24 20:00:43 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Fetching response from API
+2025-03-24 20:00:55 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Response successfully parsed
+2025-03-24 20:00:55 [main] INFO  io.github.demchaav.gemini.GeminiConnection - History content has been added
+2025-03-24 20:00:55 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Sending request to API
+2025-03-24 20:00:55 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Fetching response from API
+2025-03-24 20:00:58 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Response successfully parsed
+2025-03-24 20:00:58 [main] INFO  io.github.demchaav.gemini.GeminiConnection - History content has been added
+2025-03-24 20:00:58 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Sending request to API
+2025-03-24 20:00:58 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Fetching response from API
+2025-03-24 20:01:05 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Response successfully parsed
+2025-03-24 20:01:05 [main] INFO  io.github.demchaav.gemini.GeminiConnection - History content has been added
+2025-03-24 20:01:05 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Sending request to API
+2025-03-24 20:01:05 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Fetching response from API
+2025-03-24 20:01:10 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Response successfully parsed
+2025-03-24 20:01:10 [main] INFO  io.github.demchaav.gemini.GeminiConnection - History content has been added
+2025-03-24 20:01:11 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Sending request to API
+2025-03-24 20:01:11 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Fetching response from API
+2025-03-24 20:01:16 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Response successfully parsed
+2025-03-24 20:01:16 [main] INFO  io.github.demchaav.gemini.GeminiConnection - History content has been added
+2025-03-24 20:01:16 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Sending request to API
+2025-03-24 20:01:16 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Fetching response from API
+2025-03-24 20:01:19 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Response successfully parsed
+2025-03-24 20:01:19 [main] INFO  io.github.demchaav.gemini.GeminiConnection - History content has been added
+2025-03-24 20:01:19 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Sending request to API
+2025-03-24 20:01:19 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Fetching response from API
+2025-03-24 20:01:27 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Response successfully parsed
+2025-03-24 20:01:27 [main] INFO  io.github.demchaav.gemini.GeminiConnection - History content has been added
+2025-03-24 20:01:27 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Sending request to API
+2025-03-24 20:01:27 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Fetching response from API
+2025-03-24 20:01:31 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Response successfully parsed
+2025-03-24 20:01:31 [main] INFO  io.github.demchaav.gemini.GeminiConnection - History content has been added
+2025-03-24 20:01:31 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Sending request to API
+2025-03-24 20:01:31 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Fetching response from API
+2025-03-24 20:01:37 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Response successfully parsed
+2025-03-24 20:01:37 [main] INFO  io.github.demchaav.gemini.GeminiConnection - History content has been added
+2025-03-24 20:01:37 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Sending request to API
+2025-03-24 20:01:37 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Fetching response from API
+2025-03-24 20:01:47 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Response successfully parsed
+2025-03-24 20:01:47 [main] INFO  io.github.demchaav.gemini.GeminiConnection - History content has been added
+2025-03-24 20:01:47 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Sending request to API
+2025-03-24 20:01:47 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Fetching response from API
+2025-03-24 20:01:51 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Response successfully parsed
+2025-03-24 20:01:51 [main] INFO  io.github.demchaav.gemini.GeminiConnection - History content has been added
+2025-03-24 20:01:51 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Sending request to API
+2025-03-24 20:01:51 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Fetching response from API
+2025-03-24 20:01:56 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Response successfully parsed
+2025-03-24 20:01:56 [main] INFO  io.github.demchaav.gemini.GeminiConnection - History content has been added
+2025-03-24 20:01:56 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Sending request to API
+2025-03-24 20:01:56 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Fetching response from API
+2025-03-24 20:02:04 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Response successfully parsed
+2025-03-24 20:02:04 [main] INFO  io.github.demchaav.gemini.GeminiConnection - History content has been added
+2025-03-24 20:02:04 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Sending request to API
+2025-03-24 20:02:04 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Fetching response from API
+2025-03-24 20:02:11 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Response successfully parsed
+2025-03-24 20:02:11 [main] INFO  io.github.demchaav.gemini.GeminiConnection - History content has been added
+2025-03-24 20:02:11 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Sending request to API
+2025-03-24 20:02:11 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Fetching response from API
+2025-03-24 20:02:24 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Response successfully parsed
+2025-03-24 20:02:24 [main] INFO  io.github.demchaav.gemini.GeminiConnection - History content has been added
+2025-03-24 20:02:26 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Sending request to API
+2025-03-24 20:02:26 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Fetching response from API
+2025-03-24 20:02:39 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Response successfully parsed
+2025-03-24 20:02:39 [main] INFO  io.github.demchaav.gemini.GeminiConnection - History content has been added
+2025-03-24 20:02:41 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Sending request to API
+2025-03-24 20:02:41 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Fetching response from API
+2025-03-24 20:02:52 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Response successfully parsed
+2025-03-24 20:02:52 [main] INFO  io.github.demchaav.gemini.GeminiConnection - History content has been added
+2025-03-24 20:02:52 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Sending request to API
+2025-03-24 20:02:52 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Fetching response from API
+2025-03-24 20:02:58 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Response successfully parsed
+2025-03-24 20:02:58 [main] INFO  io.github.demchaav.gemini.GeminiConnection - History content has been added
+2025-03-24 20:02:58 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Sending request to API
+2025-03-24 20:02:58 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Fetching response from API
+2025-03-24 20:03:02 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Response successfully parsed
+2025-03-24 20:03:02 [main] INFO  io.github.demchaav.gemini.GeminiConnection - History content has been added
+2025-03-24 20:03:02 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Sending request to API
+2025-03-24 20:03:02 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Fetching response from API
+2025-03-24 20:03:08 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Response successfully parsed
+2025-03-24 20:03:08 [main] INFO  io.github.demchaav.gemini.GeminiConnection - History content has been added
+2025-03-24 20:03:08 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Sending request to API
+2025-03-24 20:03:08 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Fetching response from API
+2025-03-24 20:03:13 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Response successfully parsed
+2025-03-24 20:03:13 [main] INFO  io.github.demchaav.gemini.GeminiConnection - History content has been added
+2025-03-24 20:03:13 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Sending request to API
+2025-03-24 20:03:13 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Fetching response from API
+2025-03-24 20:03:20 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Response successfully parsed
+2025-03-24 20:03:20 [main] INFO  io.github.demchaav.gemini.GeminiConnection - History content has been added
+2025-03-24 20:03:20 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Sending request to API
+2025-03-24 20:03:20 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Fetching response from API
+2025-03-24 20:03:25 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Response successfully parsed
+2025-03-24 20:03:25 [main] INFO  io.github.demchaav.gemini.GeminiConnection - History content has been added
+2025-03-24 20:03:25 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Sending request to API
+2025-03-24 20:03:25 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Fetching response from API
+2025-03-24 20:03:31 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Response successfully parsed
+2025-03-24 20:03:31 [main] INFO  io.github.demchaav.gemini.GeminiConnection - History content has been added
+2025-03-24 20:03:31 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Sending request to API
+2025-03-24 20:03:31 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Fetching response from API
+2025-03-24 20:03:35 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Response successfully parsed
+2025-03-24 20:03:35 [main] INFO  io.github.demchaav.gemini.GeminiConnection - History content has been added
+2025-03-24 20:03:35 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Sending request to API
+2025-03-24 20:03:35 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Fetching response from API
+2025-03-24 20:03:45 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Response successfully parsed
+2025-03-24 20:03:45 [main] INFO  io.github.demchaav.gemini.GeminiConnection - History content has been added
+2025-03-24 20:03:45 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Sending request to API
+2025-03-24 20:03:45 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Fetching response from API
+2025-03-24 20:03:54 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Response successfully parsed
+2025-03-24 20:03:54 [main] INFO  io.github.demchaav.gemini.GeminiConnection - History content has been added
+2025-03-24 20:03:54 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Sending request to API
+2025-03-24 20:03:54 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Fetching response from API
+2025-03-24 20:04:04 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Response successfully parsed
+2025-03-24 20:04:04 [main] INFO  io.github.demchaav.gemini.GeminiConnection - History content has been added
+2025-03-24 20:04:04 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Sending request to API
+2025-03-24 20:04:04 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Fetching response from API
+2025-03-24 20:04:11 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Response successfully parsed
+2025-03-24 20:04:11 [main] INFO  io.github.demchaav.gemini.GeminiConnection - History content has been added
+2025-03-24 20:04:11 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Sending request to API
+2025-03-24 20:04:11 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Fetching response from API
+2025-03-24 20:04:16 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Response successfully parsed
+2025-03-24 20:04:16 [main] INFO  io.github.demchaav.gemini.GeminiConnection - History content has been added
+2025-03-24 20:04:16 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Sending request to API
+2025-03-24 20:04:16 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Fetching response from API
+2025-03-24 20:04:23 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Response successfully parsed
+2025-03-24 20:04:23 [main] INFO  io.github.demchaav.gemini.GeminiConnection - History content has been added
+2025-03-24 20:04:23 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Sending request to API
+2025-03-24 20:04:23 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Fetching response from API
+2025-03-24 20:04:29 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Response successfully parsed
+2025-03-24 20:04:29 [main] INFO  io.github.demchaav.gemini.GeminiConnection - History content has been added
+2025-03-24 20:04:29 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Sending request to API
+2025-03-24 20:04:29 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Fetching response from API
+2025-03-24 20:04:33 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Response successfully parsed
+2025-03-24 20:04:33 [main] INFO  io.github.demchaav.gemini.GeminiConnection - History content has been added
+2025-03-24 20:04:33 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Sending request to API
+2025-03-24 20:04:33 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Fetching response from API
+2025-03-24 20:04:37 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Response successfully parsed
+2025-03-24 20:04:37 [main] INFO  io.github.demchaav.gemini.GeminiConnection - History content has been added
+2025-03-24 20:04:37 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Sending request to API
+2025-03-24 20:04:37 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Fetching response from API
+2025-03-24 20:04:41 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Response successfully parsed
+2025-03-24 20:04:41 [main] INFO  io.github.demchaav.gemini.GeminiConnection - History content has been added
+2025-03-24 20:04:41 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Sending request to API
+2025-03-24 20:04:41 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Fetching response from API
+2025-03-24 20:04:45 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Response successfully parsed
+2025-03-24 20:04:45 [main] INFO  io.github.demchaav.gemini.GeminiConnection - History content has been added
+2025-03-24 20:04:45 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Sending request to API
+2025-03-24 20:04:45 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Fetching response from API
+2025-03-24 20:04:50 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Response successfully parsed
+2025-03-24 20:04:50 [main] INFO  io.github.demchaav.gemini.GeminiConnection - History content has been added
+2025-03-24 20:04:50 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Sending request to API
+2025-03-24 20:04:50 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Fetching response from API
+2025-03-24 20:04:56 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Response successfully parsed
+2025-03-24 20:04:56 [main] INFO  io.github.demchaav.gemini.GeminiConnection - History content has been added
+2025-03-24 20:04:56 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Sending request to API
+2025-03-24 20:04:56 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Fetching response from API
+2025-03-24 20:05:05 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Response successfully parsed
+2025-03-24 20:05:05 [main] INFO  io.github.demchaav.gemini.GeminiConnection - History content has been added
+2025-03-24 20:05:05 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Sending request to API
+2025-03-24 20:05:05 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Fetching response from API
+2025-03-24 20:05:10 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Response successfully parsed
+2025-03-24 20:05:10 [main] INFO  io.github.demchaav.gemini.GeminiConnection - History content has been added
+2025-03-24 20:05:10 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Sending request to API
+2025-03-24 20:05:10 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Fetching response from API
+2025-03-24 20:05:15 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Response successfully parsed
+2025-03-24 20:05:15 [main] INFO  io.github.demchaav.gemini.GeminiConnection - History content has been added
+2025-03-24 20:05:15 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Sending request to API
+2025-03-24 20:05:15 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Fetching response from API
+2025-03-24 20:05:20 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Response successfully parsed
+2025-03-24 20:05:20 [main] INFO  io.github.demchaav.gemini.GeminiConnection - History content has been added
+2025-03-24 20:05:20 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Sending request to API
+2025-03-24 20:05:20 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Fetching response from API
+2025-03-24 20:05:26 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Response successfully parsed
+2025-03-24 20:05:26 [main] INFO  io.github.demchaav.gemini.GeminiConnection - History content has been added
 2025-03-24 20:47:40 [main] WARN  anki.creator.Note - Warning: Field contains invalid HTML tags: <, >
 2025-03-24 20:48:03 [main] WARN  anki.creator.Note - Warning: Field contains invalid HTML tags: <= 100000);</code>
 2025-03-24 20:48:25 [main] WARN  anki.creator.Note - Warning: Field contains invalid HTML tags: <, >
@@ -2077,7 +2077,7 @@ requestUrl:  https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-
 2025-03-26 11:50:14 [main] WARN  anki.creator.Note - Warning: Field contains invalid HTML tags: <String, Integer>
 2025-03-26 11:50:14 [main] WARN  anki.creator.Note - Warning: Field contains invalid HTML tags: <String, Integer>
 2025-03-26 11:50:14 [main] WARN  anki.creator.Note - Warning: Field contains invalid HTML tags: <? super E>
-2025-03-27 13:22:24 [main] ERROR org.gemini.GeminiConnection - API request failed with status code: 400, message: API Error (400): INVALID_ARGUMENT / FAILED_PRECONDITION
+2025-03-27 13:22:24 [main] ERROR io.github.demchaav.gemini.GeminiConnection - API request failed with status code: 400, message: API Error (400): INVALID_ARGUMENT / FAILED_PRECONDITION
 Cause: Request fails API validation, or you tried to access a model that requires allowlisting or is disallowed by the organization's policy.
 Solution: Refer to the GeminiModel API reference for Generative AI for request parameters, token count, and other parameters. 
 requestUrl:  https://generativelanguage.googleapis.com/v1beta/models/imagen-3.0-generate-002:predict?key= 
@@ -2098,7 +2098,7 @@ requestUrl:  https://generativelanguage.googleapis.com/v1beta/models/imagen-3.0-
     "aspectRatio" : "9:16"
   }
 }
-2025-03-27 13:23:29 [main] ERROR org.gemini.GeminiConnection - API request failed with status code: 404, message: API Error (404): NOT_FOUND
+2025-03-27 13:23:29 [main] ERROR io.github.demchaav.gemini.GeminiConnection - API request failed with status code: 404, message: API Error (404): NOT_FOUND
 Cause: No valid object is found from the designated URL.
 Solution: Check and fix the file location. 
 requestUrl:  https://generativelanguage.googleapis.com/v1beta/models/imagen-3.0-generate-001:predict?key= 
@@ -2119,7 +2119,7 @@ requestUrl:  https://generativelanguage.googleapis.com/v1beta/models/imagen-3.0-
     "aspectRatio" : "9:16"
   }
 }
-2025-03-27 13:23:49 [main] ERROR org.gemini.GeminiConnection - API request failed with status code: 400, message: API Error (400): INVALID_ARGUMENT / FAILED_PRECONDITION
+2025-03-27 13:23:49 [main] ERROR io.github.demchaav.gemini.GeminiConnection - API request failed with status code: 400, message: API Error (400): INVALID_ARGUMENT / FAILED_PRECONDITION
 Cause: Request fails API validation, or you tried to access a model that requires allowlisting or is disallowed by the organization's policy.
 Solution: Refer to the GeminiModel API reference for Generative AI for request parameters, token count, and other parameters. 
 requestUrl:  https://generativelanguage.googleapis.com/v1beta/models/imagen-3.0-generate-002:predict?key= 
@@ -2140,7 +2140,7 @@ requestUrl:  https://generativelanguage.googleapis.com/v1beta/models/imagen-3.0-
     "aspectRatio" : "9:16"
   }
 }
-2025-03-27 14:56:13 [main] ERROR org.gemini.GeminiConnection - API request failed with status code: 400, message: API Error (400): INVALID_ARGUMENT / FAILED_PRECONDITION
+2025-03-27 14:56:13 [main] ERROR io.github.demchaav.gemini.GeminiConnection - API request failed with status code: 400, message: API Error (400): INVALID_ARGUMENT / FAILED_PRECONDITION
 Cause: Request fails API validation, or you tried to access a model that requires allowlisting or is disallowed by the organization's policy.
 Solution: Refer to the GeminiModel API reference for Generative AI for request parameters, token count, and other parameters. 
 requestUrl:  https://generativelanguage.googleapis.com/v1beta/models/imagen-3.0-generate-002:predict?key= 
@@ -2161,7 +2161,7 @@ requestUrl:  https://generativelanguage.googleapis.com/v1beta/models/imagen-3.0-
     "aspectRatio" : "3:4"
   }
 }
-2025-03-27 15:03:56 [main] ERROR org.gemini.GeminiConnection - API request failed with status code: 400, message: API Error (400): INVALID_ARGUMENT / FAILED_PRECONDITION
+2025-03-27 15:03:56 [main] ERROR io.github.demchaav.gemini.GeminiConnection - API request failed with status code: 400, message: API Error (400): INVALID_ARGUMENT / FAILED_PRECONDITION
 Cause: Request fails API validation, or you tried to access a model that requires allowlisting or is disallowed by the organization's policy.
 Solution: Refer to the GeminiModel API reference for Generative AI for request parameters, token count, and other parameters. 
 requestUrl:  https://generativelanguage.googleapis.com/v1beta/models/imagen-3.0-generate-002:predict?key= 
@@ -2183,7 +2183,7 @@ requestUrl:  https://generativelanguage.googleapis.com/v1beta/models/imagen-3.0-
     "safetySetting" : "block_none"
   }
 }
-2025-03-27 15:04:28 [main] ERROR org.gemini.GeminiConnection - API request failed with status code: 400, message: API Error (400): INVALID_ARGUMENT / FAILED_PRECONDITION
+2025-03-27 15:04:28 [main] ERROR io.github.demchaav.gemini.GeminiConnection - API request failed with status code: 400, message: API Error (400): INVALID_ARGUMENT / FAILED_PRECONDITION
 Cause: Request fails API validation, or you tried to access a model that requires allowlisting or is disallowed by the organization's policy.
 Solution: Refer to the GeminiModel API reference for Generative AI for request parameters, token count, and other parameters. 
 requestUrl:  https://generativelanguage.googleapis.com/v1beta/models/imagen-3.0-generate-002:predict?key= 
@@ -2205,7 +2205,7 @@ requestUrl:  https://generativelanguage.googleapis.com/v1beta/models/imagen-3.0-
     "safetySetting" : "block_only_high"
   }
 }
-2025-03-27 15:04:59 [main] ERROR org.gemini.GeminiConnection - API request failed with status code: 400, message: API Error (400): INVALID_ARGUMENT / FAILED_PRECONDITION
+2025-03-27 15:04:59 [main] ERROR io.github.demchaav.gemini.GeminiConnection - API request failed with status code: 400, message: API Error (400): INVALID_ARGUMENT / FAILED_PRECONDITION
 Cause: Request fails API validation, or you tried to access a model that requires allowlisting or is disallowed by the organization's policy.
 Solution: Refer to the GeminiModel API reference for Generative AI for request parameters, token count, and other parameters. 
 requestUrl:  https://generativelanguage.googleapis.com/v1beta/models/imagen-3.0-generate-002:predict?key= 
@@ -2227,7 +2227,7 @@ requestUrl:  https://generativelanguage.googleapis.com/v1beta/models/imagen-3.0-
     "safetySetting" : "block_medium_and_above"
   }
 }
-2025-03-27 15:05:20 [main] ERROR org.gemini.GeminiConnection - API request failed with status code: 400, message: API Error (400): INVALID_ARGUMENT / FAILED_PRECONDITION
+2025-03-27 15:05:20 [main] ERROR io.github.demchaav.gemini.GeminiConnection - API request failed with status code: 400, message: API Error (400): INVALID_ARGUMENT / FAILED_PRECONDITION
 Cause: Request fails API validation, or you tried to access a model that requires allowlisting or is disallowed by the organization's policy.
 Solution: Refer to the GeminiModel API reference for Generative AI for request parameters, token count, and other parameters. 
 requestUrl:  https://generativelanguage.googleapis.com/v1beta/models/imagen-3.0-generate-002:predict?key= 
@@ -2250,10 +2250,10 @@ requestUrl:  https://generativelanguage.googleapis.com/v1beta/models/imagen-3.0-
   }
 }
 2025-03-27 15:18:00 [main] WARN  ModelsListTest - API ключ не найден в переменной окружения GEMINI_API_KEY. Используется плейсхолдер из кода.
-2025-03-27 15:18:00 [main] ERROR GeminiModelLister - Попытка инициализации с пустым API ключом.
-2025-03-27 15:18:00 [main] ERROR ModelsListTest - Ошибка инициализации GeminiModelLister
+2025-03-27 15:18:00 [main] ERROR io.github.demchaav.gemini.GeminiModelLister - Попытка инициализации с пустым API ключом.
+2025-03-27 15:18:00 [main] ERROR ModelsListTest - Ошибка инициализации io.github.demchaav.gemini.GeminiModelLister
 java.lang.IllegalArgumentException: API ключ не может быть пустым.
-	at GeminiModelLister.<init>(GeminiModelLister.java:27)
+	at io.github.demchaav.gemini.GeminiModelLister.<init>(io.github.demchaav.gemini.GeminiModelLister.java:27)
 	at ModelsListTest.main(ModelsListTest.java:21)
 2025-03-27 15:18:20 [main] WARN  ModelsListTest - API ключ не найден в переменной окружения GEMINI_API_KEY. Используется плейсхолдер из кода.
 2025-03-27 15:28:59 [main] INFO  ModelsListTest - Получен ответ от API, начинаем парсинг моделей...
@@ -2262,3 +2262,80 @@ java.lang.IllegalArgumentException: API ключ не может быть пус
 2025-03-28 12:24:46 [main] INFO  ModelsListTest - Программа завершила выполнение.
 2025-03-28 12:25:15 [main] INFO  ModelsListTest - Получен ответ от API, начинаем парсинг моделей...
 2025-03-28 12:25:15 [main] INFO  ModelsListTest - Программа завершила выполнение.
+2025-03-28 16:21:58 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Sending request to API as Stream
+2025-03-28 16:21:58 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Fetching response from API
+2025-03-28 16:21:59 [main] INFO  io.github.demchaav.gemini.ResponseStreamProcessor - Successfully processed JSON response.
+2025-03-28 16:21:59 [main] INFO  io.github.demchaav.gemini.ResponseStreamProcessor - Successfully processed JSON response.
+2025-03-28 16:22:00 [main] INFO  io.github.demchaav.gemini.ResponseStreamProcessor - Successfully processed JSON response.
+2025-03-28 16:22:01 [main] INFO  io.github.demchaav.gemini.ResponseStreamProcessor - Successfully processed JSON response.
+2025-03-28 16:22:02 [main] INFO  io.github.demchaav.gemini.ResponseStreamProcessor - Successfully processed JSON response.
+2025-03-31 12:57:14 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Sending request to API as Stream
+2025-03-31 12:57:14 [main] INFO  io.github.demchaav.gemini.GeminiConnection - Fetching response from API
+2025-03-31 12:57:15 [main] INFO  io.github.demchaav.gemini.ResponseStreamProcessor - Successfully processed JSON response.
+2025-03-31 12:57:15 [main] INFO  io.github.demchaav.gemini.ResponseStreamProcessor - Successfully processed JSON response.
+2025-03-31 12:57:15 [main] INFO  io.github.demchaav.gemini.ResponseStreamProcessor - Successfully processed JSON response.
+2025-03-31 12:57:16 [main] INFO  io.github.demchaav.gemini.ResponseStreamProcessor - Successfully processed JSON response.
+2025-03-31 12:57:17 [main] INFO  io.github.demchaav.gemini.ResponseStreamProcessor - Successfully processed JSON response.
+2025-03-31 12:57:18 [main] INFO  io.github.demchaav.gemini.ResponseStreamProcessor - Successfully processed JSON response.
+2025-03-31 12:57:19 [main] INFO  io.github.demchaav.gemini.ResponseStreamProcessor - Successfully processed JSON response.
+2025-03-31 12:57:20 [main] INFO  io.github.demchaav.gemini.ResponseStreamProcessor - Successfully processed JSON response.
+2025-03-31 12:57:22 [main] INFO  io.github.demchaav.gemini.ResponseStreamProcessor - Successfully processed JSON response.
+2025-03-31 12:57:24 [main] INFO  io.github.demchaav.gemini.ResponseStreamProcessor - Successfully processed JSON response.
+2025-03-31 12:57:25 [main] INFO  io.github.demchaav.gemini.ResponseStreamProcessor - Successfully processed JSON response.
+2025-03-31 12:57:27 [main] INFO  io.github.demchaav.gemini.ResponseStreamProcessor - Successfully processed JSON response.
+2025-03-31 12:57:28 [main] INFO  io.github.demchaav.gemini.ResponseStreamProcessor - Successfully processed JSON response.
+2025-03-31 12:57:30 [main] INFO  io.github.demchaav.gemini.ResponseStreamProcessor - Successfully processed JSON response.
+2025-03-31 12:57:32 [main] INFO  io.github.demchaav.gemini.ResponseStreamProcessor - Successfully processed JSON response.
+2025-03-31 12:57:34 [main] INFO  io.github.demchaav.gemini.ResponseStreamProcessor - Successfully processed JSON response.
+2025-03-31 12:57:35 [main] INFO  io.github.demchaav.gemini.ResponseStreamProcessor - Successfully processed JSON response.
+2025-03-31 12:57:37 [main] INFO  io.github.demchaav.gemini.ResponseStreamProcessor - Successfully processed JSON response.
+2025-03-31 12:57:41 [main] INFO  io.github.demchaav.gemini.ResponseStreamProcessor - Successfully processed JSON response.
+2025-03-31 12:57:45 [main] INFO  io.github.demchaav.gemini.ResponseStreamProcessor - Successfully processed JSON response.
+2025-03-31 12:57:49 [main] INFO  io.github.demchaav.gemini.ResponseStreamProcessor - Successfully processed JSON response.
+2025-03-31 12:57:53 [main] INFO  io.github.demchaav.gemini.ResponseStreamProcessor - Successfully processed JSON response.
+2025-03-31 12:57:57 [main] INFO  io.github.demchaav.gemini.ResponseStreamProcessor - Successfully processed JSON response.
+2025-03-31 12:58:01 [main] INFO  io.github.demchaav.gemini.ResponseStreamProcessor - Successfully processed JSON response.
+2025-03-31 12:58:05 [main] INFO  io.github.demchaav.gemini.ResponseStreamProcessor - Successfully processed JSON response.
+2025-03-31 12:58:10 [main] INFO  io.github.demchaav.gemini.ResponseStreamProcessor - Successfully processed JSON response.
+2025-03-31 12:58:13 [main] INFO  io.github.demchaav.gemini.ResponseStreamProcessor - Successfully processed JSON response.
+2025-03-31 12:58:17 [main] INFO  io.github.demchaav.gemini.ResponseStreamProcessor - Successfully processed JSON response.
+2025-03-31 12:58:19 [main] INFO  io.github.demchaav.gemini.ResponseStreamProcessor - Successfully processed JSON response.
+2025-03-31 12:58:21 [main] INFO  io.github.demchaav.gemini.ResponseStreamProcessor - Successfully processed JSON response.
+2025-03-31 12:58:23 [main] INFO  io.github.demchaav.gemini.ResponseStreamProcessor - Successfully processed JSON response.
+2025-03-31 12:58:24 [main] INFO  io.github.demchaav.gemini.ResponseStreamProcessor - Successfully processed JSON response.
+2025-03-31 12:58:26 [main] INFO  io.github.demchaav.gemini.ResponseStreamProcessor - Successfully processed JSON response.
+2025-03-31 12:58:28 [main] INFO  io.github.demchaav.gemini.ResponseStreamProcessor - Successfully processed JSON response.
+2025-03-31 14:35:16 [main] INFO  i.g.demchaav.gemini.GeminiConnection - Sending request to API as Stream
+2025-03-31 14:35:16 [main] INFO  i.g.demchaav.gemini.GeminiConnection - Fetching response from API
+2025-03-31 14:35:17 [main] INFO  i.g.d.gemini.ResponseStreamProcessor - Successfully processed JSON response.
+2025-03-31 14:35:17 [main] INFO  i.g.d.gemini.ResponseStreamProcessor - Successfully processed JSON response.
+2025-03-31 14:35:17 [main] INFO  i.g.d.gemini.ResponseStreamProcessor - Successfully processed JSON response.
+2025-03-31 14:35:18 [main] INFO  i.g.d.gemini.ResponseStreamProcessor - Successfully processed JSON response.
+2025-03-31 14:35:19 [main] INFO  i.g.d.gemini.ResponseStreamProcessor - Successfully processed JSON response.
+2025-03-31 14:35:19 [main] INFO  i.g.d.gemini.ResponseStreamProcessor - Successfully processed JSON response.
+2025-03-31 14:35:21 [main] INFO  i.g.d.gemini.ResponseStreamProcessor - Successfully processed JSON response.
+2025-03-31 14:35:22 [main] INFO  i.g.d.gemini.ResponseStreamProcessor - Successfully processed JSON response.
+2025-03-31 14:37:55 [main] INFO  i.g.demchaav.gemini.GeminiClient - Generating content for prompt: Сделай промт для генирации изображения вот мой Generate a high-resolution, photorealistic image of the cocktail '1919'. The background should be a solid color or gradient that complements the drink. Ensure the cocktail is fully visible, centered, and without excessive empty space. Serve the cocktail in a Coupe glass glass. Garnish the cocktail with subtle, artistic accents to enhance its appeal. The liquid should exhibit a vibrant, rich color that reflects its unique flavor profile. Overall, the presentation must exude elegance and attractiveness, with meticulous attention to detail. Ingredients:  Punt E Mes vermouth amaro,  Rittenhouse bottled-in-bond straight rye whiskey,  Jamaican aged blended rum with funk,  Bénédictine D.O.M. liqueur,  Xocolatl mole bitters. History: Adapted from a cocktail created in 2008 by Ben Sandrof at Drink Bar in Fort Point, Boston, USA. (Sadly, shuttered in January 2024.) This cocktail was perhaps inspired by the bar's Fort Point cocktail. Not named after Angostura 1919 Rum, this cocktail was originally made with Old Monk Rum, the molasses notes of which inspired the name which references the Great Molasses Disaster of 15th January 1919 when 10 million litre tank of molasses stored for distilling exploded. The ensuing flood drowned and killed many. Coincidently, Prohibition started at the stroke of midnight the next day..
+2025-03-31 14:37:55 [main] INFO  i.g.demchaav.gemini.GeminiConnection - Sending request to API 
+2025-03-31 14:37:55 [main] INFO  i.g.demchaav.gemini.GeminiConnection - Fetching response from API
+2025-03-31 14:38:00 [main] INFO  i.g.demchaav.gemini.GeminiConnection - Response successfully parsed
+2025-03-31 14:38:00 [main] INFO  i.g.demchaav.gemini.GeminiConnection - History content has been added
+2025-03-31 18:51:40 [main] INFO  i.g.demchaav.gemini.GeminiConnection - Sending request to API as Stream
+2025-03-31 18:51:40 [main] INFO  i.g.demchaav.gemini.GeminiConnection - Fetching response from API
+2025-03-31 18:51:41 [main] INFO  i.g.d.gemini.ResponseStreamProcessor - Successfully processed JSON response.
+2025-03-31 18:51:42 [main] INFO  i.g.d.gemini.ResponseStreamProcessor - Successfully processed JSON response.
+2025-03-31 18:51:42 [main] INFO  i.g.d.gemini.ResponseStreamProcessor - Successfully processed JSON response.
+2025-03-31 18:51:42 [main] INFO  i.g.d.gemini.ResponseStreamProcessor - Successfully processed JSON response.
+2025-03-31 18:51:43 [main] INFO  i.g.d.gemini.ResponseStreamProcessor - Successfully processed JSON response.
+2025-03-31 18:51:44 [main] INFO  i.g.d.gemini.ResponseStreamProcessor - Successfully processed JSON response.
+2025-03-31 18:51:44 [main] INFO  i.g.d.gemini.ResponseStreamProcessor - Successfully processed JSON response.
+2025-03-31 18:51:46 [main] INFO  i.g.d.gemini.ResponseStreamProcessor - Successfully processed JSON response.
+2025-03-31 18:51:47 [main] INFO  i.g.d.gemini.ResponseStreamProcessor - Successfully processed JSON response.
+2025-04-02 12:40:21 [main] INFO  i.g.demchaav.gemini.GeminiConnection - Sending request to API as Stream
+2025-04-02 12:40:21 [main] INFO  i.g.demchaav.gemini.GeminiConnection - Fetching response from API
+2025-04-02 12:40:22 [main] INFO  i.g.d.gemini.ResponseStreamProcessor - Successfully processed JSON response.
+2025-04-02 12:40:22 [main] INFO  i.g.d.gemini.ResponseStreamProcessor - Successfully processed JSON response.
+2025-04-02 12:40:22 [main] INFO  i.g.d.gemini.ResponseStreamProcessor - Successfully processed JSON response.
+2025-04-02 12:40:23 [main] INFO  i.g.d.gemini.ResponseStreamProcessor - Successfully processed JSON response.
+2025-04-02 12:40:24 [main] INFO  i.g.d.gemini.ResponseStreamProcessor - Successfully processed JSON response.
+2025-04-02 12:40:24 [main] INFO  i.g.d.gemini.ResponseStreamProcessor - Successfully processed JSON response.

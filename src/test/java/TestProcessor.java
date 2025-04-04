@@ -1,5 +1,5 @@
-import org.gemini.ResponseStreamProcessor;
-import org.gemini.request_response.response.GeminiResponse;
+import io.github.demchaav.gemini.ResponseStreamProcessor;
+import io.github.demchaav.gemini.request_response.response.GeminiResponse;
 
 import java.io.BufferedReader;
 import java.io.FileReader;

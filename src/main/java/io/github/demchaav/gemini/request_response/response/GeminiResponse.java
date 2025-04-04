@@ -1,13 +1,15 @@
-package org.gemini.request_response.response;
+package io.github.demchaav.gemini.request_response.response;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Builder;
 import lombok.extern.slf4j.Slf4j;
-import org.gemini.request_response.content.Content;
-import org.gemini.request_response.content.part.Part;
-import org.gemini.request_response.response.candidate.Candidate;
-import org.gemini.request_response.response.usageMeta.UsageMetadata;
+import io.github.demchaav.gemini.request_response.content.Content;
+import io.github.demchaav.gemini.request_response.content.part.Part;
+import io.github.demchaav.gemini.request_response.response.candidate.Candidate;
+import io.github.demchaav.gemini.request_response.response.usageMeta.UsageMetadata;
 
+import java.io.PrintStream;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -65,13 +67,13 @@ public record GeminiResponse(
                 .map(content ->
                         content.parts().stream()
                                 .map(Part::text)
-                                .collect(Collectors.joining()).trim())
+                                .collect(Collectors.joining()))
                 .collect(Collectors.joining());
     }
 
     public void printContent (){
+        System.setOut(new PrintStream(System.out, true, StandardCharsets.UTF_8));
         for(char character: Objects.requireNonNull(asString()).toCharArray()){
-
             System.out.print(character + "█");
             System.out.flush();
             try {
