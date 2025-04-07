@@ -25,5 +25,8 @@ public record UsageMetadata(
     Integer totalTokenCount,
 
     List<TokensDetails> promptTokensDetails,
-    List<TokensDetails> candidatesTokensDetails
+
+    List<TokensDetails> candidatesTokensDetails,
+    
+    Integer thoughtsTokenCount
 ) {}
