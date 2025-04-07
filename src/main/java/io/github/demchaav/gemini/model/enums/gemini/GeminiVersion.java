@@ -6,7 +6,8 @@ public enum GeminiVersion {
     FLASH("flash"),
     FLASH_LATEST("flash-latest"),
     FLASH_LITE("flash-lite"),
-    FLASH_IMG_GEN("flash-exp-image-generation");
+    FLASH_IMG_GEN("flash-exp-image-generation"),
+    PRO_EXP("pro-exp-03-25");
 
     final String version;
 

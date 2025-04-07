@@ -17,8 +17,8 @@ public class StreamResponse {
                 .httpClient(GeminiConnection.DEFAULT_HTTP_CLIENT)
                 .geminiModel( GeminiModel.builder()
                         .verAPI(VerAPI.V1BETA)
-                        .variation(GeminiVariation._2_0)
-                        .version(GeminiVersion.FLASH)
+                        .variation(GeminiVariation._2_5)
+                        .version(GeminiVersion.PRO_EXP)
                         .build())
                 .build();
 

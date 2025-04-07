@@ -44,6 +44,10 @@ public record Candidate(
         /**
          * Returns the top candidate tokens and the actual chosen tokens at each step.
          */
-        LogprobsResult logprobsResult
+        LogprobsResult logprobsResult,
+        /**
+         * The index of the candidate.
+         */
+        Integer index
 ) {
 }
