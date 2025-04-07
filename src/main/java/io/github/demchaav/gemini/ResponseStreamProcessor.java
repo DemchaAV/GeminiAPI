@@ -61,7 +61,7 @@ public class ResponseStreamProcessor {
             responseQueue.offer(response);
             log.info("Successfully processed JSON response.");
         } catch (Exception e) {
-            log.error("Error parsing JSON: {}", e.getMessage(), e);
+            log.error("Error parsing JSON: {}, \n Error message: {}",jsonLine, e.getMessage(), e);
         }
     }
 
