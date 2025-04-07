@@ -72,7 +72,6 @@ public record GeminiResponse(
     }
 
     public void printContent (){
-        System.setOut(new PrintStream(System.out, true, StandardCharsets.UTF_8));
         for(char character: Objects.requireNonNull(asString()).toCharArray()){
             System.out.print(character + "█");
             System.out.flush();
