@@ -85,11 +85,7 @@ import java.util.stream.Collectors;
  * }</pre>
  *
  * <h3>Initialization with Custom Configuration</h3>
- * <p>
- * For more advanced configurations, you can use the {@link GeminiConnectionBuilder} to customize the client.
- * This includes setting a custom HTTP client, default model, generation configuration, system instructions, tools,
- * safety settings, and labels.
- * </p>
+ * For more advanced configurations, you can use the {@link  GeminiConnection.GeminiConnectionBuilder} to customize the client.
  * <pre>{@code
  * GenerationConfig generationConfig = GenerationConfig.builder()
  *         .temperature(0.9f)
@@ -293,17 +289,37 @@ public class GeminiConnection {
 
     /**
      * @param jsonGeminiRequest request with existing jsonObject as String
-     * @return return client to execute a request uses a method {@code getResponse>()} or {@code getResponseAsStream()}
-     * <pre>
-     *     {@code client = GeminiConnection.builder()
-     *                 .apiKey(System.getenv("API_KEY"))
-     *                 .httpClient(GeminiConnection.DEFAULT_HTTP_CLIENT)
-     *                 .defaultModel(org.gemini.model.model_test.Model.GEMINI_2_0_FLASH_LATEST)
-     *                 .build();
-     * String simpleJsonRequest = "{"contents":[{"role":"user","parts":[{"text":"Hello Gemini!"}]}]}"
+     * @return return client to execute a request uses a method {@code getResponse()} or {@code getResponseAsStream()} // Fixed typo ()>
+     * <pre>{@code
+     * // Create the client (example using API key from environment variable)
+     * GeminiConnection client = GeminiConnection.builder()
+     * .apiKey(System.getenv("API_KEY"))
+     * .httpClient(GeminiConnection.DEFAULT_HTTP_CLIENT) // Or use your custom HTTP client
+     * .defaultModel("gemini-1.5-flash-latest") // Example using standard model ID string
+     * .build();
+     *
+     * // Example JSON request using a text block for convenience
+     * String simpleJsonRequest = """
+     * {
+     * "contents":[
+     * {
+     * "role":"user",
+     * "parts":[
+     * {"text":"Hello Gemini!"}
+     * ]
+     * }
+     * ]
+     * }""";
+     *
+     * // Send the request (assuming the method accepts a JSON string)
      * client.sendRequest(simpleJsonRequest);
-     * GeminiResponse response = client.getResponse;
-     * </pre>
+     *
+     * // Get the response (calling the method with parentheses)
+     * GeminiResponse response = client.getResponse();
+     *
+     * // Example of using the response
+     * System.out.println(response.getBody()); // Replace getBody() with the actual method of your GeminiResponse
+     * }</pre>
      */
     public GeminiConnection sendRequest(String jsonGeminiRequest) {
         log.debug("Parse string Json request: {}", jsonGeminiRequest);
