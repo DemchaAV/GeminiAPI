@@ -85,7 +85,7 @@ import java.util.stream.Collectors;
  * }</pre>
  *
  * <h3>Initialization with Custom Configuration</h3>
- * For more advanced configurations, you can use the {@link  GeminiConnection.GeminiConnectionBuilder} to customize the client.
+ * For more advanced configurations, you can use the {@code  GeminiConnection.GeminiConnectionBuilder} to customize the client.
  * <pre>{@code
  * GenerationConfig generationConfig = GenerationConfig.builder()
  *         .temperature(0.9f)

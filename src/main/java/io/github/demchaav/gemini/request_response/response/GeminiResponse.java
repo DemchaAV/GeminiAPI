@@ -84,7 +84,7 @@ public record GeminiResponse(
             }
 
         }
-        System.out.print("\b");
+//        System.out.print("\b\b");
     }
 
     public Map<String, List<Content>> takeContentAsMap() {

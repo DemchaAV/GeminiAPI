@@ -1,10 +1,14 @@
 package io.github.demchaav.gemini.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import io.github.demchaav.gemini.model.enums.ModelName;
 import io.github.demchaav.gemini.model.enums.VerAPI;
 import io.github.demchaav.gemini.model.enums.gemini.GeminiGenerateMethod;
 import io.github.demchaav.gemini.model.enums.gemini.GeminiVariation;
 import io.github.demchaav.gemini.model.enums.gemini.GeminiVersion;
+import lombok.Data;
 import lombok.NonNull;
 
 /**
@@ -39,14 +43,24 @@ import lombok.NonNull;
  * that demand deeper logic and processing.</p>
  */
 
-
+@Data
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class GeminiModel implements ModelType<GeminiVariation, GeminiVersion, GeminiGenerateMethod> {
     private final @NonNull VerAPI verAPI;
     private final @NonNull GeminiVariation variation;
     private final @NonNull GeminiVersion version;
     private final @NonNull GeminiGenerateMethod generateMethod;
 
-    private GeminiModel(VerAPI verAPI, GeminiVariation variation, GeminiVersion version, GeminiGenerateMethod generateMethod) {
+    @JsonCreator // Tell Jackson to use this constructor
+    public GeminiModel(
+            // Map the JSON property "verAPI" to this parameter
+            @JsonProperty("verAPI") VerAPI verAPI,
+            // Map the JSON property "variation" to this parameter
+            @JsonProperty("variation") GeminiVariation variation,
+            // Map the JSON property "version" to this parameter
+            @JsonProperty("version") GeminiVersion version,
+            // Map the JSON property "generateMethod" to this parameter
+            @JsonProperty("generateMethod") GeminiGenerateMethod generateMethod) {
         this.verAPI = verAPI;
         this.variation = variation;
         this.version = version;
