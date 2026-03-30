@@ -1,172 +1,137 @@
-# GeminiConnection
+# gemini-client
 
-**GeminiConnection** is a Java client for interacting with the Google Gemini API. It provides a simple and flexible way to send requests and receive responses from Gemini models. The library supports advanced configuration, streaming responses, and image generation using the Imagen model.
+`gemini-client` is a Java library for working with the Google Gemini API. It provides request/response models, a higher-level client for text generation, streaming helpers, and Imagen image-generation utilities.
 
-## 📦 Features
+## Highlights
 
-- Easy initialization with optional advanced configuration
-- Supports multiple Gemini models
-- Fully customizable generation config (temperature, topK, topP, maxOutputTokens)
-- Send requests using `GeminiRequest` objects or raw JSON strings
-- Streaming response support
-- Message history tracking
-- Image generation support with Imagen
+- Text generation with `GeminiConnection` and `GeminiClient`
+- Streaming response processing via `ResponseStreamProcessor`
+- Typed request and response models backed by Jackson
+- Imagen request helpers and image extraction utilities
+- Offline unit tests for request building and stream parsing
 
----
+## Requirements
 
-## 🔧 Installation
+- JDK 21
+- Maven 3.9+
+- `GEMINI_API_KEY` for live API examples
 
-Add the following dependency to your `pom.xml`:
+## Installation
+
+Build and install the library locally:
+
+```bash
+mvn clean install
+```
+
+Dependency coordinates:
 
 ```xml
 <dependency>
-    <groupId>org.gemini</groupId>
+    <groupId>io.github.demchaav</groupId>
     <artifactId>gemini-client</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.4-SNAPSHOT</version>
 </dependency>
 ```
 
----
-
-## 🚀 Quick Start
-
-### Basic Initialization
+## Quick Start
 
 ```java
-GeminiConnection client = new GeminiConnection(API_KEY);
+import io.github.demchaav.gemini.GeminiClient;
+import io.github.demchaav.gemini.GeminiConnection;
+import io.github.demchaav.gemini.model.GeminiModel;
+import io.github.demchaav.gemini.model.enums.VerAPI;
+import io.github.demchaav.gemini.model.enums.gemini.GeminiGenerateMethod;
+import io.github.demchaav.gemini.model.enums.gemini.GeminiVariation;
+import io.github.demchaav.gemini.model.enums.gemini.GeminiVersion;
+
+GeminiConnection connection = GeminiConnection.builder()
+        .apiKey(System.getenv("GEMINI_API_KEY"))
+        .httpClient(GeminiConnection.DEFAULT_HTTP_CLIENT)
+        .geminiModel(GeminiModel.builder()
+                .verAPI(VerAPI.V1BETA)
+                .variation(GeminiVariation._2_0)
+                .version(GeminiVersion.FLASH_LATEST)
+                .generateMethod(GeminiGenerateMethod.GENERATE_CONTENT)
+                .build())
+        .build();
+
+GeminiClient client = GeminiClient.builder()
+        .connection(connection)
+        .build();
+
+client.generateResponse("Hello, Gemini!")
+        .ifPresent(response -> System.out.println(response.asString()));
 ```
 
-### Initialization with a Specific Model
+## Streaming Example
 
 ```java
-GeminiConnection client = new GeminiConnection(
-    API_KEY,
-    org.gemini.model.model_test.Model.GEMINI_PRO,
-    null
+connection.sendRequest(
+        io.github.demchaav.gemini.request_response.request.GeminiRequest.requestMessage(
+                new io.github.demchaav.gemini.request_response.content.Message("Explain HTTP requests in Java")
+        )
 );
+
+connection.getResponseAsStream(response -> System.out.print(response.asString()));
 ```
 
-### Initialization with Custom Configuration
+## Imagen Example
 
 ```java
-GenerationConfig generationConfig = GenerationConfig.builder()
-    .temperature(0.9f)
-    .topK(1)
-    .topP(1)
-    .maxOutputTokens(2048)
-    .build();
+import io.github.demchaav.gemini.model.ImagenModel;
+import io.github.demchaav.gemini.model.enums.imagen.ImagenGenerateMethod;
+import io.github.demchaav.gemini.model.enums.imagen.ImagenVariation;
+import io.github.demchaav.gemini.model.enums.imagen.ImagenVersion;
+import io.github.demchaav.gemini.request_response.Instance;
+import io.github.demchaav.gemini.request_response.content.Image;
+import io.github.demchaav.gemini.request_response.parameters_image_request.Parameters;
+import io.github.demchaav.gemini.request_response.parameters_image_request.enums_image_gen.AspectRatio;
+import io.github.demchaav.gemini.request_response.parameters_image_request.enums_image_gen.SafetySetting;
+import io.github.demchaav.gemini.request_response.request.ImgGenRequest;
 
-GeminiConnection client = GeminiConnection.builder()
-    .apiKey(API_KEY)
-    .httpClient(GeminiConnection.DEFAULT_HTTP_CLIENT)
-    .defaultModel(org.gemini.model.model_test.Model.GEMINI_PRO_LATEST.getVersion())
-    .generationConfig(generationConfig)
-    .build();
+GeminiConnection imageConnection = GeminiConnection.builder()
+        .apiKey(System.getenv("GEMINI_API_KEY"))
+        .httpClient(GeminiConnection.DEFAULT_HTTP_CLIENT)
+        .imagenModel(ImagenModel.builder()
+                .verAPI(VerAPI.V1BETA)
+                .variation(ImagenVariation._3_0)
+                .version(ImagenVersion.GENERATE_002)
+                .generateMethod(ImagenGenerateMethod.PREDICT)
+                .build())
+        .build();
+
+ImgGenRequest request = ImgGenRequest.builder()
+        .instances(java.util.List.of(Instance.builder().prompt("Studio product photo of a cappuccino").build()))
+        .parameters(Parameters.builder()
+                .sampleCount(1)
+                .aspectRatio(AspectRatio.RATIO_1_1)
+                .safetySetting(SafetySetting.block_medium_and_above)
+                .build())
+        .build();
+
+imageConnection.sendRequest(request).getImageResponse().ifPresent(response -> {
+    java.util.List<Image> images = Image.extractPack(response, "png");
+    Image.writeTo(images, "generated-images", "cappuccino");
+});
 ```
 
----
+## Development
 
-## ✉️ Sending Requests
+Run the default quality gate:
 
-### Using a `GeminiRequest` Object
-
-```java
-Message userMessage = new Message("Hello Gemini!");
-GeminiRequest request = GeminiRequest.requestMessage(userMessage);
-
-GeminiConnection client = new GeminiConnection(API_KEY);
-client.sendRequest(request);
-
-GeminiResponse response = client.getResponse();
+```bash
+mvn clean test
 ```
 
-### Using a JSON String
+Curated runnable examples live under [examples/src/main/java](examples/src/main/java).
 
-```java
-String jsonRequest = "{\"contents\":[{\"role\":\"user\",\"parts\":[{\"text\":\"Hello Gemini!\"}]}]}";
+## Notes
 
-GeminiConnection client = GeminiConnection.builder()
-    .apiKey(API_KEY)
-    .httpClient(GeminiConnection.DEFAULT_HTTP_CLIENT)
-    .defaultModel(org.gemini.model.model_test.Model.GEMINI_2_0_FLASH_LATEST)
-    .build();
+- The default library logging is console-only. No project-root log file is created automatically.
+- Live examples require a valid `GEMINI_API_KEY`.
+- The default Maven test lifecycle is offline and does not call the Google API.
 
-client.sendRequest(jsonRequest);
-GeminiResponse response = client.getResponse();
-```
+## License
 
----
-
-## 📅 Receiving Responses
-
-```java
-GeminiResponse response = client.getResponse();
-
-if (response != null && response.candidates() != null && !response.candidates().isEmpty()) {
-    String generatedText = client.takeContentAsString();
-    System.out.println("Generated Text: " + generatedText);
-} else {
-    System.out.println("No response or candidates found.");
-}
-```
-
----
-
-## 🔄 Streaming Responses
-
-```java
-try {
-    client.getResponseAsStream(response -> {
-        response.candidates().forEach(candidate -> {
-            candidate.content().parts().forEach(part -> {
-                System.out.print(part.text());
-            });
-        });
-    });
-} catch (IOException e) {
-    throw new RuntimeException(e);
-}
-```
-
----
-
-## 📜 Message History
-
-```java
-List<Content> history = client.takeContent();
-
-if (history != null) {
-    String historyString = client.takeContentAsString();
-    System.out.println("Content History:\n" + historyString);
-}
-```
-
----
-
-## 🖼 Image Generation (Imagen)
-
-> *Support for image generation using Google's Imagen model is available. You can generate images from prompts or work with existing images.*  
-*(Documentation and examples coming soon)*
-
----
-
-## 📘 Documentation
-
-For more details, see:
-- [Google Gemini API Documentation](https://ai.google.dev)
-- Internal Javadoc documentation (if available)
-
----
-
-## 📄 License
-
-MIT License
-
----
-
-## 🙌 Contributing
-
-Contributions, issues, and feature requests are welcome!  
-Feel free to submit a pull request or open an issue on GitHub.
-
----
+This project is licensed under the MIT License. See [LICENSE](LICENSE).

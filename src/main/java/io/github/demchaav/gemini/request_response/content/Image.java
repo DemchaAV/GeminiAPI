@@ -132,7 +132,7 @@ public class Image {
         try {
             Files.write(path, imageBytes);
             log.info("File \"{}\" has been written successfully to directory {}", path.getFileName(), path.getParent());
-            return true; // Успешная запись
+            return true;
         } catch (IOException e) {
             log.error("Failed to write file to {}", path.toAbsolutePath(), e);
             return false;
@@ -145,20 +145,16 @@ public class Image {
             return false;
         }
 
-        // Создание пути к папке
         Path folderPath = Path.of(pathFolder);
 
-        // Проверяем, есть ли у имени файла расширение, если нет — добавляем формат
         if (!fileName.contains(".")) {
-            fileName += "." + format; // Добавляем формат из класса
+            fileName += "." + format;
         }
 
-        // Формируем полный путь
         Path fullPath = folderPath.resolve(fileName).toAbsolutePath();
         this.path = fullPath;
 
         try {
-            // Создаем директорию, если её нет
             Files.createDirectories(folderPath);
         } catch (IOException e) {
             log.error("Failed to create directories for {}", folderPath, e);

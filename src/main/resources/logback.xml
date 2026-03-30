@@ -1,16 +1,5 @@
 <configuration>
-
-    <!-- Консольный аппендер -->
     <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
-        <encoder>
-            <pattern>%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n</pattern>
-        </encoder>
-    </appender>
-
-    <!-- Файловый аппендер -->
-    <appender name="FILE" class="ch.qos.logback.core.FileAppender">
-        <file>logs/app.log</file>
-        <append>true</append>
         <encoder>
             <pattern>%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n</pattern>
         </encoder>
@@ -18,14 +7,9 @@
 
     <logger name="io.github.demchaav.gemini.GeminiModelLister" level="WARN" additivity="false">
         <appender-ref ref="STDOUT"/>
-        <appender-ref ref="FILE"/>
     </logger>
 
-
-    <!-- Корневой логгер, который записывает в оба аппендера -->
     <root level="Info">
         <appender-ref ref="STDOUT"/>
-        <appender-ref ref="FILE"/>
     </root>
-
 </configuration>

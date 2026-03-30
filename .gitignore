@@ -1,42 +1,22 @@
+# Maven and build outputs
 target/
-!.mvn/wrapper/maven-wrapper.jar
-!**/src/main/**/target/
-!**/src/test/**/target/
-
-### IntelliJ IDEA ###
-.idea/modules.xml
-.idea/jarRepositories.xml
-.idea/compiler.xml
-.idea/libraries/
-logs/
 out/
-*.log
-*.iws
+logs/
+build/
+dependency-reduced-pom.xml
+
+# IDEs
+.idea/
+.vscode/
 *.iml
 *.ipr
+*.iws
 
-
-### Eclipse ###
-.apt_generated
-.classpath
-.factorypath
-.project
-.settings
-.springBeans
-.sts4-cache
-
-### NetBeans ###
-/nbproject/private/
-/nbbuild/
-/dist/
-/nbdist/
-/.nb-gradle/
-build/
-!**/src/main/**/build/
-!**/src/test/**/build/
-
-### VS Code ###
-.vscode/
-
-### Mac OS ###
+# OS files
 .DS_Store
+Thumbs.db
+
+# Local run artifacts
+generated-images/
+*.log
+*.tmp

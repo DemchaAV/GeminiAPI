@@ -370,7 +370,7 @@ public record GenerationConfig(
             .candidateCount(1)
             .maxOutputTokens(1024)
             .build();
-    // Упрощенный конструктор
+    // Convenience constructor for the most common parameters.
     public GenerationConfig(Double temperature, Integer maxOutputTokens) {
         this(temperature, 0.95, 40, 1, maxOutputTokens, null, null, null, null, null, null, false, null, false,null);
     }
@@ -386,7 +386,7 @@ public record GenerationConfig(
         return "\"generationConfig\": " + jSonConfig;
     }
 
-    // Метод для создания копии с измененной температурой
+    // Creates a copy with a different temperature.
     public GenerationConfig withTemperature(Double temperature) {
         return new GenerationConfig(
                 temperature,

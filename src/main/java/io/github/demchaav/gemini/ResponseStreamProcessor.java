@@ -9,9 +9,7 @@ import java.util.Queue;
 import java.util.concurrent.ConcurrentLinkedQueue;
 
 /**
- * Class {@link ResponseStreamProcessor} processes streaming JSON responses from {@link GeminiClient}.
- * This class accumulates JSON chunks from {@link java.net.http.HttpResponse} and adds them to the {@code responseQueue}
- * when a complete JSON object is detected.
+ * Processes streamed JSON chunks and emits complete {@link GeminiResponse} objects.
  */
 @Slf4j
 public class ResponseStreamProcessor {
@@ -75,7 +73,7 @@ public class ResponseStreamProcessor {
                         )
                 );
 
-                log.info("GeminiModel org.gemini.model.model_test.Version: {}", response.modelVersion());
+                log.info("Model version: {}", response.modelVersion());
                 log.info("Prompt Tokens: {}", response.usageMetadata().promptTokenCount());
                 log.info("Total Tokens: {}", response.usageMetadata().totalTokenCount());
             }

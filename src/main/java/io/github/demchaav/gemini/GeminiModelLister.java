@@ -21,17 +21,15 @@ public class GeminiModelLister {
 
     public GeminiModelLister(String apiKey) {
         if (apiKey == null || apiKey.trim().isEmpty()) {
-            // Используем логгер для ошибки и выбрасываем исключение
-            log.error("Попытка инициализации с пустым API ключом.");
-            throw new IllegalArgumentException("API ключ не может быть пустым.");
+            log.error("Attempted to initialize GeminiModelLister with a blank API key");
+            throw new IllegalArgumentException("API key must not be blank.");
         }
         this.apiKey = apiKey;
         this.httpClient = HttpClient.newBuilder()
                 .version(HttpClient.Version.HTTP_2)
                 .connectTimeout(Duration.ofSeconds(10))
                 .build();
-        // Используем логгер для информационного сообщения
-        log.info("io.github.demchaav.gemini.GeminiModelLister инициализирован.");
+        log.info("GeminiModelLister initialized");
     }
 
 
@@ -40,11 +38,9 @@ public class GeminiModelLister {
         URI requestUri;
         try {
             requestUri = new URI(urlString);
-            // Логгируем сам факт запроса, но без URL с ключом для безопасности
-            log.info("Отправка GET запроса на эндпоинт: {}/models", BASE_URL);
+            log.info("Sending GET request to {}/models", BASE_URL);
         } catch (URISyntaxException e) {
-            // Логгируем ошибку с исключением
-            log.error("Ошибка формирования URI: {}", urlString, e);
+            log.error("Failed to build URI from {}", urlString, e);
             return null;
         }
 
@@ -57,22 +53,18 @@ public class GeminiModelLister {
         try {
             HttpResponse<String> response = httpClient.send(request, HttpResponse.BodyHandlers.ofString());
             int statusCode = response.statusCode();
-            // Логгируем статус ответа
-            log.info("Статус ответа API: {}", statusCode);
+            log.info("API response status: {}", statusCode);
 
             if (statusCode >= 200 && statusCode < 300) {
-                // Логгируем успешное получение ответа (можно добавить размер ответа)
-                log.debug("Успешно получен ответ API (длина: {} символов)", response.body().length());
+                log.debug("API response received successfully ({} characters)", response.body().length());
                 return response.body();
             } else {
-                // Логгируем ошибку со статус-кодом и телом ответа
-                log.error("Ошибка запроса к API. Статус: {}. Тело ответа: {}", statusCode, response.body());
+                log.error("API request failed. Status: {}. Response body: {}", statusCode, response.body());
                 return null;
             }
 
         } catch (IOException | InterruptedException e) {
-            // Логгируем ошибки сети или прерывания с исключением
-            log.error("Ошибка при отправке HTTP запроса к {}", requestUri, e);
+            log.error("Failed to send HTTP request to {}", requestUri, e);
             if (e instanceof InterruptedException) {
                 Thread.currentThread().interrupt();
             }
@@ -82,8 +74,7 @@ public class GeminiModelLister {
 
     public void parseAndPrintModels(String jsonResponse) {
         if (jsonResponse == null || jsonResponse.isEmpty()) {
-            // Используем логгер для предупреждения
-            log.warn("Нет данных JSON для парсинга.");
+            log.warn("No JSON payload was provided for parsing");
             return;
         }
 
@@ -92,7 +83,7 @@ public class GeminiModelLister {
             JSONArray modelsArray = rootObject.optJSONArray("models");
 
             if (modelsArray != null) {
-                log.info("--- Доступные модели Gemini ({} найдено) ---", modelsArray.length());
+                log.info("--- Available Gemini models ({} found) ---", modelsArray.length());
                 for (int i = 0; i < modelsArray.length(); i++) {
                     JSONObject modelObject = modelsArray.getJSONObject(i);
 
@@ -101,19 +92,15 @@ public class GeminiModelLister {
                     String description = modelObject.optString("description", "N/A");
                     String version = modelObject.optString("version", "N/A");
 
-                    // Используем логгер для вывода информации о модели
-                    // Форматирование можно оставить или использовать параметры логгера
-                    log.info("Модель: {} ({}) | ID: {} | Описание: {}...",
+                    log.info("Model: {} ({}) | ID: {} | Description: {}...",
                             displayName, version, name, description.length() > 100 ? description.substring(0, 100) : description);
                 }
             } else {
-                // Логгируем предупреждение, если ключ не найден
-                log.warn("Ключ 'models' не найден в JSON ответе.");
+                log.warn("The 'models' key was not found in the JSON response");
             }
 
         } catch (JSONException e) {
-            // Логгируем ошибку парсинга с исключением
-            log.error("Ошибка парсинга JSON ответа", e);
+            log.error("Failed to parse JSON response", e);
         }
     }
 }

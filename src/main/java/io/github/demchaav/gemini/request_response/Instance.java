@@ -4,21 +4,19 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Builder;
 
 /**
- * Класс для представления текстового промта, используемого при генерации изображений.
+ * Text prompt wrapper used for image generation requests.
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @Builder
 public record Instance(
         /**
-         * Обязательный параметр: текстовый промт для генерации изображения.
+         * Required text prompt for image generation.
          *
-         * Ограничения на количество токенов в зависимости от модели:
-         * - `imagen-3.0-generate-002` – до 480 токенов.
-         * - `imagen-3.0-generate-001` – до 480 токенов.
-         * - `imagen-3.0-fast-generate-001` – до 480 токенов.
-         * - `imagegeneration@006` – до 128 токенов.
-         * - `imagegeneration@005` – до 128 токенов.
-         * - `imagegeneration@002` – до 64 токенов.
+         * <p>Prompt token limits depend on the selected model:
+         * `imagen-3.0-generate-002` and `imagen-3.0-generate-001` support up to 480 tokens,
+         * `imagen-3.0-fast-generate-001` supports up to 480 tokens,
+         * `imagegeneration@006` and `imagegeneration@005` support up to 128 tokens,
+         * and `imagegeneration@002` supports up to 64 tokens.</p>
          */
         String prompt
 ) {

@@ -1,6 +1,5 @@
 package io.github.demchaav.gemini.model.enums.imagen;
 
-// Перечисления для Imagen
 public enum ImagenVariation {
     _3_0("3.0");
 
