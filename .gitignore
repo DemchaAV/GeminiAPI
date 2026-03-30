@@ -1,22 +1,43 @@
 # Maven and build outputs
 target/
 out/
-logs/
 build/
+logs/
 dependency-reduced-pom.xml
+release.properties
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
 
-# IDEs
+# IDE and editor state
 .idea/
 .vscode/
 *.iml
 *.ipr
 *.iws
+*.swp
+*.swo
 
-# OS files
+# Operating system files
 .DS_Store
 Thumbs.db
+Desktop.ini
 
-# Local run artifacts
-generated-images/
+# Local environment and credentials
+.env
+.env.*
+*.key
+*.pem
+*.p12
+*.jks
+settings-security.xml
+
+# Logs and temporary files
 *.log
 *.tmp
+hs_err_pid*
+replay_pid*
+
+# Generated local example output
+generated-images/

@@ -1,23 +1,22 @@
+/*
+ * Copyright (c) 2025 Artem Demchyshyn
+ *
+ * Licensed under the MIT License. See LICENSE file in the project root.
+ */
 package io.github.demchaav.gemini.request_response.response.candidate.logprobs_result;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Builder;
 
-/**
- * Token and its probability information
- */
+/** Token and its probability information */
 @Builder
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public record TokenProbability(
-        /**
-         * Generative AI models break down text data into tokens for processing,
-         * which can be characters, words, or phrases.
-         */
-        String token,
+    /**
+     * Generative AI models break down text data into tokens for processing, which can be
+     * characters, words, or phrases.
+     */
+    String token,
 
-        /**
-         * A log probability value that indicates the model's confidence for a particular token.
-         */
-        Float logProbability
-) {
-}
+    /** A log probability value that indicates the model's confidence for a particular token. */
+    Float logProbability) {}

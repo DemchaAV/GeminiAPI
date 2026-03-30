@@ -1,0 +1,7 @@
+/*
+ * Copyright (c) 2025 Artem Demchyshyn
+ *
+ * Licensed under the MIT License. See LICENSE file in the project root.
+ */
+/** Model descriptors used to target Gemini and Imagen endpoints. */
+package io.github.demchaav.gemini.model;

@@ -1,31 +1,24 @@
+/*
+ * Copyright (c) 2025 Artem Demchyshyn
+ *
+ * Licensed under the MIT License. See LICENSE file in the project root.
+ */
 package io.github.demchaav.gemini.request_response.response.candidate.safety_rating;
 
-/**
- * Enum for harm probability levels
- */
+/** Enum for harm probability levels */
 public enum HarmProbability {
-    /**
-     * Unspecified harm probability.
-     */
-    HARM_PROBABILITY_UNSPECIFIED,
+  /** Unspecified harm probability. */
+  HARM_PROBABILITY_UNSPECIFIED,
 
-    /**
-     * Negligible probability of harmful content.
-     */
-    NEGLIGIBLE,
+  /** Negligible probability of harmful content. */
+  NEGLIGIBLE,
 
-    /**
-     * Low probability of harmful content.
-     */
-    LOW,
+  /** Low probability of harmful content. */
+  LOW,
 
-    /**
-     * Medium probability of harmful content.
-     */
-    MEDIUM,
+  /** Medium probability of harmful content. */
+  MEDIUM,
 
-    /**
-     * High probability of harmful content.
-     */
-    HIGH
+  /** High probability of harmful content. */
+  HIGH
 }

@@ -5,22 +5,145 @@ on:
     branches:
       - master
       - main
+      - develop
   pull_request:
 
 jobs:
-  build:
+  build-test:
+    name: Build and Test (JDK ${{ matrix.java-version }})
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        java-version: [21]
+
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+
+      - name: Set up Temurin JDK
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: ${{ matrix.java-version }}
+          cache: maven
+
+      - name: Make Maven Wrapper executable
+        run: chmod +x mvnw
+
+      - name: Build and run tests
+        run: ./mvnw -B -ntp clean verify
+
+      - name: Upload unit test reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: surefire-reports-jdk-${{ matrix.java-version }}
+          path: |
+            target/surefire-reports/**
+            target/failsafe-reports/**
+
+  coverage:
+    name: Code Coverage
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
+      - name: Check out source
         uses: actions/checkout@v4
 
-      - name: Set up JDK 21
+      - name: Set up Temurin JDK
         uses: actions/setup-java@v4
         with:
           distribution: temurin
           java-version: 21
           cache: maven
 
-      - name: Build and test
-        run: mvn -B clean test
+      - name: Make Maven Wrapper executable
+        run: chmod +x mvnw
+
+      - name: Generate JaCoCo report
+        run: ./mvnw -B -ntp clean verify
+
+      - name: Upload coverage artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: jacoco-report
+          path: |
+            target/site/jacoco/**
+            target/jacoco.exec
+
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v5
+        with:
+          files: ./target/site/jacoco/jacoco.xml
+          fail_ci_if_error: false
+
+  static-analysis:
+    name: Static Analysis
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+
+      - name: Set up Temurin JDK
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 21
+          cache: maven
+
+      - name: Make Maven Wrapper executable
+        run: chmod +x mvnw
+
+      - name: Run formatter and static analysis
+        run: ./mvnw -B -ntp -Pquality license:check spotless:check checkstyle:check spotbugs:check
+
+      - name: Upload static-analysis reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: static-analysis-reports
+          path: |
+            target/checkstyle-result.xml
+            target/spotbugsXml.xml
+
+  dependency-scan:
+    name: Dependency Vulnerability Scan
+    runs-on: ubuntu-latest
+    env:
+      NVD_API_KEY: ${{ secrets.NVD_API_KEY }}
+
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+
+      - name: Set up Temurin JDK
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 21
+          cache: maven
+
+      - name: Make Maven Wrapper executable
+        run: chmod +x mvnw
+
+      - name: Run OWASP Dependency-Check
+        shell: bash
+        run: |
+          EXTRA_ARGS=""
+          if [[ -n "${NVD_API_KEY}" ]]; then
+            EXTRA_ARGS="-DnvdApiKey=${NVD_API_KEY}"
+          fi
+          ./mvnw -B -ntp org.owasp:dependency-check-maven:check \
+            -Dformats=HTML,XML \
+            -DprettyPrint=true \
+            ${EXTRA_ARGS}
+
+      - name: Upload dependency-check reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: dependency-check-report
+          path: target/dependency-check-report.*
