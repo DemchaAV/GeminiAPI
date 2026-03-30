@@ -31,7 +31,7 @@ jobs:
         run: ./mvnw -B -ntp clean verify
 
       - name: Upload build artifacts
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: release-build
           path: |
@@ -70,7 +70,7 @@ jobs:
         run: ./mvnw -B -ntp -Prelease clean deploy
 
       - name: Upload published bundles
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: central-bundles
           path: |
