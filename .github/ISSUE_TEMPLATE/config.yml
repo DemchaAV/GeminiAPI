@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Usage question
+    url: mailto:demchaav@gmail.com
+    about: Ask a question if you are unsure whether the issue tracker is the right fit.

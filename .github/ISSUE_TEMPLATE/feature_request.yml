@@ -1,0 +1,28 @@
+name: Feature Request
+description: Suggest an idea or enhancement
+labels: ["enhancement", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: "Thanks for proposing an improvement. Please describe the use case and the API shape you have in mind."
+  - type: textarea
+    id: use-case
+    attributes:
+      label: Use Case
+      description: What are you trying to accomplish?
+    validations:
+      required: true
+  - type: textarea
+    id: proposed-solution
+    attributes:
+      label: Proposed Solution
+      description: Describe the API or behavior you would like to see.
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives Considered
+      description: What alternatives have you evaluated already?
+    validations:
+      required: true
