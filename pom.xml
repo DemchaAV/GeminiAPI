@@ -99,7 +99,7 @@
     <maven.gpg.plugin.version>3.2.7</maven.gpg.plugin.version>
     <spotless.maven.plugin.version>2.43.0</spotless.maven.plugin.version>
     <google.java.format.version>1.22.0</google.java.format.version>
-    <maven.checkstyle.plugin.version>3.4.0</maven.checkstyle.plugin.version>
+    <maven.checkstyle.plugin.version>3.6.0</maven.checkstyle.plugin.version>
     <checkstyle.version>10.18.2</checkstyle.version>
     <spotbugs.maven.plugin.version>4.9.8.1</spotbugs.maven.plugin.version>
     <license.maven.plugin.version>4.5</license.maven.plugin.version>
