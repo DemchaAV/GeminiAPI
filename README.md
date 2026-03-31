@@ -1,6 +1,6 @@
 # gemini-client
 
-[![Build](https://img.shields.io/github/actions/workflow/status/DemchaAV/GeminiAPI/ci.yml?branch=master&label=build)](https://github.com/DemchaAV/GeminiAPI/actions/workflows/ci.yml)
+[![Build](https://img.shields.io/github/actions/workflow/status/DemchaAV/GeminiAPI/ci.yml?branch=main&label=build)](https://github.com/DemchaAV/GeminiAPI/actions/workflows/ci.yml)
 [![Version](https://img.shields.io/badge/version-1.0.4--SNAPSHOT-0A7EA4)](https://github.com/DemchaAV/GeminiAPI/releases)
 [![License](https://img.shields.io/github/license/DemchaAV/GeminiAPI)](LICENSE)
 [![JDK](https://img.shields.io/badge/JDK-21-437291?logo=openjdk&logoColor=white)](https://openjdk.org/projects/jdk/21/)

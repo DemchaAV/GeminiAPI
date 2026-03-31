@@ -24,4 +24,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Closed gaps in project metadata required for Maven Central validation.
 - Tightened repository hygiene files so local build output, credentials, and editor state stay untracked.
 
-[Unreleased]: https://github.com/DemchaAV/GeminiAPI/commits/master
+[Unreleased]: https://github.com/DemchaAV/GeminiAPI/commits/main
