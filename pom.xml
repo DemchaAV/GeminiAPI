@@ -85,7 +85,7 @@
     <slf4j.version>2.0.17</slf4j.version>
     <logback.version>1.5.11</logback.version>
     <jetbrains.annotations.version>26.0.1</jetbrains.annotations.version>
-    <org.json.version>20240303</org.json.version>
+    <org.json.version>20251224</org.json.version>
     <junit.version>5.10.2</junit.version>
 
     <maven.compiler.plugin.version>3.13.0</maven.compiler.plugin.version>
