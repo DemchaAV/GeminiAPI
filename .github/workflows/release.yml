@@ -15,7 +15,7 @@ jobs:
 
     steps:
       - name: Check out source
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Set up Temurin JDK
         uses: actions/setup-java@v4
@@ -49,7 +49,7 @@ jobs:
 
     steps:
       - name: Check out source
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Set up Temurin JDK and Maven Central credentials
         uses: actions/setup-java@v4
